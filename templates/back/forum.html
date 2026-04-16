@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Management - CodeQuest</title>
+    <link rel="stylesheet" href="../../assets/css/forum-back.css">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo">Code<span>Quest</span></div>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">📊 Dashboard</a></li>
+                    <li><a href="users.html">👥 Users</a></li>
+                    <li><a href="courses.html">📚 Courses</a></li>
+                    <li><a href="forum.html" class="active">🤝 Forum</a></li>
+                    <li><a href="problems.html">✏️ Problems</a></li>
+                    <li><a href="projects.html">🎯 Projects</a></li>
+                    <li><a href="events.html">🏆 Events</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="motivation-box">
+                    <p>Level up your skills! 🚀</p>
+                    <div class="rocket-emoji">👨‍🚀</div>
+                </div>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Forum Management</h1>
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search forum posts...">
+                        <button type="submit">🔍</button>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <div class="admin-profile">
+                        <span class="admin-avatar">👤</span>
+                        <span class="admin-name">Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Forum Stats -->
+            <section class="user-stats">
+                <div class="stat-card">
+                    <h3>Total Posts</h3>
+                    <p class="stat-number">12,345</p>
+                    <span class="stat-change positive">+12% this month</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Threads</h3>
+                    <p class="stat-number">2,156</p>
+                    <span class="stat-change positive">+8% this week</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Users</h3>
+                    <p class="stat-number">8,901</p>
+                    <span class="stat-change positive">+15% this month</span>
+                </div>
+                <div class="stat-card">
+                    <h3>New This Month</h3>
+                    <p class="stat-number">456</p>
+                    <span class="stat-change positive">+23% this week</span>
+                </div>
+            </section>
+
+            <!-- Filters and Actions -->
+            <section class="user-controls">
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All Posts</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="inactive">Inactive</button>
+                    <button class="filter-btn" data-filter="recent">Recent</button>
+                    <button class="filter-btn" data-filter="popular">Popular</button>
+                    <button class="filter-btn" data-filter="controversial">Controversial</button>
+                </div>
+                <div class="action-buttons">
+                    <button class="stats-btn">
+                        📊 View Stats
+                    </button>
+                    <button class="add-user-btn">
+                        <span>+</span> Add New Thread
+                    </button>
+                </div>
+            </section>
+
+            <!-- Forum Table -->
+            <section class="users-table-section">
+                <div class="table-container">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>Post ID</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Category</th>
+                                <th>Replies</th>
+                                <th>Views</th>
+                                <th>Created Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Help with Python loops</td>
+                                <td>John Doe</td>
+                                <td><span class="category-badge general">General</span></td>
+                                <td>23</td>
+                                <td>156</td>
+                                <td>Jan 15, 2024</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewPostDetails(1)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyPost(1)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deletePost(1)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Best practices for React components</td>
+                                <td>Sarah Miller</td>
+                                <td><span class="category-badge webdev">Web Dev</span></td>
+                                <td>45</td>
+                                <td>289</td>
+                                <td>Feb 20, 2024</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewPostDetails(2)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyPost(2)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deletePost(2)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>003</td>
+                                <td>Database optimization tips</td>
+                                <td>Mike Chen</td>
+                                <td><span class="category-badge database">Database</span></td>
+                                <td>12</td>
+                                <td>98</td>
+                                <td>Mar 10, 2024</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewPostDetails(3)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyPost(3)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deletePost(3)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>004</td>
+                                <td>AI and machine learning discussion</td>
+                                <td>Emily Davis</td>
+                                <td><span class="category-badge ai">AI/ML</span></td>
+                                <td>67</td>
+                                <td>423</td>
+                                <td>Apr 5, 2024</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewPostDetails(4)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyPost(4)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deletePost(4)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>005</td>
+                                <td>Career advice for developers</td>
+                                <td>David Wilson</td>
+                                <td><span class="category-badge career">Career</span></td>
+                                <td>89</td>
+                                <td>567</td>
+                                <td>May 12, 2024</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewPostDetails(5)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyPost(5)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deletePost(5)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="../../assets/js/forum-back.js"></script>
+</body>
+</html></content>
+<parameter name="filePath">c:\Users\MSI-PC\Desktop\projet\templates\back\forum.html

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - CodeQuest</title>
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo">Code<span>Quest</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">📊 Dashboard</a></li>
+                    <li><a href="#">👥 Users</a></li>
+                    <li><a href="#">📚 Courses</a></li>
+                    <li><a href="#">🤝 Forum</a></li>
+                    <li><a href="#">✏️ Problems</a></li>
+                    <li><a href="#">🎯 Projects</a></li>
+                    <li><a href="#">🏆 Events</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="motivation-box">
+                    <p>Level up your skills! 🚀</p>
+                    <div class="rocket-emoji">👨‍🚀</div>
+                </div>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Admin Dashboard</h1>
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search...">
+                        <button type="submit">🔍</button>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <div class="admin-profile">
+                        <span class="admin-avatar">👤</span>
+                        <span class="admin-name">Admin</span>
+                    </div>
+                </div>
+            </header>
+            <section class="stats">
+                <div class="stat-card">
+                    <h3>Total Users</h3>
+                    <p class="stat-number">1,234</p>
+                    <span class="stat-change positive">+12% from last month</span>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Courses</h3>
+                    <p class="stat-number">56</p>
+                    <span class="stat-change positive">+5% this week</span>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 60%"></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <h3>Forum Posts</h3>
+                    <p class="stat-number">789</p>
+                    <span class="stat-change negative">-2% yesterday</span>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <h3>Problems Solved</h3>
+                    <p class="stat-number">12,345</p>
+                    <span class="stat-change positive">+18% this month</span>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <h3>Projects Submitted</h3>
+                    <p class="stat-number">234</p>
+                    <span class="stat-change positive">+8% last week</span>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <h3>Events Hosted</h3>
+                    <p class="stat-number">12</p>
+                    <span class="stat-change positive">+25% this quarter</span>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 50%"></div>
+                    </div>
+                </div>
+            </section>
+            <div class="dashboard-grid">
+                <section class="top-users">
+                    <h2>Top Active Users</h2>
+                    <div class="user-list">
+                        <div class="user-item">
+                            <span class="user-avatar">JD</span>
+                            <div class="user-info">
+                                <p class="user-name">John Doe</p>
+                                <p class="user-stats">Level 15 • 2,450 XP</p>
+                            </div>
+                            <span class="user-score">⭐ 4.8</span>
+                        </div>
+                        <div class="user-item">
+                            <span class="user-avatar">SM</span>
+                            <div class="user-info">
+                                <p class="user-name">Sarah Miller</p>
+                                <p class="user-stats">Level 12 • 1,890 XP</p>
+                            </div>
+                            <span class="user-score">⭐ 4.7</span>
+                        </div>
+                        <div class="user-item">
+                            <span class="user-avatar">AK</span>
+                            <div class="user-info">
+                                <p class="user-name">Alex Kim</p>
+                                <p class="user-stats">Level 10 • 1,650 XP</p>
+                            </div>
+                            <span class="user-score">⭐ 4.6</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <span class="activity-icon">👤</span>
+                            <p><strong>John Doe</strong> registered and completed "Python Basics"</p>
+                            <span class="activity-time">2 minutes ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">📚</span>
+                            <p>Course "JavaScript Advanced" completed by 5 users</p>
+                            <span class="activity-time">15 minutes ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">💬</span>
+                            <p>New forum post: "Help with React hooks" in General Discussion</p>
+                            <span class="activity-time">1 hour ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎯</span>
+                            <p><strong>Sarah Miller</strong> submitted project "Weather App"</p>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏆</span>
+                            <p>Monthly coding challenge ended - 156 participants</p>
+                            <span class="activity-time">3 hours ago</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="quick-actions">
+                    <h2>Quick Actions</h2>
+                    <div class="action-buttons">
+                        <button class="action-btn">➕ Add New Course</button>
+                        <button class="action-btn">👥 Manage Users</button>
+                        <button class="action-btn">📢 Send Announcement</button>
+                        <button class="action-btn">📊 Generate Report</button>
+                    </div>
+                </section>
+                <section class="system-status">
+                    <h2>System Status</h2>
+                    <div class="status-items">
+                        <div class="status-item">
+                            <span class="status-icon">🟢</span>
+                            <div class="status-info">
+                                <p>Server Status</p>
+                                <span>All systems operational</span>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-icon">🟡</span>
+                            <div class="status-info">
+                                <p>Database Load</p>
+                                <span>Medium (45% capacity)</span>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-icon">🟢</span>
+                            <div class="status-info">
+                                <p>API Response Time</p>
+                                <span>120ms average</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Charts Section -->
+            <section class="charts-section">
+                <div class="chart-container">
+                    <div class="chart-card">
+                        <h2>User Growth Over Time</h2>
+                        <div class="bar-chart">
+                            <div class="chart-bar">
+                                <div class="bar-fill" style="height: 40%"></div>
+                                <span class="bar-label">Jan</span>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="bar-fill" style="height: 55%"></div>
+                                <span class="bar-label">Feb</span>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="bar-fill" style="height: 70%"></div>
+                                <span class="bar-label">Mar</span>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="bar-fill" style="height: 85%"></div>
+                                <span class="bar-label">Apr</span>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="bar-fill" style="height: 95%"></div>
+                                <span class="bar-label">May</span>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="bar-fill" style="height: 100%"></div>
+                                <span class="bar-label">Jun</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <h2>Course Categories</h2>
+                        <div class="pie-chart-container">
+                            <svg class="pie-chart" viewBox="0 0 200 200">
+                                <circle cx="100" cy="100" r="80" fill="transparent" stroke="#e9ecef" stroke-width="20"/>
+                                <circle cx="100" cy="100" r="80" fill="transparent" stroke="#FF6B4A" stroke-width="20" 
+                                        stroke-dasharray="251.2 251.2" stroke-dashoffset="0" class="pie-segment"/>
+                                <circle cx="100" cy="100" r="80" fill="transparent" stroke="#2196F3" stroke-width="20" 
+                                        stroke-dasharray="125.6 251.2" stroke-dashoffset="-251.2" class="pie-segment"/>
+                                <circle cx="100" cy="100" r="80" fill="transparent" stroke="#FFB800" stroke-width="20" 
+                                        stroke-dasharray="75.36 251.2" stroke-dashoffset="-376.8" class="pie-segment"/>
+                                <circle cx="100" cy="100" r="80" fill="transparent" stroke="#4CAF50" stroke-width="20" 
+                                        stroke-dasharray="50.24 251.2" stroke-dashoffset="-452.16" class="pie-segment"/>
+                            </svg>
+                            <div class="pie-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #FF6B4A"></span>
+                                    <span>Web Development (50%)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #2196F3"></span>
+                                    <span>Data Science (25%)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #FFB800"></span>
+                                    <span>Mobile Dev (15%)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #4CAF50"></span>
+                                    <span>Algorithms (10%)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="chart-card">
+                        <h2>Problem Difficulty Distribution</h2>
+                        <div class="doughnut-chart">
+                            <svg viewBox="0 0 200 200">
+                                <circle cx="100" cy="100" r="60" fill="transparent" stroke="#e9ecef" stroke-width="40"/>
+                                <circle cx="100" cy="100" r="60" fill="transparent" stroke="#4CAF50" stroke-width="40" 
+                                        stroke-dasharray="75.36 188.4" stroke-dashoffset="0" class="doughnut-segment"/>
+                                <circle cx="100" cy="100" r="60" fill="transparent" stroke="#FF9800" stroke-width="40" 
+                                        stroke-dasharray="94.2 188.4" stroke-dashoffset="-75.36" class="doughnut-segment"/>
+                                <circle cx="100" cy="100" r="60" fill="transparent" stroke="#f44336" stroke-width="40" 
+                                        stroke-dasharray="18.84 188.4" stroke-dashoffset="-169.56" class="doughnut-segment"/>
+                            </svg>
+                            <div class="chart-center">
+                                <span class="center-number">156</span>
+                                <span class="center-label">Problems</span>
+                            </div>
+                        </div>
+                        <div class="doughnut-legend">
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #4CAF50"></span>
+                                <span>Easy (40%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #FF9800"></span>
+                                <span>Medium (50%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: #f44336"></span>
+                                <span>Hard (10%)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <h2>Monthly Revenue Trend</h2>
+                        <div class="line-chart">
+                            <svg viewBox="0 0 300 150" class="line-svg">
+                                <polyline points="0,120 50,100 100,80 150,60 200,40 250,30 300,20" 
+                         fill="none" stroke="#FF6B4A" stroke-width="3"/>
+                                <circle cx="0" cy="120" r="4" fill="#FF6B4A"/>
+                                <circle cx="50" cy="100" r="4" fill="#FF6B4A"/>
+                                <circle cx="100" cy="80" r="4" fill="#FF6B4A"/>
+                                <circle cx="150" cy="60" r="4" fill="#FF6B4A"/>
+                                <circle cx="200" cy="40" r="4" fill="#FF6B4A"/>
+                                <circle cx="250" cy="30" r="4" fill="#FF6B4A"/>
+                                <circle cx="300" cy="20" r="4" fill="#FF6B4A"/>
+                            </svg>
+                            <div class="line-labels">
+                                <span>Jan</span>
+                                <span>Feb</span>
+                                <span>Mar</span>
+                                <span>Apr</span>
+                                <span>May</span>
+                                <span>Jun</span>
+                                <span>Jul</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="../../assets/js/dashboard.js"></script>
+</body>
+</html></content>
+<parameter name="filePath">c:\Users\MSI-PC\Desktop\projet\templates\back\dashboard.html

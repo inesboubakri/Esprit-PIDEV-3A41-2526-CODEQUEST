@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - CodeQuest</title>
+    <link rel="stylesheet" href="../../assets/css/sign-up.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Code<span>Quest</span></div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="home.html">🏠 Home</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="problems.html">✏️ Quests</a></li>
+                <li><a href="projects.html">🎯 Missions</a></li>
+                <li><a href="events.html">🏆 Tournaments</a></li>
+                <li><a href="forum.html">🤝 Guild</a></li>
+                <li><a href="users.html">⚔️ Arena</a></li>
+            </ul>
+        </div>
+        <div class="nav-buttons">
+            <a href="sign-up.html" class="btn-login">Sign Up</a>
+            <a href="sign-in.html" class="btn-play">Log In</a>
+        </div>
+    </nav>
+
+    <!-- Sign Up Form Section -->
+    <section class="signup-section">
+        <div class="signup-container">
+            <div class="signup-form">
+                <div class="form-header">
+                    <h1>Join the <span>Adventure</span></h1>
+                    <p>Create your account and start your coding journey today!</p>
+                </div>
+
+                <form id="signupForm" class="form-content">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <div class="input-container">
+                            <span class="input-icon">👤</span>
+                            <input type="text" id="username" name="username" required placeholder="Choose a username">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-container">
+                            <span class="input-icon">📧</span>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-container">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="password" name="password" required placeholder="Create a password">
+                            <button type="button" class="password-toggle" id="passwordToggle">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#" class="link">Terms of Service</a> and <a href="#" class="link">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-signup">
+                        <span class="btn-text">Create Account</span>
+                        <span class="btn-icon">⚔️</span>
+                    </button>
+
+                    <div class="form-footer">
+                        <p>Already have an account? <a href="sign-in.html" class="link">Log in here</a></p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+        </div>
+        <div class="hero-content">
+            <div class="level-badge">
+                ⚡ <span>Level 1 • 2,450 XP</span>
+            </div>
+            <h1>Your Coding Adventure Awaits</h1>
+            <p>Embark on an epic adventure to master programming. Complete quests, earn XP, and improve your coding skills!</p>
+            <div class="hero-buttons">
+                <button class="btn-start">▶ Start Adventure</button>
+                <button class="btn-trailer">Watch Trailer</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/sign-up.js"></script>
+
+</body>
+</html>
+
+
+
+
+

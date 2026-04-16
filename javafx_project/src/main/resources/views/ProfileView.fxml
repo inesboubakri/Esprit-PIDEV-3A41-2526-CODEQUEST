@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.ProfileController"
+            stylesheets="@../styles.css"
+            style="-fx-background-color: white;">
+    
+    <!-- Top Navigation Bar - Fixed Position -->
+    <top>
+        <HBox style="-fx-background-color: transparent; -fx-padding: 0 40 0 40; -fx-spacing: 40; -fx-min-height: 80; -fx-alignment: CENTER_LEFT; -fx-border-color: rgba(0, 0, 0, 0.1); -fx-border-width: 0 0 1 0;" fx:id="navbar">
+            <!-- Logo -->
+            <HBox spacing="8" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                <Label text="Code" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                <Label text="Quest" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+            </HBox>
+            
+            <!-- Navigation Links -->
+            <VBox style="-fx-background-color: rgba(255, 255, 255, 0.08); -fx-border-radius: 999; -fx-background-radius: 999; -fx-border-color: rgba(0, 0, 0, 0.1); -fx-border-width: 1;" prefHeight="40">
+                <HBox spacing="8" alignment="CENTER" style="-fx-padding: 8 16 8 16;">
+                    <Hyperlink text="🏠 Home" style="-fx-text-fill: #333; -fx-font-size: 14; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavHome"/>
+                    <Hyperlink text="📚 Courses" style="-fx-text-fill: #333; -fx-font-size: 14; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavCourses"/>
+                    <Hyperlink text="✏️ Quests" style="-fx-text-fill: #333; -fx-font-size: 14; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavProblems"/>
+                    <Hyperlink text="🎯 Missions" style="-fx-text-fill: #333; -fx-font-size: 14; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavProjects"/>
+                    <Hyperlink text="🏆 Tournaments" style="-fx-text-fill: #333; -fx-font-size: 14; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavEvents"/>
+                    <Hyperlink text="🤝 Guild" style="-fx-text-fill: #333; -fx-font-size: 14; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavForum"/>
+                    <Hyperlink text="⚔️ Arena" style="-fx-text-fill: #333; -fx-font-size: 14; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavUsers"/>
+                </HBox>
+            </VBox>
+            
+            <!-- Right side buttons -->
+            <HBox spacing="16" alignment="CENTER_RIGHT">
+                <Button text="Log Out" onAction="#handleLogOut" style="-fx-padding: 10 24 10 24; -fx-font-size: 14; -fx-background-color: linear-gradient(135deg, rgb(255, 107, 74), rgb(255, 138, 101)); -fx-text-fill: white; -fx-font-weight: 600; -fx-border-radius: 12;"/>
+            </HBox>
+        </HBox>
+    </top>
+    
+    <!-- Main Content - Hero Section + Profile Content -->
+    <center>
+        <ScrollPane style="-fx-background-color: #f8f9fa; -fx-fit-to-width: true; -fx-padding: 0;">
+            <VBox spacing="0" style="-fx-background-color: #f8f9fa;">
+                
+                <!-- Hero Section -->
+                <VBox style="-fx-background-color: linear-gradient(135deg, rgb(102, 126, 234), rgb(118, 75, 162)); -fx-padding: 80 40 60 40; -fx-min-height: 400; -fx-alignment: CENTER;" alignment="CENTER" spacing="20">
+                    <!-- Level Badge -->
+                    <VBox style="-fx-background-color: rgba(255, 255, 255, 0.15); -fx-border-color: rgba(255, 255, 255, 0.3); -fx-border-width: 1; -fx-border-radius: 20; -fx-padding: 8 16 8 16; -fx-alignment: CENTER; -fx-max-width: 200;">
+                        <Label fx:id="levelBadge" text="⚡ Level 47 • 89,450 XP" style="-fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: 500;"/>
+                    </VBox>
+                    
+                    <!-- Hero Title -->
+                    <Label fx:id="heroTitle" text="User's Complete Profile" style="-fx-text-fill: white; -fx-font-size: 48; -fx-font-weight: bold;"/>
+                    
+                    <!-- Hero Subtitle -->
+                    <Label text="Explore comprehensive details about this developer's journey, skills, and achievements" style="-fx-text-fill: rgba(255, 255, 255, 0.9); -fx-font-size: 16;"/>
+                    
+                    <!-- Hero Buttons -->
+                    <HBox spacing="20" alignment="CENTER" style="-fx-padding: 20 0 0 0;">
+                        <Button text="👤 View Full Profile" style="-fx-padding: 15 30 15 30; -fx-background-color: rgba(255, 255, 255, 0.2); -fx-border-color: rgba(255, 255, 255, 0.3); -fx-border-width: 1; -fx-border-radius: 50; -fx-text-fill: white; -fx-font-weight: 600; -fx-font-size: 14;"/>
+                        <Button text="💬 Send Message" style="-fx-padding: 15 30 15 30; -fx-background-color: linear-gradient(135deg, rgb(255, 107, 74), rgb(255, 138, 101)); -fx-border-radius: 50; -fx-text-fill: white; -fx-font-weight: 600; -fx-font-size: 14;"/>
+                    </HBox>
+                </VBox>
+                
+                <!-- Profile Details Section -->
+                <VBox style="-fx-padding: 60 40 60 40; -fx-background-color: #f8f9fa;" spacing="0">
+                    <VBox style="-fx-background-color: white; -fx-border-radius: 12; -fx-padding: 40; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 20, 0, 0, 4);" spacing="20">
+                        
+                        <!-- Profile Header -->
+                        <VBox spacing="8" style="-fx-padding: 0 0 20 0;">
+                            <Label fx:id="profileName" text="CodeMaster_99" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <Label fx:id="profileSubtitle" text="Senior Full-Stack Developer &amp; Mentor" style="-fx-font-size: 14; -fx-text-fill: #666;"/>
+                            <Label fx:id="profileEmail" text="user@example.com" style="-fx-font-size: 12; -fx-text-fill: #999;"/>
+                        </VBox>
+                        
+                        <!-- Profile Tabs -->
+                        <HBox style="-fx-border-color: #e0e0e0; -fx-border-width: 0 0 1 0; -fx-padding: 0 0 20 0; -fx-spacing: 0;">
+                            <Button fx:id="tabOverview" text="Overview" style="-fx-padding: 15 25 15 25; -fx-font-size: 14; -fx-font-weight: 500; -fx-text-fill: #FF6B4A; -fx-background-color: transparent; -fx-border-color: #FF6B4A; -fx-border-width: 0 0 2 0;" onAction="#handleTabOverview"/>
+                            <Button fx:id="tabCourses" text="Courses" style="-fx-padding: 15 25 15 25; -fx-font-size: 14; -fx-font-weight: 500; -fx-text-fill: #666; -fx-background-color: transparent; -fx-border-color: transparent;" onAction="#handleTabCourses"/>
+                            <Button fx:id="tabEvents" text="Events" style="-fx-padding: 15 25 15 25; -fx-font-size: 14; -fx-font-weight: 500; -fx-text-fill: #666; -fx-background-color: transparent; -fx-border-color: transparent;" onAction="#handleTabEvents"/>
+                            <Button fx:id="tabForum" text="Forum" style="-fx-padding: 15 25 15 25; -fx-font-size: 14; -fx-font-weight: 500; -fx-text-fill: #666; -fx-background-color: transparent; -fx-border-color: transparent;" onAction="#handleTabForum"/>
+                            <Button fx:id="tabProblems" text="Problems" style="-fx-padding: 15 25 15 25; -fx-font-size: 14; -fx-font-weight: 500; -fx-text-fill: #666; -fx-background-color: transparent; -fx-border-color: transparent;" onAction="#handleTabProblems"/>
+                            <Button fx:id="tabProjects" text="Projects" style="-fx-padding: 15 25 15 25; -fx-font-size: 14; -fx-font-weight: 500; -fx-text-fill: #666; -fx-background-color: transparent; -fx-border-color: transparent;" onAction="#handleTabProjects"/>
+                        </HBox>
+                        
+                        <!-- Tab Content - Overview (Active by default) -->
+                        <VBox fx:id="overviewTab" spacing="20">
+                            <Label text="Profile Overview" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <Label fx:id="profileBio" text="Full-stack developer with 5+ years of experience in web development. Specializing in modern JavaScript frameworks and cloud technologies." style="-fx-font-size: 14; -fx-text-fill: #666; -fx-wrap-text: true;"/>
+                            
+                            <!-- Profile Highlights Grid -->
+                            <GridPane hgap="20" vgap="20" style="-fx-padding: 20 0 0 0;">
+                                <columnConstraints>
+                                    <ColumnConstraints percentWidth="33"/>
+                                    <ColumnConstraints percentWidth="33"/>
+                                    <ColumnConstraints percentWidth="34"/>
+                                </columnConstraints>
+                                
+                                <VBox spacing="8" style="-fx-background-color: #f8f9fa; -fx-padding: 20; -fx-border-radius: 8; -fx-border-color: #FF6B4A; -fx-border-width: 0 0 0 4;" GridPane.columnIndex="0">
+                                    <Label text="🎓 Education" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                                    <Label fx:id="educationDisplay" text="Computer Science, Stanford University" style="-fx-font-size: 12; -fx-text-fill: #666;"/>
+                                </VBox>
+                                
+                                <VBox spacing="8" style="-fx-background-color: #f8f9fa; -fx-padding: 20; -fx-border-radius: 8; -fx-border-color: #FF6B4A; -fx-border-width: 0 0 0 4;" GridPane.columnIndex="1">
+                                    <Label text="💼 Experience" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                                    <Label fx:id="experienceDisplay" text="Senior Full-Stack Developer" style="-fx-font-size: 12; -fx-text-fill: #666;"/>
+                                    <Label fx:id="experienceRole" text="Tech Lead &amp; Mentor" style="-fx-font-size: 12; -fx-text-fill: #666;"/>
+                                </VBox>
+                                
+                                <VBox spacing="8" style="-fx-background-color: #f8f9fa; -fx-padding: 20; -fx-border-radius: 8; -fx-border-color: #FF6B4A; -fx-border-width: 0 0 0 4;" GridPane.columnIndex="2">
+                                    <Label text="🏆 Achievements" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                                    <Label text="Top 10% in Leaderboard" style="-fx-font-size: 12; -fx-text-fill: #666;"/>
+                                    <Label text="100+ Problems Solved" style="-fx-font-size: 12; -fx-text-fill: #666;"/>
+                                </VBox>
+                            </GridPane>
+                            
+                            <!-- Skills Section -->
+                            <VBox spacing="12" style="-fx-padding: 30 0 0 0;">
+                                <Label text="Technical Skills" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                                <FlowPane hgap="10" vgap="10">
+                                    <Label text="JavaScript" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-padding: 6 12 6 12; -fx-background-radius: 20;"/>
+                                    <Label text="React" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-padding: 6 12 6 12; -fx-background-radius: 20;"/>
+                                    <Label text="Node.js" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-padding: 6 12 6 12; -fx-background-radius: 20;"/>
+                                    <Label text="Python" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-padding: 6 12 6 12; -fx-background-radius: 20;"/>
+                                    <Label text="TypeScript" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-padding: 6 12 6 12; -fx-background-radius: 20;"/>
+                                    <Label text="AWS" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-padding: 6 12 6 12; -fx-background-radius: 20;"/>
+                                    <Label text="Docker" style="-fx-background-color: #FF9800; -fx-text-fill: white; -fx-padding: 6 12 6 12; -fx-background-radius: 20;"/>
+                                    <Label text="MongoDB" style="-fx-background-color: #FF9800; -fx-text-fill: white; -fx-padding: 6 12 6 12; -fx-background-radius: 20;"/>
+                                </FlowPane>
+                            </VBox>
+                        </VBox>
+                        
+                        <!-- Tab Content - Courses (Hidden by default) -->
+                        <VBox fx:id="coursesTab" spacing="20" visible="false" managed="false">
+                            <Label text="Enrolled Courses" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <Label text="Courses content will be loaded here" style="-fx-font-size: 14; -fx-text-fill: #999;"/>
+                        </VBox>
+                        
+                        <!-- Tab Content - Events (Hidden by default) -->
+                        <VBox fx:id="eventsTab" spacing="20" visible="false" managed="false">
+                            <Label text="Event Participation" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <Label text="Events content will be loaded here" style="-fx-font-size: 14; -fx-text-fill: #999;"/>
+                        </VBox>
+                        
+                        <!-- Tab Content - Forum (Hidden by default) -->
+                        <VBox fx:id="forumTab" spacing="20" visible="false" managed="false">
+                            <Label text="Forum Activity" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <Label text="Forum content will be loaded here" style="-fx-font-size: 14; -fx-text-fill: #999;"/>
+                        </VBox>
+                        
+                        <!-- Tab Content - Problems (Hidden by default) -->
+                        <VBox fx:id="problemsTab" spacing="20" visible="false" managed="false">
+                            <Label text="Problem Solving" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <Label text="Problems content will be loaded here" style="-fx-font-size: 14; -fx-text-fill: #999;"/>
+                        </VBox>
+                        
+                        <!-- Tab Content - Projects (Hidden by default) -->
+                        <VBox fx:id="projectsTab" spacing="20" visible="false" managed="false">
+                            <Label text="Featured Projects" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <Label text="Projects content will be loaded here" style="-fx-font-size: 14; -fx-text-fill: #999;"/>
+                        </VBox>
+                        
+                        <!-- Profile Meta Information -->
+                        <VBox spacing="20" style="-fx-padding: 40 0 0 0; -fx-border-color: #e0e0e0; -fx-border-width: 1 0 0 0;">
+                            <GridPane hgap="30" vgap="20" style="-fx-padding: 30 0 0 0;">
+                                <columnConstraints>
+                                    <ColumnConstraints percentWidth="50"/>
+                                    <ColumnConstraints percentWidth="50"/>
+                                </columnConstraints>
+                                
+                                <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                    <Label text="🌍 Role" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                                    <Label fx:id="roleDisplay" text="Student" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                                </VBox>
+                                
+                                <VBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                    <Label text="📅 Member Since" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                                    <Label fx:id="memberSinceDisplay" text="January 2024" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                                </VBox>
+                                
+                                <VBox spacing="8" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                    <Label text="🎓 Formation" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                                    <Label fx:id="formationDisplay" text="Computer Science" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                                </VBox>
+                                
+                                <VBox spacing="8" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <Label text="👤 Age" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                                    <Label fx:id="ageDisplay" text="25" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                                </VBox>
+                            </GridPane>
+                        </VBox>
+                    </VBox>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

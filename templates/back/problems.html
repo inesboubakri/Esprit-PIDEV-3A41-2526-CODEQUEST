@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems Management - CodeQuest</title>
+    <link rel="stylesheet" href="../../assets/css/problems-back.css">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo">Code<span>Quest</span></div>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">📊 Dashboard</a></li>
+                    <li><a href="users.html">👥 Users</a></li>
+                    <li><a href="#">📚 Courses</a></li>
+                    <li><a href="#">🤝 Forum</a></li>
+                    <li><a href="problems.html" class="active">✏️ Problems</a></li>
+                    <li><a href="#">🎯 Projects</a></li>
+                    <li><a href="#">🏆 Events</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="motivation-box">
+                    <p>Level up your skills! 🚀</p>
+                    <div class="rocket-emoji">👨‍🚀</div>
+                </div>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Problems Management</h1>
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search problems...">
+                        <button type="submit">🔍</button>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <div class="admin-profile">
+                        <span class="admin-avatar">👤</span>
+                        <span class="admin-name">Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Problem Stats -->
+            <section class="user-stats">
+                <div class="stat-card">
+                    <h3>Total Problems</h3>
+                    <p class="stat-number">1,234</p>
+                    <span class="stat-change positive">+12% this month</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Solved Problems</h3>
+                    <p class="stat-number">987</p>
+                    <span class="stat-change positive">+8% this week</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Easy Problems</h3>
+                    <p class="stat-number">456</p>
+                    <span class="stat-change positive">+5% this month</span>
+                </div>
+                <div class="stat-card">
+                    <h3>New This Month</h3>
+                    <p class="stat-number">89</p>
+                    <span class="stat-change positive">+23% this week</span>
+                </div>
+            </section>
+
+            <!-- Filters and Actions -->
+            <section class="user-controls">
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All Problems</button>
+                    <button class="filter-btn" data-filter="easy">Easy</button>
+                    <button class="filter-btn" data-filter="medium">Medium</button>
+                    <button class="filter-btn" data-filter="hard">Hard</button>
+                    <button class="filter-btn" data-filter="solved">Solved</button>
+                    <button class="filter-btn" data-filter="unsolved">Unsolved</button>
+                </div>
+                <div class="action-buttons">
+                    <button class="stats-btn">
+                        📊 View Stats
+                    </button>
+                    <button class="add-user-btn">
+                        <span>+</span> Add New Problem
+                    </button>
+                </div>
+            </section>
+
+            <!-- Problems Table -->
+            <section class="users-table-section">
+                <div class="table-container">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>Problem ID</th>
+                                <th>Title</th>
+                                <th>Difficulty</th>
+                                <th>Status</th>
+                                <th>Submissions</th>
+                                <th>Acceptance Rate</th>
+                                <th>Created Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Two Sum</td>
+                                <td><span class="level-badge">Easy</span></td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>15,234</td>
+                                <td>45.6%</td>
+                                <td>Jan 15, 2024</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewProblemDetails(1)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyProblem(1)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deleteProblem(1)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Valid Parentheses</td>
+                                <td><span class="level-badge">Medium</span></td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>8,567</td>
+                                <td>52.3%</td>
+                                <td>Feb 20, 2024</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewProblemDetails(2)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyProblem(2)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deleteProblem(2)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>003</td>
+                                <td>Median of Two Sorted Arrays</td>
+                                <td><span class="level-badge">Hard</span></td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>3,421</td>
+                                <td>28.9%</td>
+                                <td>Mar 10, 2024</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewProblemDetails(3)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyProblem(3)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deleteProblem(3)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>004</td>
+                                <td>Climbing Stairs</td>
+                                <td><span class="level-badge">Easy</span></td>
+                                <td><span class="status-badge inactive">Inactive</span></td>
+                                <td>12,345</td>
+                                <td>67.8%</td>
+                                <td>Apr 5, 2024</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewProblemDetails(4)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyProblem(4)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deleteProblem(4)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>005</td>
+                                <td>Longest Common Subsequence</td>
+                                <td><span class="level-badge">Medium</span></td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>5,678</td>
+                                <td>34.5%</td>
+                                <td>May 12, 2024</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewProblemDetails(5)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyProblem(5)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deleteProblem(5)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="../../assets/js/problems-back.js"></script>
+</body>
+</html></content>
+<parameter name="filePath">c:\Users\MSI-PC\Desktop\projet\templates\back\problems.html

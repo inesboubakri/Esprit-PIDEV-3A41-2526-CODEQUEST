@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - CodeQuest</title>
+    <link rel="stylesheet" href="../../assets/css/courses.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Code<span>Quest</span></div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="home.html">🏠 Home</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="problems.html">✏️ Quests</a></li>
+                <li><a href="projects.html">🎯 Missions</a></li>
+                <li><a href="events.html">🏆 Tournaments</a></li>
+                <li><a href="forum.html">🤝 Guild</a></li>
+                <li><a href="users.html">⚔️ Arena</a></li>
+            </ul>
+        </div>
+        <div class="nav-buttons">
+            <a href="sign-in.html" class="btn-login">Log In</a>
+            <button class="btn-play">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="level-badge">
+                ⚡ <span>Level 1 • 2,450 XP</span>
+            </div>
+            <h1>Master Programming Skills</h1>
+            <p>Choose from our comprehensive collection of courses. Learn at your own pace and unlock new programming abilities!</p>
+            <div class="hero-buttons">
+                <button class="btn-start">🎓 Browse Courses</button>
+                <button class="btn-trailer">Watch Intro</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section">
+        <div class="courses-container">
+            <!-- Filter Sidebar -->
+            <aside class="filter-sidebar">
+                <div class="filter-header">
+                    <h3>🔍 Filter Courses</h3>
+                </div>
+
+                <div class="filter-group">
+                    <h4>📚 Course Type</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="type" value="web-development">
+                        <span class="checkmark"></span>
+                        Web Development
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="type" value="data-science">
+                        <span class="checkmark"></span>
+                        Data Science
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="type" value="mobile-dev">
+                        <span class="checkmark"></span>
+                        Mobile Development
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="type" value="game-dev">
+                        <span class="checkmark"></span>
+                        Game Development
+                    </label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>💻 Language</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="html">
+                        <span class="checkmark"></span>
+                        HTML
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="css">
+                        <span class="checkmark"></span>
+                        CSS
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="javascript">
+                        <span class="checkmark"></span>
+                        JavaScript
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="python">
+                        <span class="checkmark"></span>
+                        Python
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="java">
+                        <span class="checkmark"></span>
+                        Java
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="cpp">
+                        <span class="checkmark"></span>
+                        C++
+                    </label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>🎯 Difficulty</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="difficulty" value="beginner">
+                        <span class="checkmark"></span>
+                        Beginner
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="difficulty" value="intermediate">
+                        <span class="checkmark"></span>
+                        Intermediate
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="difficulty" value="advanced">
+                        <span class="checkmark"></span>
+                        Advanced
+                    </label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>⏱️ Duration</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="duration" value="short">
+                        <span class="checkmark"></span>
+                        1-2 hours
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="duration" value="medium">
+                        <span class="checkmark"></span>
+                        3-5 hours
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="duration" value="long">
+                        <span class="checkmark"></span>
+                        5+ hours
+                    </label>
+                </div>
+
+                <button class="btn-clear-filters">Clear All Filters</button>
+            </aside>
+
+            <!-- Courses Grid -->
+            <main class="courses-main">
+                <div class="courses-header">
+                    <h2>All <span>Courses</span></h2>
+                    <p>Discover and master new programming skills</p>
+                    <div class="courses-stats">
+                        <span>📚 50+ Courses</span>
+                        <span>👥 100K+ Students</span>
+                        <span>⭐ 4.8 Average Rating</span>
+                    </div>
+                </div>
+
+                <div class="courses-grid">
+                    <!-- HTML Course -->
+                    <div class="course-card html-bg" data-type="web-development" data-language="html" data-difficulty="beginner" data-duration="short">
+                        <div class="course-header">
+                            <span class="difficulty-badge beginner">Beginner</span>
+                            <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                        </div>
+                        <div class="course-body">
+                            <h3>HTML Foundations</h3>
+                            <p>Master the building blocks of the web with hands-on projects</p>
+                            <div class="course-meta">
+                                <span>⏱️ 2 hours</span>
+                                <span>📖 15 lessons</span>
+                                <span>⭐ 4.9</span>
+                            </div>
+                            <div class="course-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">Web Basics</span>
+                            </div>
+                            <div class="course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 100%"></div>
+                                </div>
+                                <span class="progress-text">Completed</span>
+                            </div>
+                            <button class="btn-enroll">Continue Learning</button>
+                        </div>
+                    </div>
+
+                    <!-- CSS Course -->
+                    <div class="course-card css-bg" data-type="web-development" data-language="css" data-difficulty="beginner" data-duration="medium">
+                        <div class="course-header">
+                            <span class="difficulty-badge beginner">Beginner</span>
+                            <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                        </div>
+                        <div class="course-body">
+                            <h3>CSS Styling Mastery</h3>
+                            <p>Create beautiful, responsive designs with modern CSS techniques</p>
+                            <div class="course-meta">
+                                <span>⏱️ 4 hours</span>
+                                <span>📖 25 lessons</span>
+                                <span>⭐ 4.8</span>
+                            </div>
+                            <div class="course-tags">
+                                <span class="tag">CSS</span>
+                                <span class="tag">Responsive</span>
+                            </div>
+                            <div class="course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%"></div>
+                                </div>
+                                <span class="progress-text">75% Complete</span>
+                            </div>
+                            <button class="btn-enroll">Continue Learning</button>
+                        </div>
+                    </div>
+
+                    <!-- JavaScript Course -->
+                    <div class="course-card js-bg" data-type="web-development" data-language="javascript" data-difficulty="intermediate" data-duration="long">
+                        <div class="course-header">
+                            <span class="difficulty-badge intermediate">Intermediate</span>
+                            <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                        </div>
+                        <div class="course-body">
+                            <h3>JavaScript Interactive</h3>
+                            <p>Build dynamic web applications with modern JavaScript</p>
+                            <div class="course-meta">
+                                <span>⏱️ 8 hours</span>
+                                <span>📖 40 lessons</span>
+                                <span>⭐ 4.9</span>
+                            </div>
+                            <div class="course-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">ES6+</span>
+                            </div>
+                            <div class="course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 30%"></div>
+                                </div>
+                                <span class="progress-text">30% Complete</span>
+                            </div>
+                            <button class="btn-enroll">Start Course</button>
+                        </div>
+                    </div>
+
+                    <!-- Python Course -->
+                    <div class="course-card python-bg" data-type="data-science" data-language="python" data-difficulty="beginner" data-duration="medium">
+                        <div class="course-header">
+                            <span class="difficulty-badge beginner">Beginner</span>
+                            <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                        </div>
+                        <div class="course-body">
+                            <h3>Python Programming</h3>
+                            <p>Learn Python from basics to building your first applications</p>
+                            <div class="course-meta">
+                                <span>⏱️ 6 hours</span>
+                                <span>📖 35 lessons</span>
+                                <span>⭐ 4.7</span>
+                            </div>
+                            <div class="course-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Programming</span>
+                            </div>
+                            <div class="course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text">Not Started</span>
+                            </div>
+                            <button class="btn-enroll">Enroll Now</button>
+                        </div>
+                    </div>
+
+                    <!-- React Course -->
+                    <div class="course-card react-bg" data-type="web-development" data-language="javascript" data-difficulty="intermediate" data-duration="long">
+                        <div class="course-header">
+                            <span class="difficulty-badge intermediate">Intermediate</span>
+                            <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                        </div>
+                        <div class="course-body">
+                            <h3>React Development</h3>
+                            <p>Build modern user interfaces with React and component architecture</p>
+                            <div class="course-meta">
+                                <span>⏱️ 10 hours</span>
+                                <span>📖 50 lessons</span>
+                                <span>⭐ 4.8</span>
+                            </div>
+                            <div class="course-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Frontend</span>
+                            </div>
+                            <div class="course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text">Not Started</span>
+                            </div>
+                            <button class="btn-enroll">Enroll Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Data Science Course -->
+                    <div class="course-card data-bg" data-type="data-science" data-language="python" data-difficulty="intermediate" data-duration="long">
+                        <div class="course-header">
+                            <span class="difficulty-badge intermediate">Intermediate</span>
+                            <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                        </div>
+                        <div class="course-body">
+                            <h3>Data Science Fundamentals</h3>
+                            <p>Analyze data and build predictive models with Python</p>
+                            <div class="course-meta">
+                                <span>⏱️ 12 hours</span>
+                                <span>📖 60 lessons</span>
+                                <span>⭐ 4.9</span>
+                            </div>
+                            <div class="course-tags">
+                                <span class="tag">Data Science</span>
+                                <span class="tag">Machine Learning</span>
+                            </div>
+                            <div class="course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text">Not Started</span>
+                            </div>
+                            <button class="btn-enroll">Enroll Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Development Course -->
+                    <div class="course-card mobile-bg" data-type="mobile-dev" data-language="javascript" data-difficulty="intermediate" data-duration="long">
+                        <div class="course-header">
+                            <span class="difficulty-badge intermediate">Intermediate</span>
+                            <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                        </div>
+                        <div class="course-body">
+                            <h3>React Native Mobile Apps</h3>
+                            <p>Create cross-platform mobile applications with React Native</p>
+                            <div class="course-meta">
+                                <span>⏱️ 14 hours</span>
+                                <span>📖 70 lessons</span>
+                                <span>⭐ 4.6</span>
+                            </div>
+                            <div class="course-tags">
+                                <span class="tag">React Native</span>
+                                <span class="tag">Mobile</span>
+                            </div>
+                            <div class="course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text">Not Started</span>
+                            </div>
+                            <button class="btn-enroll">Enroll Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Game Development Course -->
+                    <div class="course-card game-bg" data-type="game-dev" data-language="javascript" data-difficulty="advanced" data-duration="long">
+                        <div class="course-header">
+                            <span class="difficulty-badge advanced">Advanced</span>
+                            <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                        </div>
+                        <div class="course-body">
+                            <h3>Game Development with JS</h3>
+                            <p>Build interactive games using HTML5 Canvas and JavaScript</p>
+                            <div class="course-meta">
+                                <span>⏱️ 16 hours</span>
+                                <span>📖 80 lessons</span>
+                                <span>⭐ 4.8</span>
+                            </div>
+                            <div class="course-tags">
+                                <span class="tag">Games</span>
+                                <span class="tag">Canvas</span>
+                            </div>
+                            <div class="course-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text">Not Started</span>
+                            </div>
+                            <button class="btn-enroll">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/courses.js"></script>
+
+</body>
+</html>
+
+
+
+
+

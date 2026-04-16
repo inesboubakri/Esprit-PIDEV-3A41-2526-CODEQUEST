@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/20" 
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="controllers.SignUpController"
+           stylesheets="@../styles.css"
+           style="-fx-background-color: white;">
+    
+    <!-- Hero Background (Fixed, Low Opacity) -->
+    <VBox style="-fx-background-color: linear-gradient(135deg, rgb(102, 126, 234), rgb(118, 75, 162)); -fx-opacity: 0.05;" VBox.vgrow="ALWAYS"/>
+    
+    <!-- Main Content Layer -->
+    <VBox spacing="0">
+        <!-- Navigation Bar -->
+        <HBox style="-fx-background-color: transparent; -fx-padding: 0 40 0 40; -fx-spacing: 40; -fx-min-height: 80; -fx-alignment: CENTER_LEFT;" fx:id="navbar">
+            <!-- Logo -->
+            <HBox spacing="8" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                <Label text="Code" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                <Label text="Quest" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+            </HBox>
+            
+            <!-- Navigation Links -->
+            <VBox style="-fx-background-color: rgba(255, 255, 255, 0.08); -fx-border-radius: 999; -fx-background-radius: 999; -fx-border-color: rgba(0, 0, 0, 0.1); -fx-border-width: 1;" prefHeight="40">
+                <HBox spacing="8" alignment="CENTER" style="-fx-padding: 8 16 8 16;">
+                    <Hyperlink text="🏠 Home" style="-fx-text-fill: #333; -fx-font-size: 14; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavHome"/>
+                    <Hyperlink text="📚 Courses" style="-fx-text-fill: #333; -fx-font-size: 14; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavCourses"/>
+                    <Hyperlink text="✏️ Quests" style="-fx-text-fill: #333; -fx-font-size: 14; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavProblems"/>
+                    <Hyperlink text="🎯 Missions" style="-fx-text-fill: #333; -fx-font-size: 14; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavProjects"/>
+                    <Hyperlink text="🏆 Tournaments" style="-fx-text-fill: #333; -fx-font-size: 14; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavEvents"/>
+                    <Hyperlink text="🤝 Guild" style="-fx-text-fill: #333; -fx-font-size: 14; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavForum"/>
+                    <Hyperlink text="⚔️ Arena" style="-fx-text-fill: #333; -fx-font-size: 14; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavUsers"/>
+                </HBox>
+            </VBox>
+            
+            <!-- Right side buttons -->
+            <HBox spacing="28" alignment="CENTER_RIGHT" style="-fx-padding: 0 20 0 20;">
+                <Hyperlink text="Sign Up" style="-fx-text-fill: #333; -fx-font-size: 14; -fx-font-weight: 500; -fx-opacity: 0.9;" onAction="#handleSignUpRedirect"/>
+                <Button text="Log In" styleClass="btn-primary" onAction="#handleSignIn" style="-fx-padding: 10 24 10 24; -fx-font-size: 14;"/>
+            </HBox>
+        </HBox>
+        
+        <!-- Sign Up Form Section -->
+        <VBox alignment="TOP_CENTER" style="-fx-padding: 60 20 60 20;" VBox.vgrow="ALWAYS">
+            <VBox style="-fx-max-width: 500; -fx-background-color: rgba(255, 255, 255, 0.95); -fx-border-radius: 20; -fx-padding: 40; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 20, 0, 0, 10);" spacing="20">
+                
+                <!-- Form Header -->
+                <VBox alignment="CENTER" spacing="8" style="-fx-padding: 0 0 20 0;">
+                    <Label text="Join the Adventure" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                    <Label text="Create your account and start your coding journey today!" style="-fx-font-size: 14; -fx-text-fill: #666;"/>
+                </VBox>
+                    
+                    <!-- Error Message -->
+                    <Label fx:id="errorLabel" text="" style="-fx-text-fill: #d32f2f; -fx-font-size: 12; -fx-wrap-text: true;" visible="false"/>
+                    
+                    <!-- Username Field -->
+                    <VBox spacing="8">
+                        <Label text="Username" style="-fx-font-size: 13; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                        <HBox spacing="12" alignment="CENTER_LEFT" style="-fx-background-color: #fff; -fx-padding: 12; -fx-border-color: #e1e5e9; -fx-border-width: 2; -fx-border-radius: 12;">
+                            <Label text="👤" style="-fx-font-size: 16;"/>
+                            <TextField promptText="Choose your username" fx:id="usernameField" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-font-size: 13;" HBox.hgrow="ALWAYS"/>
+                        </HBox>
+                    </VBox>
+                    
+                    <!-- Email Field -->
+                    <VBox spacing="8">
+                        <Label text="Email Address" style="-fx-font-size: 13; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                        <HBox spacing="12" alignment="CENTER_LEFT" style="-fx-background-color: #fff; -fx-padding: 12; -fx-border-color: #e1e5e9; -fx-border-width: 2; -fx-border-radius: 12;">
+                            <Label text="📧" style="-fx-font-size: 16;"/>
+                            <TextField promptText="Enter your email" fx:id="emailField" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-font-size: 13;" HBox.hgrow="ALWAYS"/>
+                        </HBox>
+                    </VBox>
+                    
+                    <!-- Role Selection -->
+                    <VBox spacing="8">
+                        <Label text="What's your role?" style="-fx-font-size: 13; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                        <ComboBox fx:id="roleComboBox" style="-fx-padding: 12; -fx-font-size: 13; -fx-background-color: #fff; -fx-border-color: #e1e5e9; -fx-border-width: 2; -fx-border-radius: 12;" prefWidth="100"/>
+                    </VBox>
+                    
+                    <!-- Password Field -->
+                    <VBox spacing="8">
+                        <Label text="Password" style="-fx-font-size: 13; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                        <HBox spacing="12" alignment="CENTER_LEFT" style="-fx-background-color: #fff; -fx-padding: 12; -fx-border-color: #e1e5e9; -fx-border-width: 2; -fx-border-radius: 12;">
+                            <Label text="🔒" style="-fx-font-size: 16;"/>
+                            <PasswordField promptText="Create a strong password" fx:id="passwordField" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-font-size: 13;" HBox.hgrow="ALWAYS"/>
+                            <Button text="👁️" style="-fx-background-color: transparent; -fx-text-fill: #666; -fx-cursor: hand; -fx-padding: 0;"/>
+                        </HBox>
+                    </VBox>
+                    
+                    <!-- Confirm Password Field -->
+                    <VBox spacing="8">
+                        <Label text="Confirm Password" style="-fx-font-size: 13; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                        <HBox spacing="12" alignment="CENTER_LEFT" style="-fx-background-color: #fff; -fx-padding: 12; -fx-border-color: #e1e5e9; -fx-border-width: 2; -fx-border-radius: 12;">
+                            <Label text="🔒" style="-fx-font-size: 16;"/>
+                            <PasswordField promptText="Confirm your password" fx:id="confirmPasswordField" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-font-size: 13;" HBox.hgrow="ALWAYS"/>
+                        </HBox>
+                    </VBox>
+                    
+                    <!-- Terms and Conditions -->
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <CheckBox style="-fx-padding: 0;"/>
+                        <Label text="I agree to the " style="-fx-font-size: 12; -fx-text-fill: #333;"/>
+                        <Hyperlink text="Terms and Conditions" style="-fx-text-fill: #FF6B4A; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 0;"/>
+                    </HBox>
+                    
+                    <!-- Sign Up Button -->
+                    <Button text="Create Account ⚔️" fx:id="signUpButton" styleClass="btn-primary" style="-fx-padding: 14 28 14 28; -fx-font-size: 14; -fx-font-weight: 600; -fx-min-width: 350;" onAction="#handleSignUp">
+                        <VBox.margin>
+                            <Insets top="8"/>
+                        </VBox.margin>
+                    </Button>
+                
+                <!-- Form Footer -->
+                <VBox alignment="CENTER" spacing="4" style="-fx-padding: 20 0 0 0; -fx-border-color: #e1e5e9; -fx-border-width: 1 0 0 0;">
+                    <Label text="Already have an account?" style="-fx-font-size: 14; -fx-text-fill: #666; -fx-padding: 16 0 0 0;"/>
+                    <Hyperlink text="Log in here" style="-fx-text-fill: #FF6B4A; -fx-font-size: 14; -fx-font-weight: bold; -fx-padding: 4 0 0 0;" onAction="#handleSignIn"/>
+                </VBox>
+            </VBox>
+        </VBox>
+    </VBox>
+</StackPane>

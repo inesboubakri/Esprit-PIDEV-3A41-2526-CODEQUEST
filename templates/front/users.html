@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users - CodeQuest</title>
+    <link rel="stylesheet" href="../../assets/css/users.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Code<span>Quest</span></div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="home.html">🏠 Home</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="problems.html">✏️ Quests</a></li>
+                <li><a href="projects.html">🎯 Missions</a></li>
+                <li><a href="events.html">🏆 Tournaments</a></li>
+                <li><a href="forum.html">🤝 Guild</a></li>
+                <li><a href="users.html">⚔️ Arena</a></li>
+            </ul>
+        </div>
+        <div class="nav-buttons">
+            <a href="sign-in.html" class="btn-login">Log In</a>
+            <button class="btn-play">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="level-badge">
+                ⚡ <span>Level 1 • 2,450 XP</span>
+            </div>
+            <h1>Connect with Coders</h1>
+            <p>Discover amazing developers, learn from experts, and build your network in the coding community!</p>
+            <div class="hero-buttons">
+                <button class="btn-browse">👥 Browse Users</button>
+                <button class="btn-trailer">Find Mentors</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Users Section -->
+    <section class="users-section">
+        <div class="users-container">
+            <!-- Filter Sidebar -->
+            <aside class="filter-sidebar">
+                <div class="filter-header">
+                    <h3>🔍 Filter Users</h3>
+                </div>
+
+                <div class="filter-group">
+                    <h4>🏷️ Skill Level</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="level" value="beginner">
+                        <span class="checkmark"></span>
+                        Beginner (1-10)
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="level" value="intermediate">
+                        <span class="checkmark"></span>
+                        Intermediate (11-25)
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="level" value="advanced">
+                        <span class="checkmark"></span>
+                        Advanced (26-50)
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="level" value="expert">
+                        <span class="checkmark"></span>
+                        Expert (50+)
+                    </label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>💻 Languages</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="javascript">
+                        <span class="checkmark"></span>
+                        JavaScript
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="python">
+                        <span class="checkmark"></span>
+                        Python
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="java">
+                        <span class="checkmark"></span>
+                        Java
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="html">
+                        <span class="checkmark"></span>
+                        HTML/CSS
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="cpp">
+                        <span class="checkmark"></span>
+                        C++
+                    </label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>📊 Activity</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="activity" value="online">
+                        <span class="checkmark"></span>
+                        Online Now
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="activity" value="active">
+                        <span class="checkmark"></span>
+                        Very Active
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="activity" value="mentors">
+                        <span class="checkmark"></span>
+                        Available Mentors
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="activity" value="new">
+                        <span class="checkmark"></span>
+                        New Members
+                    </label>
+                </div>
+
+                <button class="btn-clear-filters">Clear All Filters</button>
+            </aside>
+
+            <!-- Users Grid -->
+            <main class="users-main">
+                <div class="users-header">
+                    <h2>All <span>Users</span></h2>
+                    <p>Connect with fellow developers and build your network</p>
+                    <div class="users-stats">
+                        <span>👥 15K+ Users</span>
+                        <span>💻 50+ Countries</span>
+                        <span>⭐ 2.5K Mentors</span>
+                    </div>
+                </div>
+
+                <div class="users-grid">
+                    <!-- User 1 -->
+                    <div class="user-card" data-level="expert" data-language="javascript python" data-activity="online mentors">
+                        <div class="user-header">
+                            <div class="user-avatar avatar-cm">CM</div>
+                            <div class="user-actions">
+                                <span class="status-badge online">Online</span>
+                                <button class="follow-btn">Follow</button>
+                            </div>
+                        </div>
+                        <div class="user-body">
+                            <h3>CodeMaster_99</h3>
+                            <p class="user-title">Senior Full-Stack Developer & Mentor</p>
+                            <div class="user-level">
+                                <span class="level-indicator">Level 47</span>
+                                <span class="xp-indicator">89,450 XP</span>
+                            </div>
+                            <div class="user-meta">
+                                <span>📍 San Francisco, CA</span>
+                                <span>💼 Tech Lead at StartupXYZ</span>
+                                <span>⭐ 4.9/5 (127 reviews)</span>
+                            </div>
+                            <div class="user-skills">
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Node.js</span>
+                            </div>
+                            <div class="user-stats">
+                                <span>📝 234 Posts</span>
+                                <span>👥 1,567 Followers</span>
+                                <span>🎯 89 Projects</span>
+                            </div>
+                            <div class="user-actions">
+                                <button class="btn-view-profile">View Profile</button>
+                                <button class="btn-message">Message</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User 2 -->
+                    <div class="user-card" data-level="advanced" data-language="python java" data-activity="active">
+                        <div class="user-header">
+                            <div class="user-avatar avatar-dn">DN</div>
+                            <div class="user-actions">
+                                <span class="status-badge offline">Offline</span>
+                                <button class="follow-btn">Follow</button>
+                            </div>
+                        </div>
+                        <div class="user-body">
+                            <h3>DevNinja</h3>
+                            <p class="user-title">Backend Engineer & Algorithm Expert</p>
+                            <div class="user-level">
+                                <span class="level-indicator">Level 38</span>
+                                <span class="xp-indicator">67,890 XP</span>
+                            </div>
+                            <div class="user-meta">
+                                <span>📍 Tokyo, Japan</span>
+                                <span>💼 Senior Engineer at TechCorp</span>
+                                <span>⭐ 4.8/5 (89 reviews)</span>
+                            </div>
+                            <div class="user-skills">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Java</span>
+                                <span class="skill-tag">Django</span>
+                                <span class="skill-tag">PostgreSQL</span>
+                            </div>
+                            <div class="user-stats">
+                                <span>📝 189 Posts</span>
+                                <span>👥 945 Followers</span>
+                                <span>🎯 67 Projects</span>
+                            </div>
+                            <div class="user-actions">
+                                <button class="btn-view-profile">View Profile</button>
+                                <button class="btn-message">Message</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User 3 -->
+                    <div class="user-card" data-level="intermediate" data-language="html javascript" data-activity="online">
+                        <div class="user-header">
+                            <div class="user-avatar avatar-nc">NC</div>
+                            <div class="user-actions">
+                                <span class="status-badge online">Online</span>
+                                <button class="follow-btn">Follow</button>
+                            </div>
+                        </div>
+                        <div class="user-body">
+                            <h3>NewbieCoder</h3>
+                            <p class="user-title">Frontend Developer & UI/UX Enthusiast</p>
+                            <div class="user-level">
+                                <span class="level-indicator">Level 23</span>
+                                <span class="xp-indicator">34,567 XP</span>
+                            </div>
+                            <div class="user-meta">
+                                <span>📍 London, UK</span>
+                                <span>💼 Junior Developer at WebAgency</span>
+                                <span>⭐ 4.6/5 (45 reviews)</span>
+                            </div>
+                            <div class="user-skills">
+                                <span class="skill-tag">HTML/CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Figma</span>
+                            </div>
+                            <div class="user-stats">
+                                <span>📝 156 Posts</span>
+                                <span>👥 423 Followers</span>
+                                <span>🎯 34 Projects</span>
+                            </div>
+                            <div class="user-actions">
+                                <button class="btn-view-profile">View Profile</button>
+                                <button class="btn-message">Message</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User 4 -->
+                    <div class="user-card" data-level="expert" data-language="java cpp" data-activity="mentors">
+                        <div class="user-header">
+                            <div class="user-avatar avatar-aq">AQ</div>
+                            <div class="user-actions">
+                                <span class="status-badge online">Online</span>
+                                <button class="follow-btn">Follow</button>
+                            </div>
+                        </div>
+                        <div class="user-body">
+                            <h3>AlgoQueen_99</h3>
+                            <p class="user-title">Algorithm Specialist & Competitive Programmer</p>
+                            <div class="user-level">
+                                <span class="level-indicator">Level 52</span>
+                                <span class="xp-indicator">98,234 XP</span>
+                            </div>
+                            <div class="user-meta">
+                                <span>📍 New York, NY</span>
+                                <span>💼 Principal Engineer at BigTech</span>
+                                <span>⭐ 4.9/5 (203 reviews)</span>
+                            </div>
+                            <div class="user-skills">
+                                <span class="skill-tag">Java</span>
+                                <span class="skill-tag">C++</span>
+                                <span class="skill-tag">Algorithms</span>
+                                <span class="skill-tag">Competitive Programming</span>
+                            </div>
+                            <div class="user-stats">
+                                <span>📝 312 Posts</span>
+                                <span>👥 2,134 Followers</span>
+                                <span>🎯 156 Projects</span>
+                            </div>
+                            <div class="user-actions">
+                                <button class="btn-view-profile">View Profile</button>
+                                <button class="btn-message">Message</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User 5 -->
+                    <div class="user-card" data-level="advanced" data-language="python javascript" data-activity="active mentors">
+                        <div class="user-header">
+                            <div class="user-avatar avatar-ts">TS</div>
+                            <div class="user-actions">
+                                <span class="status-badge offline">Offline</span>
+                                <button class="follow-btn">Follow</button>
+                            </div>
+                        </div>
+                        <div class="user-body">
+                            <h3>TechSage</h3>
+                            <p class="user-title">AI/ML Engineer & Tech Evangelist</p>
+                            <div class="user-level">
+                                <span class="level-indicator">Level 41</span>
+                                <span class="xp-indicator">76,543 XP</span>
+                            </div>
+                            <div class="user-meta">
+                                <span>📍 Seattle, WA</span>
+                                <span>💼 ML Engineer at AI Labs</span>
+                                <span>⭐ 4.8/5 (167 reviews)</span>
+                            </div>
+                            <div class="user-skills">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">TensorFlow</span>
+                                <span class="skill-tag">PyTorch</span>
+                            </div>
+                            <div class="user-stats">
+                                <span>📝 278 Posts</span>
+                                <span>👥 1,823 Followers</span>
+                                <span>🎯 98 Projects</span>
+                            </div>
+                            <div class="user-actions">
+                                <button class="btn-view-profile">View Profile</button>
+                                <button class="btn-message">Message</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User 6 -->
+                    <div class="user-card" data-level="beginner" data-language="html javascript" data-activity="new">
+                        <div class="user-header">
+                            <div class="user-avatar avatar-jd">JD</div>
+                            <div class="user-actions">
+                                <span class="status-badge online">Online</span>
+                                <button class="follow-btn">Follow</button>
+                            </div>
+                        </div>
+                        <div class="user-body">
+                            <h3>JuniorDev2026</h3>
+                            <p class="user-title">Aspiring Web Developer</p>
+                            <div class="user-level">
+                                <span class="level-indicator">Level 8</span>
+                                <span class="xp-indicator">12,345 XP</span>
+                            </div>
+                            <div class="user-meta">
+                                <span>📍 Berlin, Germany</span>
+                                <span>💼 Student at Tech University</span>
+                                <span>⭐ 4.4/5 (23 reviews)</span>
+                            </div>
+                            <div class="user-skills">
+                                <span class="skill-tag">HTML/CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Learning</span>
+                            </div>
+                            <div class="user-stats">
+                                <span>📝 67 Posts</span>
+                                <span>👥 156 Followers</span>
+                                <span>🎯 12 Projects</span>
+                            </div>
+                            <div class="user-actions">
+                                <button class="btn-view-profile">View Profile</button>
+                                <button class="btn-message">Message</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/users.js"></script>
+
+</body>
+</html>
+
+
+
+
+

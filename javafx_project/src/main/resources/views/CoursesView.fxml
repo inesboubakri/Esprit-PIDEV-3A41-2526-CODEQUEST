@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.CoursesController"
+            stylesheets="@../styles.css">
+    
+    <!-- Top Navigation -->
+    <top>
+        <VBox spacing="0">
+            <!-- Navbar -->
+            <HBox fx:id="navbar" style="-fx-background-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent); -fx-padding: 0 40 0 40;" spacing="40" alignment="CENTER_LEFT" prefHeight="80">
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="Code" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="Quest" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                </HBox>
+                
+                <VBox style="-fx-background-color: rgba(255, 255, 255, 0.08); -fx-border-radius: 999; -fx-background-radius: 999; -fx-border-color: rgba(255, 255, 255, 0.1); -fx-border-width: 1;" prefHeight="40">
+                    <HBox spacing="8" alignment="CENTER" style="-fx-padding: 8 16 8 16;">
+                        <Hyperlink text="🏠 Home" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavHome"/>
+                        <Hyperlink text="📚 Courses" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavCourses"/>
+                        <Hyperlink text="✏️ Problems" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavProblems"/>
+                        <Hyperlink text="🎯 Projects" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavProjects"/>
+                        <Hyperlink text="🏆 Events" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavEvents"/>
+                        <Hyperlink text="🤝 Forum" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavForum"/>
+                        <Hyperlink text="⚔️ Users" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavUsers"/>
+                    </HBox>
+                </VBox>
+                
+                <HBox spacing="28" alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS" style="-fx-padding: 0 40 0 40;">
+                    <Hyperlink text="Profile" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500;" onAction="#handleNavProfile"/>
+                    <Button text="Log Out" styleClass="btn-primary" onAction="#handleLogOut"/>
+                </HBox>
+            </HBox>
+            
+            <!-- Hero Section for Courses -->
+            <VBox style="-fx-background-color: #1a1a1a; -fx-padding: 60 40 60 40;" alignment="CENTER" spacing="20">
+                <Label text="⚡ Level 1 • 2,450 XP" 
+                       style="-fx-background-color: white; -fx-text-fill: #FFB800; -fx-font-weight: bold; -fx-padding: 8 24 8 24; -fx-background-radius: 30; -fx-font-size: 14;"/>
+                <Label text="Master Programming Skills" 
+                       style="-fx-font-size: 40; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                <Label text="Choose from our comprehensive collection of courses. Learn at your own pace and unlock new programming abilities!" 
+                       style="-fx-font-size: 16; -fx-text-fill: white;" wrapText="true" maxWidth="800"/>
+                <HBox spacing="16" alignment="CENTER" style="-fx-padding: 20 0 0 0;">
+                    <Button text="🎓 Browse Courses" styleClass="btn-primary"/>
+                    <Button text="Watch Intro" styleClass="btn-secondary"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </top>
+    
+    <!-- Main Content with Sidebar -->
+    <center>
+        <HBox spacing="0">
+            <!-- Filter Sidebar -->
+            <ScrollPane fitToHeight="true" style="-fx-border-color: transparent;">
+                <VBox styleClass="filter-sidebar" spacing="20" style="-fx-padding: 24;">
+                    <HBox style="-fx-padding: 0 0 16 0; -fx-border-color: #E0E0E0; -fx-border-width: 0 0 1 0;">
+                        <Label text="🔍 Filter Courses" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                    </HBox>
+                    
+                    <!-- Course Type Filter -->
+                    <VBox spacing="12">
+                        <Label text="📚 Course Type" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                        <CheckBox text="Web Development" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                        <CheckBox text="Data Science" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                        <CheckBox text="Mobile Development" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                        <CheckBox text="Game Development" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                    </VBox>
+                    
+                    <!-- Language Filter -->
+                    <VBox spacing="12">
+                        <Label text="💻 Language" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                        <CheckBox text="HTML" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                        <CheckBox text="CSS" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                        <CheckBox text="JavaScript" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                        <CheckBox text="Python" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                        <CheckBox text="Java" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                        <CheckBox text="C++" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                    </VBox>
+                    
+                    <!-- Difficulty Filter -->
+                    <VBox spacing="12">
+                        <Label text="🎯 Difficulty" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                        <CheckBox text="Beginner" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                        <CheckBox text="Intermediate" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                        <CheckBox text="Advanced" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                    </VBox>
+                    
+                    <!-- Duration Filter -->
+                    <VBox spacing="12">
+                        <Label text="⏱️ Duration" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                        <CheckBox text="1-2 hours" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                        <CheckBox text="3-5 hours" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                        <CheckBox text="5+ hours" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                    </VBox>
+                    
+                    <!-- Clear Filters Button -->
+                    <Button text="Clear All Filters" style="-fx-padding: 12 16 12 16;" onAction="#handleClearFilters"/>
+                </VBox>
+            </ScrollPane>
+            
+            <!-- Courses Grid -->
+            <VBox HBox.hgrow="ALWAYS" spacing="32" style="-fx-padding: 40;">
+                <!-- Search and Sort Bar -->
+                <HBox spacing="16" alignment="CENTER_RIGHT">
+                    <TextField promptText="Search courses..." style="-fx-padding: 12 16 12 16; -fx-min-width: 300;"/>
+                    <ComboBox promptText="Sort by: Newest" style="-fx-padding: 12 16 12 16;"/>
+                </HBox>
+                
+                <!-- Courses Grid - ScrollPane with GridPane -->
+                <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+                    <GridPane fx:id="coursesGrid" hgap="24" vgap="24" style="-fx-padding: 0;">
+                        
+                        <!-- Course Card 1 -->
+                        <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="card" spacing="12">
+                            <Label text="Web Development" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <Label text="HTML & CSS Fundamentals" style="-fx-font-size: 12; -fx-text-fill: #FF6B4A; -fx-font-weight: bold;"/>
+                            <Label text="Learn the basics of HTML, CSS, and create beautiful web pages from scratch." style="-fx-font-size: 13; -fx-text-fill: #666; -fx-wrap-text: true;"/>
+                            <HBox spacing="8" style="-fx-padding: 8 0 8 0;">
+                                <Label text="Beginner" style="-fx-background-color: #C8E6C9; -fx-text-fill: #2E7D32; -fx-padding: 4 12 4 12; -fx-background-radius: 15; -fx-font-size: 12; -fx-font-weight: bold;"/>
+                                <Label text="2 hours" style="-fx-text-fill: #666; -fx-font-size: 12;"/>
+                            </HBox>
+                            <ProgressBar progress="0.65" style="-fx-padding: 4; -fx-background-color: #F0F0F0; -fx-background-radius: 8;"/>
+                            <HBox spacing="12" style="-fx-padding: 12 0 0 0;">
+                                <Button text="Enroll" styleClass="btn-primary" HBox.hgrow="ALWAYS" minWidth="100"/>
+                                <Button text="Preview" styleClass="btn-outline"/>
+                            </HBox>
+                        </VBox>
+                        
+                        <!-- Course Card 2 -->
+                        <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="card" spacing="12">
+                            <Label text="JavaScript" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <Label text="JavaScript from Zero to Hero" style="-fx-font-size: 12; -fx-text-fill: #FF6B4A; -fx-font-weight: bold;"/>
+                            <Label text="Master JavaScript programming with interactive challenges and real-world projects." style="-fx-font-size: 13; -fx-text-fill: #666; -fx-wrap-text: true;"/>
+                            <HBox spacing="8" style="-fx-padding: 8 0 8 0;">
+                                <Label text="Intermediate" style="-fx-background-color: #FFE0B2; -fx-text-fill: #E65100; -fx-padding: 4 12 4 12; -fx-background-radius: 15; -fx-font-size: 12; -fx-font-weight: bold;"/>
+                                <Label text="5 hours" style="-fx-text-fill: #666; -fx-font-size: 12;"/>
+                            </HBox>
+                            <ProgressBar progress="0.45" style="-fx-padding: 4; -fx-background-color: #F0F0F0; -fx-background-radius: 8;"/>
+                            <HBox spacing="12" style="-fx-padding: 12 0 0 0;">
+                                <Button text="Enroll" styleClass="btn-primary" HBox.hgrow="ALWAYS" minWidth="100"/>
+                                <Button text="Preview" styleClass="btn-outline"/>
+                            </HBox>
+                        </VBox>
+                        
+                        <!-- Course Card 3 -->
+                        <VBox GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="card" spacing="12">
+                            <Label text="Python" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <Label text="Python for Data Science" style="-fx-font-size: 12; -fx-text-fill: #FF6B4A; -fx-font-weight: bold;"/>
+                            <Label text="Dive into data science with Python. Learn pandas, NumPy, and data visualization." style="-fx-font-size: 13; -fx-text-fill: #666; -fx-wrap-text: true;"/>
+                            <HBox spacing="8" style="-fx-padding: 8 0 8 0;">
+                                <Label text="Advanced" style="-fx-background-color: #FFCCCC; -fx-text-fill: #C62828; -fx-padding: 4 12 4 12; -fx-background-radius: 15; -fx-font-size: 12; -fx-font-weight: bold;"/>
+                                <Label text="8 hours" style="-fx-text-fill: #666; -fx-font-size: 12;"/>
+                            </HBox>
+                            <ProgressBar progress="0.22" style="-fx-padding: 4; -fx-background-color: #F0F0F0; -fx-background-radius: 8;"/>
+                            <HBox spacing="12" style="-fx-padding: 12 0 0 0;">
+                                <Button text="Enroll" styleClass="btn-primary" HBox.hgrow="ALWAYS" minWidth="100"/>
+                                <Button text="Preview" styleClass="btn-outline"/>
+                            </HBox>
+                        </VBox>
+                    </GridPane>
+                </ScrollPane>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

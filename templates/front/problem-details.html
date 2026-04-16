@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Sum - CodeQuest</title>
+    <link rel="stylesheet" href="../../assets/css/problem-details.css">
+    <!-- Monaco Editor for code editing -->
+    <script src="https://unpkg.com/monaco-editor@0.45.0/min/vs/loader.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Code<span>Quest</span></div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="home.html">🏠 Home</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="problems.html">✏️ Quests</a></li>
+                <li><a href="projects.html">🎯 Missions</a></li>
+                <li><a href="events.html">🏆 Tournaments</a></li>
+                <li><a href="forum.html">🤝 Guild</a></li>
+                <li><a href="users.html">⚔️ Arena</a></li>
+            </ul>
+        </div>
+        <div class="nav-buttons">
+            <a href="sign-in.html" class="btn-login">Log In</a>
+            <button class="btn-play">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Main Problem Details Layout -->
+    <div class="problem-details-container">
+        <!-- Left Section: Problem Description -->
+        <div class="problem-section">
+            <div class="problem-header">
+                <h1>Two Sum</h1>
+                <div class="problem-meta">
+                    <span class="difficulty easy">Easy</span>
+                    <span class="acceptance-rate">52.3% Accepted</span>
+                    <span class="likes">❤️ 2.1K</span>
+                </div>
+            </div>
+
+            <div class="problem-content">
+                <div class="problem-description">
+                    <h3>Problem Description</h3>
+                    <p>Given an array of integers <code>nums</code> and an integer <code>target</code>, return <em>indices of the two numbers such that they add up to <code>target</code></em>.</p>
+                    <p>You may assume that each input would have <strong>exactly one solution</strong>, and you may not use the <em>same element twice</em>.</p>
+                    <p>You can return the answer in any order.</p>
+                </div>
+
+                <div class="examples">
+                    <h4>Example 1:</h4>
+                    <div class="example-content">
+                        <div class="example-input">
+                            <strong>Input:</strong> nums = [2,7,11,15], target = 9
+                        </div>
+                        <div class="example-output">
+                            <strong>Output:</strong> [0,1]
+                        </div>
+                        <div class="example-explanation">
+                            <strong>Explanation:</strong> Because nums[0] + nums[1] == 9, we return [0, 1].
+                        </div>
+                    </div>
+
+                    <h4>Example 2:</h4>
+                    <div class="example-content">
+                        <div class="example-input">
+                            <strong>Input:</strong> nums = [3,2,4], target = 6
+                        </div>
+                        <div class="example-output">
+                            <strong>Output:</strong> [1,2]
+                        </div>
+                    </div>
+                </div>
+
+                <div class="constraints">
+                    <h4>Constraints:</h4>
+                    <ul>
+                        <li>2 ≤ nums.length ≤ 10⁴</li>
+                        <li>-10⁹ ≤ nums[i] ≤ 10⁹</li>
+                        <li>-10⁹ ≤ target ≤ 10⁹</li>
+                        <li>Only one valid answer exists.</li>
+                    </ul>
+                </div>
+
+                <div class="hints">
+                    <h4>Hints:</h4>
+                    <div class="hint-toggle" onclick="toggleHints()">
+                        <span>💡 Click to show hints</span>
+                        <span class="hint-arrow">▼</span>
+                    </div>
+                    <div class="hints-content" id="hints-content" style="display: none;">
+                        <div class="hint">Try using a hash map to store the complement of each number.</div>
+                        <div class="hint">For each number, check if target - number exists in the hash map.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Section: Code Editor -->
+        <div class="editor-section">
+            <div class="editor-header">
+                <div class="language-selector">
+                    <select id="language-select">
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="cpp">C++</option>
+                    </select>
+                </div>
+                <div class="editor-actions">
+                    <button class="btn-run" onclick="runCode()">▶️ Run Code</button>
+                    <button class="btn-submit" onclick="submitCode()">Submit</button>
+                </div>
+            </div>
+
+            <div class="code-editor" id="code-editor"></div>
+
+            <div class="test-results" id="test-results">
+                <div class="results-header">
+                    <h4>Test Results</h4>
+                    <div class="results-status" id="results-status">Ready to run</div>
+                </div>
+                <div class="results-content" id="results-content">
+                    <div class="test-case">
+                        <div class="test-input">Input: nums = [2,7,11,15], target = 9</div>
+                        <div class="test-expected">Expected: [0,1]</div>
+                        <div class="test-actual" id="test-actual-1">Click "Run Code" to test</div>
+                        <div class="test-status" id="test-status-1">⏳</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section: Chat Assistant -->
+        <div class="chat-section">
+            <div class="chat-header">
+                <h3>🤖 AI Assistant</h3>
+                <div class="chat-controls">
+                    <button class="voice-btn" onclick="toggleVoice()" id="voice-btn">🎤 Voice</button>
+                    <button class="clear-chat-btn" onclick="clearChat()">🗑️ Clear</button>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <p>Hello! I'm here to help you solve this problem. Ask me anything about the Two Sum problem!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <div class="chat-input-container">
+                    <input type="text" id="chat-input" placeholder="Ask a question about this problem..." onkeypress="handleChatKeyPress(event)">
+                    <button class="send-btn" onclick="sendMessage()">📤</button>
+                </div>
+                <div class="voice-indicator" id="voice-indicator" style="display: none;">
+                    <span>🎤 Listening...</span>
+                    <button onclick="stopVoice()">Stop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/problem-details.js"></script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.HomeController"
+            stylesheets="@../styles.css">
+    
+    <!-- Top Navigation Bar -->
+    <top>
+        <HBox fx:id="navbar" style="-fx-background-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);">
+            <!-- Logo -->
+            <HBox spacing="8" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                <Label text="Code" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                <Label text="Quest" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+            </HBox>
+            
+            <!-- Navigation Links -->
+            <VBox style="-fx-background-color: rgba(255, 255, 255, 0.08); -fx-border-radius: 999; -fx-background-radius: 999; -fx-border-color: rgba(255, 255, 255, 0.1); -fx-border-width: 1;" prefHeight="40">
+                <HBox spacing="8" alignment="CENTER" style="-fx-padding: 8 16 8 16;">
+                    <Hyperlink text="Courses" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavCourses"/>
+                    <Hyperlink text="Problems" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavProblems"/>
+                    <Hyperlink text="Projects" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavProjects"/>
+                    <Hyperlink text="Events" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavEvents"/>
+                    <Hyperlink text="Forum" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavForum"/>
+                    <Hyperlink text="Users" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" HBox.hgrow="NEVER" onAction="#handleNavUsers"/>
+                </HBox>
+            </VBox>
+            
+            <!-- Right side buttons -->
+            <HBox spacing="28" alignment="CENTER_RIGHT" style="-fx-padding: 0 40 0 40;">
+                <Hyperlink text="Profile" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-opacity: 0.9;" onAction="#handleNavProfile"/>
+                <Button text="Log Out" styleClass="btn-primary" onAction="#handleLogOut"/>
+            </HBox>
+        </HBox>
+    </top>
+    
+    <!-- Main Content -->
+    <center>
+        <VBox>
+            <!-- Hero Section -->
+            <VBox style="-fx-background-color: #1a1a1a; -fx-padding: 100 40 100 40;" alignment="CENTER" spacing="20">
+                <!-- Level Badge -->
+                <Label text="⚡ Level 1 • 2,450 XP" 
+                       style="-fx-background-color: white; -fx-text-fill: #FFB800; -fx-font-weight: bold; -fx-padding: 8 24 8 24; -fx-background-radius: 30; -fx-font-size: 14;"/>
+                
+                <!-- Main Title -->
+                <Label text="Your Coding Adventure Awaits" 
+                       style="-fx-font-size: 48; -fx-font-weight: bold; -fx-text-fill: white;" 
+                       wrapText="true"/>
+                
+                <!-- Subtitle -->
+                <Label text="Embark on an epic adventure to master programming. Complete quests, earn XP, and improve your coding skills!" 
+                       style="-fx-font-size: 18; -fx-text-fill: white;" 
+                       wrapText="true" maxWidth="800"/>
+                
+                <!-- Hero Buttons -->
+                <HBox spacing="16" alignment="CENTER" style="-fx-padding: 20 0 0 0;">
+                    <Button text="▶ Start Adventure" styleClass="btn-primary" onAction="#handleStartAdventure"/>
+                    <Button text="Watch Trailer" styleClass="btn-secondary" onAction="#handleWatchTrailer"/>
+                </HBox>
+            </VBox>
+            
+            <!-- Stats Section -->
+            <HBox spacing="60" style="-fx-background-color: white; -fx-padding: 60 40 60 40;" alignment="CENTER">
+                <VBox alignment="CENTER" spacing="8">
+                    <Label text="50K+" style="-fx-font-size: 40; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                    <Label text="Active Adventurers" style="-fx-font-size: 16; -fx-text-fill: #666;"/>
+                </VBox>
+                <VBox alignment="CENTER" spacing="8">
+                    <Label text="2M+" style="-fx-font-size: 40; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                    <Label text="Quests Completed" style="-fx-font-size: 16; -fx-text-fill: #666;"/>
+                </VBox>
+                <VBox alignment="CENTER" spacing="8">
+                    <Label text="100+" style="-fx-font-size: 40; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                    <Label text="Skills Unlocked" style="-fx-font-size: 16; -fx-text-fill: #666;"/>
+                </VBox>
+            </HBox>
+            
+            <!-- Mentors Section -->
+            <VBox style="-fx-background-color: #F8F9FA; -fx-padding: 80 40 80 40;" alignment="TOP_CENTER" spacing="40">
+                <!-- Section Header -->
+                <VBox alignment="CENTER" spacing="16">
+                    <Label text="🧙 Your Guides" 
+                           style="-fx-background-color: #E3F2FD; -fx-text-fill: #2196F3; -fx-padding: 8 16 8 16; -fx-background-radius: 20; -fx-font-size: 12; -fx-font-weight: bold;"/>
+                    <Label text="Meet Your " style="-fx-font-size: 40; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                    <Label text="Mentors" style="-fx-font-size: 40; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                    <Label text="Legendary coders who will guide you throughout your journey. Learn from the best and unlock your true potential!" 
+                           style="-fx-font-size: 16; -fx-text-fill: #666;" wrapText="true" maxWidth="600"/>
+                </VBox>
+                
+                <!-- Mentors Grid (simplified - 3 columns) -->
+                <ScrollPane fitToWidth="true" style="-fx-border-color: transparent; -fx-control-inner-background: transparent;">
+                    <HBox spacing="24" alignment="TOP_CENTER" style="-fx-padding: 0;">
+                        <!-- Mentor Card 1 -->
+                        <VBox styleClass="card" style="-fx-min-width: 320;" spacing="12">
+                            <Label text="Lv. 99" style="-fx-background-color: #FFB800; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 4 12 4 12; -fx-background-radius: 20; -fx-font-size: 12;"/>
+                            <Label text="★★★★★" style="-fx-text-fill: #FFB800; -fx-font-size: 16;"/>
+                            <Label text="Luna" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <Label text="The Code Weaver" style="-fx-font-size: 12; -fx-text-fill: #FF6B4A;"/>
+                            <Label text="Every great adventure begins with a single line of code!" style="-fx-font-size: 13; -fx-text-fill: #666; -fx-font-style: italic;" wrapText="true"/>
+                            <HBox spacing="8">
+                                <Label text="React" styleClass="badge" style="-fx-background-color: #E3F2FD; -fx-text-fill: #2196F3;"/>
+                                <Label text="CSS Sorcery" styleClass="badge" style="-fx-background-color: #E3F2FD; -fx-text-fill: #2196F3;"/>
+                                <Label text="Animation Spells" styleClass="badge" style="-fx-background-color: #E3F2FD; -fx-text-fill: #2196F3;"/>
+                            </HBox>
+                            <Label text="Specialty: Frontend Magic" style="-fx-font-size: 12; -fx-text-fill: #666; -fx-font-weight: bold;"/>
+                        </VBox>
+                        
+                        <!-- Mentor Card 2 -->
+                        <VBox styleClass="card" style="-fx-min-width: 320;" spacing="12">
+                            <Label text="Lv. 99" style="-fx-background-color: #FFB800; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 4 12 4 12; -fx-background-radius: 20; -fx-font-size: 12;"/>
+                            <Label text="★★★★★" style="-fx-text-fill: #FFB800; -fx-font-size: 16;"/>
+                            <Label text="Kai" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <Label text="The Data Knight" style="-fx-font-size: 12; -fx-text-fill: #FF6B4A;"/>
+                            <Label text="The most powerful algorithms are forged in the flames of practice!" style="-fx-font-size: 13; -fx-text-fill: #666; -fx-font-style: italic;" wrapText="true"/>
+                            <HBox spacing="8">
+                                <Label text="APIs" styleClass="badge" style="-fx-background-color: #E3F2FD; -fx-text-fill: #2196F3;"/>
+                                <Label text="Database Arts" styleClass="badge" style="-fx-background-color: #E3F2FD; -fx-text-fill: #2196F3;"/>
+                                <Label text="Server Craft" styleClass="badge" style="-fx-background-color: #E3F2FD; -fx-text-fill: #2196F3;"/>
+                            </HBox>
+                            <Label text="Specialty: Backend Mastery" style="-fx-font-size: 12; -fx-text-fill: #666; -fx-font-weight: bold;"/>
+                        </VBox>
+                    </HBox>
+                </ScrollPane>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems - CodeQuest</title>
+    <link rel="stylesheet" href="../../assets/css/problems.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Code<span>Quest</span></div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="home.html">🏠 Home</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="problems.html">✏️ Quests</a></li>
+                <li><a href="projects.html">🎯 Missions</a></li>
+                <li><a href="events.html">🏆 Tournaments</a></li>
+                <li><a href="forum.html">🤝 Guild</a></li>
+                <li><a href="users.html">⚔️ Arena</a></li>
+            </ul>
+        </div>
+        <div class="nav-buttons">
+            <a href="sign-in.html" class="btn-login">Log In</a>
+            <button class="btn-play">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="level-badge">
+                ⚡ <span>Level 1 • 2,450 XP</span>
+            </div>
+            <h1>Choose from our comprehensive collection of challenges</h1>
+            <p>Solve problems at your own pace and unlock new programming abilities!</p>
+            <div class="hero-buttons">
+                <button class="btn-start">🎯 Browse Challenges</button>
+                <button class="btn-trailer">Watch Intro</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="problems-section">
+        <div class="problems-container">
+            <!-- Filter Sidebar -->
+            <aside class="filter-sidebar">
+                <div class="filter-header">
+                    <h3>🔍 Filter Problems</h3>
+                </div>
+
+                <div class="filter-group">
+                    <h4>🎯 Difficulty</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="difficulty" value="easy">
+                        <span class="checkmark"></span>
+                        Easy
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="difficulty" value="medium">
+                        <span class="checkmark"></span>
+                        Medium
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="difficulty" value="hard">
+                        <span class="checkmark"></span>
+                        Hard
+                    </label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>💻 Language</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="javascript">
+                        <span class="checkmark"></span>
+                        JavaScript
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="python">
+                        <span class="checkmark"></span>
+                        Python
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="java">
+                        <span class="checkmark"></span>
+                        Java
+                    </label>
+                </div>
+
+                <button class="btn-clear-filters">Clear All Filters</button>
+            </aside>
+
+            <!-- Problems List -->
+            <main class="problems-main">
+                <div class="problems-header">
+                    <h2>All <span>Problems</span></h2>
+                    <p>Solve coding challenges and improve your skills</p>
+                    <div class="problems-stats">
+                        <span>🧩 200+ Problems</span>
+                        <span>👥 50K+ Solvers</span>
+                        <span>⭐ 4.7 Average Rating</span>
+                    </div>
+                </div>
+
+                <div class="problems-list">
+                    <!-- Problem 1 -->
+                    <div class="problem-card" data-difficulty="easy" data-language="javascript">
+                        <div class="problem-header">
+                            <div class="problem-icon">🔢</div>
+                            <div class="problem-actions">
+                                <span class="difficulty-badge easy">Easy</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="problem-body">
+                            <h3>Two Sum</h3>
+                            <p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+                            <div class="problem-meta">
+                                <span>⏱️ 15 min</span>
+                                <span>⭐ 4.8</span>
+                                <span>💻 JavaScript</span>
+                            </div>
+                            <div class="problem-tags">
+                                <span class="tag">Array</span>
+                                <span class="tag">Hash Table</span>
+                            </div>
+                            <button class="btn-solve">Solve Challenge</button>
+                        </div>
+                    </div>
+
+                    <!-- Problem 2 -->
+                    <div class="problem-card" data-difficulty="medium" data-language="python">
+                        <div class="problem-header">
+                            <div class="problem-icon">🔄</div>
+                            <div class="problem-actions">
+                                <span class="difficulty-badge medium">Medium</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="problem-body">
+                            <h3>Valid Parentheses</h3>
+                            <p>Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.</p>
+                            <div class="problem-meta">
+                                <span>⏱️ 20 min</span>
+                                <span>⭐ 4.6</span>
+                                <span>💻 Python</span>
+                            </div>
+                            <div class="problem-tags">
+                                <span class="tag">String</span>
+                                <span class="tag">Stack</span>
+                            </div>
+                            <button class="btn-solve">Solve Challenge</button>
+                        </div>
+                    </div>
+
+                    <!-- Problem 3 -->
+                    <div class="problem-card" data-difficulty="hard" data-language="javascript">
+                        <div class="problem-header">
+                            <div class="problem-icon">🌳</div>
+                            <span class="difficulty-badge hard">Hard</span>                            <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>                        </div>
+                        <div class="problem-body">
+                            <h3>Binary Tree Maximum Path Sum</h3>
+                            <p>Given a non-empty binary tree, find the maximum path sum. For this problem, a path is defined as any sequence of nodes from some starting node to any node in the tree.</p>
+                            <div class="problem-meta">
+                                <span>⏱️ 45 min</span>
+                                <span>⭐ 4.9</span>
+                                <span>💻 JavaScript</span>
+                            </div>
+                            <div class="problem-tags">
+                                <span class="tag">Tree</span>
+                                <span class="tag">DFS</span>
+                                <span class="tag">Dynamic Programming</span>
+                            </div>
+                            <button class="btn-solve">Solve Challenge</button>
+                        </div>
+                    </div>
+
+                    <!-- Problem 4 -->
+                    <div class="problem-card" data-difficulty="easy" data-language="python">
+                        <div class="problem-header">
+                            <div class="problem-icon">🔄</div>
+                            <div class="problem-actions">
+                                <span class="difficulty-badge easy">Easy</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="problem-body">
+                            <h3>Valid Palindrome</h3>
+                            <p>Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.</p>
+                            <div class="problem-meta">
+                                <span>⏱️ 10 min</span>
+                                <span>⭐ 4.6</span>
+                                <span>🐍 Python</span>
+                            </div>
+                            <div class="problem-tags">
+                                <span class="tag">String</span>
+                                <span class="tag">Two Pointers</span>
+                            </div>
+                            <button class="btn-solve">Solve Challenge</button>
+                        </div>
+                    </div>
+
+                    <!-- Problem 5 -->
+                    <div class="problem-card" data-difficulty="medium" data-language="javascript">
+                        <div class="problem-header">
+                            <div class="problem-icon">🔗</div>
+                            <div class="problem-actions">
+                                <span class="difficulty-badge medium">Medium</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="problem-body">
+                            <h3>Merge Intervals</h3>
+                            <p>Given a collection of intervals, merge all overlapping intervals.</p>
+                            <div class="problem-meta">
+                                <span>⏱️ 25 min</span>
+                                <span>⭐ 4.7</span>
+                                <span>💻 JavaScript</span>
+                            </div>
+                            <div class="problem-tags">
+                                <span class="tag">Array</span>
+                                <span class="tag">Sorting</span>
+                            </div>
+                            <button class="btn-solve">Solve Challenge</button>
+                        </div>
+                    </div>
+
+                    <!-- Problem 6 -->
+                    <div class="problem-card" data-difficulty="hard" data-language="python">
+                        <div class="problem-header">
+                            <div class="problem-icon">🏗️</div>
+                            <div class="problem-actions">
+                                <span class="difficulty-badge hard">Hard</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="problem-body">
+                            <h3>N-Queens</h3>
+                            <p>The n-queens puzzle is the problem of placing n queens on an n×n chessboard so that no two queens attack each other.</p>
+                            <div class="problem-meta">
+                                <span>⏱️ 60 min</span>
+                                <span>⭐ 4.8</span>
+                                <span>🐍 Python</span>
+                            </div>
+                            <div class="problem-tags">
+                                <span class="tag">Backtracking</span>
+                                <span class="tag">Array</span>
+                            </div>
+                            <button class="btn-solve">Solve Challenge</button>
+                        </div>
+                    </div>
+
+                    <!-- Add more problems as needed -->
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/problems.js"></script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Details - CodeQuest</title>
+    <link rel="stylesheet" href="../../assets/css/forum-details.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Code<span>Quest</span></div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="home.html">🏠 Home</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="problems.html">✏️ Quests</a></li>
+                <li><a href="projects.html">🎯 Missions</a></li>
+                <li><a href="events.html">🏆 Tournaments</a></li>
+                <li><a href="forum.html">🤝 Guild</a></li>
+                <li><a href="users.html">⚔️ Arena</a></li>
+            </ul>
+        </div>
+        <div class="nav-buttons">
+            <a href="sign-in.html" class="btn-login">Log In</a>
+            <button class="btn-play">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="level-badge">
+                ⚡ <span>Level 1 • 2,450 XP</span>
+            </div>
+            <h1>Join the Community</h1>
+            <p>Connect with fellow coders, ask questions, share knowledge, and grow together in our vibrant coding community!</p>
+            <div class="hero-buttons">
+                <button class="btn-browse">💬 Browse Forums</button>
+                <button class="btn-trailer">Watch Intro</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forum Details Section -->
+    <section class="forum-details-section">
+        <div class="forum-details-container">
+            <div class="forum-content">
+                <!-- Guild Header -->
+                <div class="guild-header">
+                    <div class="guild-info">
+                        <div class="guild-icon-large">⚔️</div>
+                        <div class="guild-details">
+                            <h1>Code Crusaders</h1>
+                            <p class="guild-description">Warriors of clean code and best practices. Share your coding victories and learn from fellow developers.</p>
+                            <div class="guild-stats">
+                                <span>👥 1,247 members</span>
+                                <span>💬 5.2K posts</span>
+                                <span>📅 Founded 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="guild-actions">
+                        <button class="btn-join-guild">Join Guild</button>
+                        <button class="btn-create-post">Create Post</button>
+                    </div>
+                </div>
+
+                <!-- Forum Posts -->
+                <div class="forum-posts">
+                    <div class="posts-header">
+                        <h2>Recent Discussions</h2>
+                        <div class="posts-filter">
+                            <button class="filter-btn active" data-filter="all">All Posts</button>
+                            <button class="filter-btn" data-filter="questions">Questions</button>
+                            <button class="filter-btn" data-filter="discussions">Discussions</button>
+                            <button class="filter-btn" data-filter="help">Help</button>
+                        </div>
+                    </div>
+
+                    <div class="posts-list">
+                        <!-- Post 1 -->
+                        <div class="post-card" data-type="question">
+                            <div class="post-header">
+                                <div class="post-author">
+                                    <div class="author-avatar avatar-cm">CM</div>
+                                    <div class="author-info">
+                                        <h4>CodeMaster_99</h4>
+                                        <span class="post-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="post-actions">
+                                    <span class="post-type question">Question</span>
+                                    <button class="save-post">💾</button>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <h3>How do you handle async/await error handling in JavaScript?</h3>
+                                <p>I've been struggling with proper error handling in async functions. What's the best practice for catching and handling errors in async/await code? Should I use try/catch blocks everywhere or is there a better approach?</p>
+                                <div class="post-tags">
+                                    <span class="tag">JavaScript</span>
+                                    <span class="tag">Async/Await</span>
+                                    <span class="tag">Error Handling</span>
+                                </div>
+                            </div>
+                            <div class="post-footer">
+                                <div class="post-reactions">
+                                    <button class="reaction-btn" data-reaction="like">👍 24</button>
+                                    <button class="reaction-btn" data-reaction="helpful">💡 12</button>
+                                    <button class="reaction-btn" data-reaction="love">❤️ 8</button>
+                                </div>
+                                <div class="post-stats">
+                                    <span>💬 8 replies</span>
+                                    <span>👁️ 156 views</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 2 -->
+                        <div class="post-card" data-type="discussion">
+                            <div class="post-header">
+                                <div class="post-author">
+                                    <div class="author-avatar avatar-dn">DN</div>
+                                    <div class="author-info">
+                                        <h4>DevNinja</h4>
+                                        <span class="post-time">5 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="post-actions">
+                                    <span class="post-type discussion">Discussion</span>
+                                    <button class="save-post">💾</button>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <h3>React vs Vue.js in 2026: What's your take?</h3>
+                                <p>With all the recent updates to both frameworks, I'm curious about the community's current preferences. React seems to be dominating the job market, but Vue.js has some amazing features. What are your experiences with both?</p>
+                                <div class="post-tags">
+                                    <span class="tag">React</span>
+                                    <span class="tag">Vue.js</span>
+                                    <span class="tag">Framework Comparison</span>
+                                </div>
+                            </div>
+                            <div class="post-footer">
+                                <div class="post-reactions">
+                                    <button class="reaction-btn" data-reaction="like">👍 31</button>
+                                    <button class="reaction-btn" data-reaction="helpful">💡 18</button>
+                                    <button class="reaction-btn" data-reaction="fire">🔥 15</button>
+                                </div>
+                                <div class="post-stats">
+                                    <span>💬 23 replies</span>
+                                    <span>👁️ 289 views</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 3 -->
+                        <div class="post-card" data-type="help">
+                            <div class="post-header">
+                                <div class="post-author">
+                                    <div class="author-avatar avatar-nc">NC</div>
+                                    <div class="author-info">
+                                        <h4>NewbieCoder</h4>
+                                        <span class="post-time">1 day ago</span>
+                                    </div>
+                                </div>
+                                <div class="post-actions">
+                                    <span class="post-type help">Help</span>
+                                    <button class="save-post">💾</button>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <h3>Stuck on CSS Grid responsive design</h3>
+                                <p>Hi everyone! I'm trying to create a responsive grid layout but it's not working as expected on mobile devices. Here's my code:
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+```
+
+The grid works on desktop but stacks weirdly on mobile. Any suggestions?</p>
+                                <div class="post-tags">
+                                    <span class="tag">CSS</span>
+                                    <span class="tag">Grid</span>
+                                    <span class="tag">Responsive</span>
+                                </div>
+                            </div>
+                            <div class="post-footer">
+                                <div class="post-reactions">
+                                    <button class="reaction-btn" data-reaction="like">👍 15</button>
+                                    <button class="reaction-btn" data-reaction="helpful">💡 27</button>
+                                    <button class="reaction-btn" data-reaction="solved">✅ Solved</button>
+                                </div>
+                                <div class="post-stats">
+                                    <span>💬 12 replies</span>
+                                    <span>👁️ 203 views</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 4 -->
+                        <div class="post-card" data-type="question">
+                            <div class="post-header">
+                                <div class="post-author">
+                                    <div class="author-avatar avatar-aq">AQ</div>
+                                    <div class="author-info">
+                                        <h4>AlgoQueen_99</h4>
+                                        <span class="post-time">2 days ago</span>
+                                    </div>
+                                </div>
+                                <div class="post-actions">
+                                    <span class="post-type question">Question</span>
+                                    <button class="save-post">💾</button>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <h3>Best practices for database indexing?</h3>
+                                <p>I'm working on optimizing my application's database performance. What are the key things to consider when creating indexes? Are there any common mistakes to avoid?</p>
+                                <div class="post-tags">
+                                    <span class="tag">Database</span>
+                                    <span class="tag">Performance</span>
+                                    <span class="tag">Indexing</span>
+                                </div>
+                            </div>
+                            <div class="post-footer">
+                                <div class="post-reactions">
+                                    <button class="reaction-btn" data-reaction="like">👍 42</button>
+                                    <button class="reaction-btn" data-reaction="helpful">💡 35</button>
+                                    <button class="reaction-btn" data-reaction="star">⭐ 8</button>
+                                </div>
+                                <div class="post-stats">
+                                    <span>💬 19 replies</span>
+                                    <span>👁️ 387 views</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 5 -->
+                        <div class="post-card" data-type="discussion">
+                            <div class="post-header">
+                                <div class="post-author">
+                                    <div class="author-avatar avatar-ts">TS</div>
+                                    <div class="author-info">
+                                        <h4>TechSage</h4>
+                                        <span class="post-time">3 days ago</span>
+                                    </div>
+                                </div>
+                                <div class="post-actions">
+                                    <span class="post-type discussion">Discussion</span>
+                                    <button class="save-post">💾</button>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <h3>The future of AI in software development</h3>
+                                <p>AI tools are becoming increasingly sophisticated. How do you think AI will change the way we write code in the next 5-10 years? Will it replace developers or enhance our capabilities?</p>
+                                <div class="post-tags">
+                                    <span class="tag">AI</span>
+                                    <span class="tag">Future</span>
+                                    <span class="tag">Software Development</span>
+                                </div>
+                            </div>
+                            <div class="post-footer">
+                                <div class="post-reactions">
+                                    <button class="reaction-btn" data-reaction="like">👍 67</button>
+                                    <button class="reaction-btn" data-reaction="helpful">💡 23</button>
+                                    <button class="reaction-btn" data-reaction="think">🤔 31</button>
+                                </div>
+                                <div class="post-stats">
+                                    <span>💬 45 replies</span>
+                                    <span>👁️ 892 views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="forum-sidebar">
+                <!-- Guild Members -->
+                <div class="sidebar-card">
+                    <h3>Active Members</h3>
+                    <div class="members-list">
+                        <div class="member-item">
+                            <div class="member-avatar avatar-cm">CM</div>
+                            <div class="member-info">
+                                <span class="member-name">CodeMaster_99</span>
+                                <span class="member-role">Moderator</span>
+                            </div>
+                        </div>
+                        <div class="member-item">
+                            <div class="member-avatar avatar-dn">DN</div>
+                            <div class="member-info">
+                                <span class="member-name">DevNinja</span>
+                                <span class="member-role">Senior Member</span>
+                            </div>
+                        </div>
+                        <div class="member-item">
+                            <div class="member-avatar avatar-nc">NC</div>
+                            <div class="member-info">
+                                <span class="member-name">NewbieCoder</span>
+                                <span class="member-role">Member</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guild Rules -->
+                <div class="sidebar-card">
+                    <h3>Guild Rules</h3>
+                    <ul class="rules-list">
+                        <li>Be respectful to all members</li>
+                        <li>Stay on topic in discussions</li>
+                        <li>No spam or self-promotion</li>
+                        <li>Use appropriate tags for posts</li>
+                        <li>Help others when you can</li>
+                    </ul>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="sidebar-card">
+                    <h3>Guild Stats</h3>
+                    <div class="stats-list">
+                        <div class="stat-item">
+                            <span class="stat-label">Total XP</span>
+                            <span class="stat-value">12.4M</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Avg. Level</span>
+                            <span class="stat-value">42</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Top Language</span>
+                            <span class="stat-value">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/forum-details.js"></script>
+
+</body>
+</html>
+
+
+
+
+

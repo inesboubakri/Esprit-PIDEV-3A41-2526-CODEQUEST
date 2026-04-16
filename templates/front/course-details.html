@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details - React Development</title>
+    <link rel="stylesheet" href="../../assets/css/course-details.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Code<span>Quest</span></div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="home.html">🏠 Home</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="problems.html">✏️ Quests</a></li>
+                <li><a href="projects.html">🎯 Missions</a></li>
+                <li><a href="events.html">🏆 Tournaments</a></li>
+                <li><a href="forum.html">🤝 Guild</a></li>
+                <li><a href="users.html">⚔️ Arena</a></li>
+            </ul>
+        </div>
+        <div class="nav-buttons">
+            <a href="sign-in.html" class="btn-login">Log In</a>
+            <button class="btn-play">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('../../assets/background-gifs/13801b8f02521497ed21c65eea146b9e.gif');">
+        <div class="hero-content">
+            <h1>React Development</h1>
+            <p>Build modern user interfaces with React and component architecture</p>
+        </div>
+    </section>
+
+    <!-- Course Details Section -->
+    <section class="course-details-section">
+        <div class="course-details-container">
+            <!-- Left: Course Content -->
+            <div class="course-content">
+                <h2>Course Overview</h2>
+                <p>This comprehensive course covers everything you need to know about React, from basics to advanced concepts. You'll learn to build modern, scalable user interfaces with component-based architecture, state management, and best practices.</p>
+                
+                <div class="course-tabs">
+                    <button class="tab-btn active" onclick="openTab('html')">HTML</button>
+                    <button class="tab-btn" onclick="openTab('css')">CSS</button>
+                    <button class="tab-btn" onclick="openTab('js')">React</button>
+                </div>
+
+                <div id="html" class="tab-content active">
+                    <h3>HTML Foundations</h3>
+                    <p>Learn the structure of web pages with HTML. We'll cover elements, attributes, forms, and semantic markup essential for React development.</p>
+                    <ul>
+                        <li>HTML5 semantic elements</li>
+                        <li>Forms and input types</li>
+                        <li>Accessibility best practices</li>
+                    </ul>
+                </div>
+
+                <div id="css" class="tab-content">
+                    <h3>CSS Styling</h3>
+                    <p>Style your React components with CSS. Master modern styling techniques including CSS Modules and styled-components.</p>
+                    <ul>
+                        <li>CSS Modules</li>
+                        <li>Styled-components</li>
+                        <li>Responsive design</li>
+                    </ul>
+                </div>
+
+                <div id="js" class="tab-content">
+                    <h3>React Development</h3>
+                    <p>Dive deep into React programming. Learn components, hooks, state management, and advanced patterns.</p>
+                    <ul>
+                        <li>JSX and components</li>
+                        <li>Hooks (useState, useEffect)</li>
+                        <li>Context API and Redux</li>
+                        <li>React Router</li>
+                        <li>Performance optimization</li>
+                    </ul>
+                </div>
+
+                <div class="course-meta">
+                    <div class="meta-item">
+                        <span class="meta-icon">⏱️</span>
+                        <span>10 hours</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-icon">📖</span>
+                        <span>50 lessons</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-icon">⭐</span>
+                        <span>4.8 rating</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-icon">🎯</span>
+                        <span>Intermediate level</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Enroll Section -->
+            <div class="enroll-section">
+                <div class="enroll-card">
+                    <h3>Enroll Now</h3>
+                    <p>Start your React journey today!</p>
+                    <div class="price">Free</div>
+                    <button class="btn-enroll-large">Enroll in Course</button>
+                    <div class="enroll-features">
+                        <p>✅ Lifetime access</p>
+                        <p>✅ Certificate of completion</p>
+                        <p>✅ Community support</p>
+                        <p>✅ Mobile friendly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/course-details.js"></script>
+</body>
+</html>
+
+
+
+
+
+

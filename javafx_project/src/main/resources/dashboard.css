@@ -1,0 +1,366 @@
+/* 
+ * CodeQuest Admin Dashboard Styles
+ * Exact replica of HTML dashboard.css for JavaFX
+ */
+
+.root {
+    -fx-background-color: #f5f5f5;
+    -fx-font-family: "Segoe UI", Verdana, sans-serif;
+    -fx-font-size: 14;
+    -fx-text-fill: #333333;
+}
+
+/* ============================================================
+   SIDEBAR STYLING
+   ============================================================ */
+
+.sidebar {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 1 0 0;
+}
+
+.logo {
+    -fx-font-size: 22;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 30 0;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 0 1 0;
+}
+
+.logo-text {
+    -fx-text-fill: #333333;
+}
+
+.logo-accent {
+    -fx-text-fill: #FF6B4A;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+    -fx-spacing: 10;
+}
+
+.sidebar-nav-link {
+    -fx-text-fill: #333333;
+    -fx-font-size: 14;
+    -fx-font-weight: 500;
+    -fx-padding: 12 15 12 15;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.sidebar-nav-link:hover {
+    -fx-background-color: rgba(255, 107, 74, 0.1);
+    -fx-text-fill: #FF6B4A;
+}
+
+.sidebar-nav-link:active {
+    -fx-background-color: #FF6B4A;
+    -fx-text-fill: white;
+}
+
+/* Sidebar Footer Motivation Box */
+.motivation-box {
+    -fx-background-color: rgba(255, 107, 74, 0.1);
+    -fx-padding: 20;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-alignment: center;
+}
+
+.motivation-text {
+    -fx-font-size: 13;
+    -fx-text-fill: #333333;
+    -fx-text-alignment: center;
+    -fx-font-weight: 600;
+    -fx-wrap-text: true;
+}
+
+.rocket-emoji {
+    -fx-font-size: 48;
+}
+
+/* ============================================================
+   HEADER STYLING  
+   ============================================================ */
+
+.header {
+    -fx-background-color: white;
+    -fx-padding: 20 40 20 40;
+    -fx-border-color: #E0E0E0;
+    -fx-border-width: 0 0 1 0;
+    -fx-spacing: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0, 0, 2);
+}
+
+.header-title {
+    -fx-font-size: 32;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.header-actions {
+    -fx-spacing: 15;
+}
+
+.search-bar {
+    -fx-background-color: #F5F5F5;
+    -fx-padding: 10 16 10 16;
+    -fx-background-radius: 8;
+    -fx-spacing: 8;
+}
+
+.search-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-min-width: 200;
+    -fx-font-size: 14;
+    -fx-text-fill: #333333;
+}
+
+.search-field:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.search-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #999999;
+    -fx-font-size: 14;
+    -fx-cursor: hand;
+}
+
+.search-button:hover {
+    -fx-text-fill: #FF6B4A;
+}
+
+.theme-toggle {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 18;
+    -fx-padding: 8;
+    -fx-cursor: hand;
+}
+
+.theme-toggle:hover {
+    -fx-text-fill: #FF6B4A;
+}
+
+.admin-profile {
+    -fx-spacing: 12;
+}
+
+.admin-avatar {
+    -fx-font-size: 28;
+}
+
+.admin-name {
+    -fx-font-size: 14;
+    -fx-font-weight: 600;
+    -fx-text-fill: #333333;
+}
+
+/* ============================================================
+   STATISTICS CARDS
+   ============================================================ */
+
+.stat-card {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 2);
+}
+
+.stat-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 6, 0, 0, 4);
+}
+
+.stat-label {
+    -fx-font-size: 12;
+    -fx-font-weight: 600;
+    -fx-text-fill: #666666;
+    -fx-text-transform: uppercase;
+}
+
+.stat-number {
+    -fx-font-size: 36;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FF6B4A;
+}
+
+.stat-change {
+    -fx-font-size: 11;
+    -fx-font-weight: 500;
+    -fx-padding: 4 8 4 8;
+    -fx-background-radius: 4;
+}
+
+.stat-change-positive {
+    -fx-background-color: #d4edda;
+    -fx-text-fill: #4CAF50;
+}
+
+.stat-change-negative {
+    -fx-background-color: #f8d7da;
+    -fx-text-fill: #d32f2f;
+}
+
+/* ============================================================
+   USER ITEMS & ACTIVITY ITEMS
+   ============================================================ */
+
+.user-item {
+    -fx-padding: 15;
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 8;
+    -fx-border-color: #f0f0f0;
+    -fx-border-width: 0 0 1 0;
+}
+
+.user-item:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+.user-avatar {
+    -fx-background-color: #FF6B4A;
+    -fx-text-fill: white;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+    -fx-background-radius: 20;
+    -fx-alignment: center;
+}
+
+.user-name {
+    -fx-font-size: 14;
+    -fx-font-weight: 600;
+    -fx-text-fill: #333333;
+}
+
+.user-stats {
+    -fx-font-size: 12;
+    -fx-text-fill: #666666;
+}
+
+.user-score {
+    -fx-font-size: 14;
+    -fx-text-fill: #FF6B4A;
+}
+
+.activity-item {
+    -fx-padding: 12 0 12 0;
+    -fx-border-color: #f0f0f0;
+    -fx-border-width: 0 0 1 0;
+}
+
+.activity-item:last {
+    -fx-border-width: 0;
+}
+
+.activity-icon {
+    -fx-font-size: 18;
+}
+
+.activity-text {
+    -fx-font-size: 13;
+    -fx-text-fill: #333333;
+    -fx-wrap-text: true;
+}
+
+.activity-time {
+    -fx-font-size: 11;
+    -fx-text-fill: #999999;
+}
+
+/* ============================================================
+   CONTENT SECTION
+   ============================================================ */
+
+.content-section {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 2);
+}
+
+.section-title {
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 0 0 15 0;
+}
+
+/* ============================================================
+   PROGRESS BAR
+   ============================================================ */
+
+.progress-bar {
+    -fx-min-height: 4;
+}
+
+.progress-bar .bar {
+    -fx-background-color: linear-gradient(to right, #FF6B4A, #ffb366);
+}
+
+.progress-bar:vertical {
+    -fx-padding: 0;
+}
+
+/* ============================================================
+   SCROLL PANE
+   ============================================================ */
+
+.scroll-pane {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: #f5f5f5;
+}
+
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #cccccc;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #bbbbbb;
+}
+
+/* ============================================================
+   GENERAL UTILITY CLASSES
+   ============================================================ */
+
+.vgrow-always {
+    -fx-vgrow: always;
+}
+
+.hgrow-always {
+    -fx-hgrow: always;
+}
+
+.spacing-40 {
+    -fx-spacing: 40;
+}
+
+.spacing-20 {
+    -fx-spacing: 20;
+}
+
+.spacing-15 {
+    -fx-spacing: 15;
+}
+
+.padding-40 {
+    -fx-padding: 40;
+}
+

@@ -1,0 +1,1006 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+    gap: 8px;
+}
+
+.logo span {
+    color: #FF6B4A;
+}
+
+/* Container with glassmorphism effect for nav links */
+.nav-container {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    padding: 8px 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 999px;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.btn-login {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    opacity: 1;
+}
+
+.btn-play {
+    background: #FF6B4A;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(255, 107, 74, 0.4);
+    transition: all 0.25s ease;
+}
+
+.btn-play:hover {
+    background: #ff7a1f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 107, 74, 0.55);
+}
+
+/* Navbar scroll effect */
+.navbar-scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-scrolled .logo {
+    color: #333;
+}
+
+.navbar-scrolled .nav-container {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar-scrolled .nav-links a {
+    color: #333;
+}
+
+.navbar-scrolled .nav-links a:hover {
+    background: rgba(255, 107, 74, 0.1);
+    color: #FF6B4A;
+}
+
+.navbar-scrolled .btn-login {
+    color: #333;
+}
+
+.navbar-scrolled .btn-login:hover {
+    color: #FF6B4A;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('../images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    padding-top: 80px;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+.level-badge {
+    display: inline-flex;
+    align-items: center;
+    background: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.level-badge span {
+    color: #FFB800;
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.hero h1 span {
+    color: #FF6B4A;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn-start {
+    padding: 1rem 2.5rem;
+    background: #FF6B4A;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn-start:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 74, 0.4);
+}
+
+.btn-trailer {
+    padding: 1rem 2.5rem;
+    background: white;
+    border: none;
+    border-radius: 30px;
+    color: #333;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn-trailer:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem 5%;
+    background: white;
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    color: #FF6B4A;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+    color: #666;
+}
+
+/* Mentors Section */
+.mentors {
+    padding: 4rem 5%;
+    background: #F8F9FA;
+    text-align: center;
+}
+
+.section-badge {
+    display: inline-block;
+    background: #E3F2FD;
+    color: #2196F3;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.mentors h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.mentors h2 span {
+    color: #FF6B4A;
+}
+
+.mentors p {
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.mentor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mentor-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.mentor-card:hover {
+    transform: translateY(-10px);
+}
+
+.mentor-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.mentor-level {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #FFB800;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.mentor-info {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.mentor-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.mentor-info .subtitle {
+    color: #FF6B4A;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.mentor-quote {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.mentor-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    background: #E3F2FD;
+    color: #2196F3;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.mentor-specialty {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.mentor-specialty strong {
+    color: #333;
+}
+
+.stars {
+    color: #FFB800;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Adventures Section */
+.adventures {
+    padding: 4rem 5%;
+    background: white;
+    text-align: center;
+}
+
+.adventures h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.adventures h2 span {
+    color: #FF6B4A;
+}
+
+.adventures > p {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.adventure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.adventure-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    border-top: 5px solid;
+    text-align: left;
+}
+
+.adventure-card:nth-child(1) {
+    border-top-color: #00BCD4;
+}
+
+.adventure-card:nth-child(2) {
+    border-top-color: #2196F3;
+}
+
+.adventure-card:nth-child(3) {
+    border-top-color: #FFB800;
+}
+
+.adventure-card:nth-child(4) {
+    border-top-color: #9C27B0;
+}
+
+.adventure-card:hover {
+    transform: translateY(-10px);
+}
+
+.adventure-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.adventure-icon {
+    font-size: 2rem;
+}
+
+.difficulty-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.beginner {
+    background: #C8E6C9;
+    color: #2E7D32;
+}
+
+.intermediate {
+    background: #FFE0B2;
+    color: #E65100;
+}
+
+.adventure-body {
+    padding: 0 1.5rem 1.5rem;
+}
+
+.adventure-body h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.adventure-body p {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.adventure-stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.adventure-stats span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.progress-bar {
+    background: #E0E0E0;
+    height: 8px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.3s;
+}
+
+.progress-text {
+    font-size: 0.85rem;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.btn-continue {
+    width: 100%;
+    padding: 0.8rem;
+    background: #FF6B4A;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-continue:hover {
+    background: #FF5533;
+}
+
+.btn-start-adventure {
+    width: 100%;
+    padding: 0.8rem;
+    background: #4CAF50;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-start-adventure:hover {
+    background: #45A049;
+}
+
+.locked {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.lock-message {
+    text-align: center;
+    color: #999;
+    font-size: 0.9rem;
+    padding: 1rem;
+}
+
+/* Quests Section */
+.quests {
+    padding: 4rem 5%;
+    background: #FFF9F0;
+}
+
+.quests-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.streak-banner {
+    background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.streak-icon {
+    font-size: 3rem;
+}
+
+.streak-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.streak-days {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.day-badge {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.day-complete {
+    background: #FFB800;
+    color: white;
+}
+
+.day-incomplete {
+    background: #E0E0E0;
+    color: #999;
+}
+
+.quest-section {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.quest-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.quest-section-header h3 {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quest-count {
+    background: #FF6B4A;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.quest-timer {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.quest-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: #FAFAFA;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+}
+
+.quest-item:hover {
+    transform: translateX(5px);
+}
+
+.quest-icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.quest-completed .quest-icon-circle {
+    background: #C8E6C9;
+}
+
+.quest-item:not(.quest-completed) .quest-icon-circle {
+    background: #E3F2FD;
+}
+
+.quest-details {
+    flex-grow: 1;
+}
+
+.quest-details h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.quest-details p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.quest-reward {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.difficulty-icons {
+    color: #FF6B4A;
+    font-size: 1.2rem;
+}
+
+.quest-time {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.quest-xp {
+    background: #FFE0B2;
+    color: #E65100;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* Tournaments Section */
+.tournaments {
+    padding: 4rem 5%;
+    background: white;
+    text-align: center;
+}
+
+.tournaments h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.tournaments h2 span {
+    color: #FF6B4A;
+}
+
+.tournaments > p {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+/* Footer */
+footer {
+    background: #2C3E50;
+    color: white;
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #FF6B4A;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .mentor-grid,
+    .adventure-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Card Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Adventure Cards */
+.adventure-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.adventure-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.adventure-card:nth-child(1) { animation-delay: 0.1s; }
+.adventure-card:nth-child(2) { animation-delay: 0.2s; }
+.adventure-card:nth-child(3) { animation-delay: 0.3s; }
+.adventure-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Tournament Cards */
+.tournament-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.tournament-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.tournament-card:nth-child(1) { animation-delay: 0.1s; }
+.tournament-card:nth-child(2) { animation-delay: 0.2s; }
+.tournament-card:nth-child(3) { animation-delay: 0.3s; }
+.tournament-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Guild Cards */
+.guild-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.guild-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+}
+
+.guild-card:nth-child(1) { animation-delay: 0.1s; }
+.guild-card:nth-child(2) { animation-delay: 0.2s; }
+.guild-card:nth-child(3) { animation-delay: 0.3s; }
+.guild-card:nth-child(4) { animation-delay: 0.4s; }
+.guild-card:nth-child(5) { animation-delay: 0.5s; }
+.guild-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Champion Cards */
+.champion-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.champion-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.champion-card:nth-child(1) { animation-delay: 0.1s; }
+.champion-card:nth-child(2) { animation-delay: 0.2s; }
+.champion-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Podium Positions */
+.podium-position {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.podium-position:nth-child(1) { animation-delay: 0.2s; }
+.podium-position:nth-child(2) { animation-delay: 0.1s; }
+.podium-position:nth-child(3) { animation-delay: 0.3s; }
+
+.podium-position:hover {
+    transform: scale(1.05);
+}
+
+/* Leaderboard Items */
+.leaderboard-item {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.leaderboard-item:nth-child(1) { animation-delay: 0.1s; }
+.leaderboard-item:nth-child(2) { animation-delay: 0.2s; }
+.leaderboard-item:nth-child(3) { animation-delay: 0.3s; }
+.leaderboard-item:nth-child(4) { animation-delay: 0.4s; }
+.leaderboard-item:nth-child(5) { animation-delay: 0.5s; }
+.leaderboard-item:nth-child(6) { animation-delay: 0.6s; }
+.leaderboard-item:nth-child(7) { animation-delay: 0.7s; }
+.leaderboard-item:nth-child(8) { animation-delay: 0.8s; }
+.leaderboard-item:nth-child(9) { animation-delay: 0.9s; }
+.leaderboard-item:nth-child(10) { animation-delay: 1.0s; }
+
+.leaderboard-item:hover {
+    background: rgba(255, 107, 74, 0.05);
+    transform: translateX(5px);
+}
+
+/* Quest Items */
+.quest-item {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.quest-item:nth-child(1) { animation-delay: 0.1s; }
+.quest-item:nth-child(2) { animation-delay: 0.2s; }
+.quest-item:nth-child(3) { animation-delay: 0.3s; }
+.quest-item:nth-child(4) { animation-delay: 0.4s; }
+.quest-item:nth-child(5) { animation-delay: 0.5s; }
+
+.quest-item:hover {
+    background: rgba(255, 107, 74, 0.05);
+    transform: translateX(3px);
+}
+
+.quest-item.completed:hover {
+    background: rgba(76, 175, 80, 0.1);
+}
+
+/* Button Hover Effects */
+.btn-continue:hover,
+.btn-start-adventure:hover,
+.guild-card button:hover,
+.tournament-card button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Floating Animation for Special Elements */
+.live-tournament {
+    animation: float 3s ease-in-out infinite;
+}
+
+.section-badge {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Stagger Animation for Grid Items */
+.adventure-grid > *,
+.tournament-grid > *,
+.guilds-grid > * {
+    animation-fill-mode: both;
+}

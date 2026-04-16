@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users Management - CodeQuest</title>
+    <link rel="stylesheet" href="../../assets/css/users-back.css">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo">Code<span>Quest</span></div>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">📊 Dashboard</a></li>
+                    <li><a href="users.html" class="active">👥 Users</a></li>
+                    <li><a href="#">📚 Courses</a></li>
+                    <li><a href="#">🤝 Forum</a></li>
+                    <li><a href="#">✏️ Problems</a></li>
+                    <li><a href="#">🎯 Projects</a></li>
+                    <li><a href="#">🏆 Events</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="motivation-box">
+                    <p>Level up your skills! 🚀</p>
+                    <div class="rocket-emoji">👨‍🚀</div>
+                </div>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Users Management</h1>
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search users...">
+                        <button type="submit">🔍</button>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <div class="admin-profile">
+                        <span class="admin-avatar">👤</span>
+                        <span class="admin-name">Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- User Stats -->
+            <section class="user-stats">
+                <div class="stat-card">
+                    <h3>Total Users</h3>
+                    <p class="stat-number">1,234</p>
+                    <span class="stat-change positive">+12% this month</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Users</h3>
+                    <p class="stat-number">987</p>
+                    <span class="stat-change positive">+8% this week</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Users Level 8+</h3>
+                    <p class="stat-number">156</p>
+                    <span class="stat-change positive">+15% this month</span>
+                </div>
+                <div class="stat-card">
+                    <h3>New Registrations</h3>
+                    <p class="stat-number">89</p>
+                    <span class="stat-change positive">+23% this week</span>
+                </div>
+            </section>
+
+            <!-- Filters and Actions -->
+            <section class="user-controls">
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All Users</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="inactive">Inactive</button>
+                    <button class="filter-btn" data-filter="premium">Premium</button>
+                    <button class="filter-btn" data-filter="level8">Level 8+</button>
+                </div>
+                <div class="action-buttons">
+                    <button class="stats-btn">
+                        📊 View Stats
+                    </button>
+                    <button class="add-user-btn">
+                        <span>+</span> Add New User
+                    </button>
+                </div>
+            </section>
+
+            <!-- Users Table -->
+            <section class="users-table-section">
+                <div class="table-container">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Email</th>
+                                <th>Level</th>
+                                <th>XP</th>
+                                <th>Status</th>
+                                <th>Join Date</th>
+                                <th>Last Active</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <img src="../../assets/images/default-avatar.png" alt="Avatar" class="user-avatar-img">
+                                        <div>
+                                            <div class="user-name">John Doe</div>
+                                            <div class="user-role">Student</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>john.doe@email.com</td>
+                                <td><span class="level-badge">15</span></td>
+                                <td>2,450 XP</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>Jan 15, 2024</td>
+                                <td>2 hours ago</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewUserDetails(1)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyUser(1)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deleteUser(1)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <img src="../../assets/images/default-avatar.png" alt="Avatar" class="user-avatar-img">
+                                        <div>
+                                            <div class="user-name">Sarah Miller</div>
+                                            <div class="user-role">Premium</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>sarah.miller@email.com</td>
+                                <td><span class="level-badge">12</span></td>
+                                <td>1,890 XP</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>Feb 20, 2024</td>
+                                <td>1 day ago</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewUserDetails(2)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyUser(2)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deleteUser(2)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <img src="../../assets/images/default-avatar.png" alt="Avatar" class="user-avatar-img">
+                                        <div>
+                                            <div class="user-name">Alex Kim</div>
+                                            <div class="user-role">Student</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>alex.kim@email.com</td>
+                                <td><span class="level-badge">10</span></td>
+                                <td>1,650 XP</td>
+                                <td><span class="status-badge inactive">Inactive</span></td>
+                                <td>Mar 10, 2024</td>
+                                <td>1 week ago</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewUserDetails(3)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyUser(3)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deleteUser(3)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <img src="../../assets/images/default-avatar.png" alt="Avatar" class="user-avatar-img">
+                                        <div>
+                                            <div class="user-name">Mike Johnson</div>
+                                            <div class="user-role">Premium</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>mike.johnson@email.com</td>
+                                <td><span class="level-badge">8</span></td>
+                                <td>1,200 XP</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>Apr 5, 2024</td>
+                                <td>30 min ago</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewUserDetails(4)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyUser(4)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deleteUser(4)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <img src="../../assets/images/default-avatar.png" alt="Avatar" class="user-avatar-img">
+                                        <div>
+                                            <div class="user-name">Emma Wilson</div>
+                                            <div class="user-role">Student</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>emma.wilson@email.com</td>
+                                <td><span class="level-badge">6</span></td>
+                                <td>850 XP</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>May 12, 2024</td>
+                                <td>5 hours ago</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewUserDetails(5)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyUser(5)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deleteUser(5)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="../../assets/js/usersback.js"></script>
+</body>
+</html></content>
+<parameter name="filePath">c:\Users\MSI-PC\Desktop\projet\templates\back\users.html

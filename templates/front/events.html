@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - CodeQuest</title>
+    <link rel="stylesheet" href="../../assets/css/events.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Code<span>Quest</span></div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="home.html">🏠 Home</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="problems.html">✏️ Quests</a></li>
+                <li><a href="projects.html">🎯 Missions</a></li>
+                <li><a href="events.html">🏆 Tournaments</a></li>
+                <li><a href="forum.html">🤝 Guild</a></li>
+                <li><a href="users.html">⚔️ Arena</a></li>
+            </ul>
+        </div>
+        <div class="nav-buttons">
+            <a href="sign-in.html" class="btn-login">Log In</a>
+            <button class="btn-play">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="level-badge">
+                ⚡ <span>Level 1 • 2,450 XP</span>
+            </div>
+            <h1>Join exciting coding events and competitions</h1>
+            <p>Participate in webinars, contests, and challenges to enhance your skills and compete with others!</p>
+            <div class="hero-buttons">
+                <button class="btn-start">🎯 Browse Events</button>
+                <button class="btn-trailer">Watch Intro</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section">
+        <div class="events-container">
+            <!-- Filter Sidebar -->
+            <aside class="filter-sidebar">
+                <div class="filter-header">
+                    <h3>🔍 Filter Events</h3>
+                </div>
+
+                <div class="filter-group">
+                    <h4>🎯 Event Type</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="type" value="webinar">
+                        <span class="checkmark"></span>
+                        Webinar
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="type" value="contest">
+                        <span class="checkmark"></span>
+                        Contest
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="type" value="workshop">
+                        <span class="checkmark"></span>
+                        Workshop
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="type" value="hackathon">
+                        <span class="checkmark"></span>
+                        Hackathon
+                    </label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>💻 Language</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="javascript">
+                        <span class="checkmark"></span>
+                        JavaScript
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="python">
+                        <span class="checkmark"></span>
+                        Python
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="java">
+                        <span class="checkmark"></span>
+                        Java
+                    </label>
+                </div>
+
+                <button class="btn-clear-filters">Clear All Filters</button>
+            </aside>
+
+            <!-- Events List -->
+            <main class="events-main">
+                <div class="events-header">
+                    <h2>All <span>Events</span></h2>
+                    <p>Join coding events and challenges to boost your skills</p>
+                    <div class="events-stats">
+                        <span>🎉 50+ Events</span>
+                        <span>👥 100K+ Participants</span>
+                        <span>⭐ 4.8 Average Rating</span>
+                    </div>
+                </div>
+
+                <div class="events-list">
+                    <!-- Event 1 -->
+                    <div class="event-card" data-type="webinar" data-language="javascript">
+                        <div class="event-header">
+                            <div class="event-icon">🎥</div>
+                            <div class="event-actions">
+                                <span class="type-badge webinar">Webinar</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="event-body">
+                            <h3>Advanced JavaScript Patterns</h3>
+                            <p>Learn advanced JavaScript patterns and best practices from industry experts.</p>
+                            <div class="event-meta">
+                                <span>📅 Feb 15, 2026</span>
+                                <span>⏱️ 2 hours</span>
+                                <span>⭐ 4.9</span>
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Patterns</span>
+                            </div>
+                            <a href="event-details.html" class="btn-join">Join Event</a>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div class="event-card" data-type="contest" data-language="python">
+                        <div class="event-header">
+                            <div class="event-icon">🏆</div>
+                            <div class="event-actions">
+                                <span class="type-badge contest">Contest</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="event-body">
+                            <h3>Python Coding Challenge</h3>
+                            <p>Compete in a timed coding challenge and solve algorithmic problems in Python.</p>
+                            <div class="event-meta">
+                                <span>📅 Feb 20, 2026</span>
+                                <span>⏱️ 3 hours</span>
+                                <span>⭐ 4.7</span>
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Algorithms</span>
+                            </div>
+                            <a href="event-details.html" class="btn-join">Join Event</a>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div class="event-card" data-type="workshop" data-language="javascript">
+                        <div class="event-header">
+                            <div class="event-icon">🛠️</div>
+                            <div class="event-actions">
+                                <span class="type-badge workshop">Workshop</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="event-body">
+                            <h3>React Workshop: Building Modern UIs</h3>
+                            <p>Hands-on workshop on building modern user interfaces with React.</p>
+                            <div class="event-meta">
+                                <span>📅 Feb 25, 2026</span>
+                                <span>⏱️ 4 hours</span>
+                                <span>⭐ 4.8</span>
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">UI/UX</span>
+                            </div>
+                            <a href="event-details.html" class="btn-join">Join Event</a>
+                        </div>
+                    </div>
+
+                    <!-- Event 4 -->
+                    <div class="event-card" data-type="hackathon" data-language="java">
+                        <div class="event-header">
+                            <div class="event-icon">💻</div>
+                            <div class="event-actions">
+                                <span class="type-badge hackathon">Hackathon</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="event-body">
+                            <h3>48-Hour Java Hackathon</h3>
+                            <p>Build innovative applications in Java over a 48-hour period.</p>
+                            <div class="event-meta">
+                                <span>📅 Mar 1-3, 2026</span>
+                                <span>⏱️ 48 hours</span>
+                                <span>⭐ 4.9</span>
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">Innovation</span>
+                            </div>
+                            <a href="event-details.html" class="btn-join">Join Event</a>
+                        </div>
+                    </div>
+
+                    <!-- Event 5 -->
+                    <div class="event-card" data-type="webinar" data-language="python">
+                        <div class="event-header">
+                            <div class="event-icon">📊</div>
+                            <div class="event-actions">
+                                <span class="type-badge webinar">Webinar</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="event-body">
+                            <h3>Data Science with Python</h3>
+                            <p>Explore data science techniques and tools using Python.</p>
+                            <div class="event-meta">
+                                <span>📅 Mar 5, 2026</span>
+                                <span>⏱️ 1.5 hours</span>
+                                <span>⭐ 4.6</span>
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">Data Science</span>
+                                <span class="tag">Python</span>
+                            </div>
+                            <a href="event-details.html" class="btn-join">Join Event</a>
+                        </div>
+                    </div>
+
+                    <!-- Event 6 -->
+                    <div class="event-card" data-type="contest" data-language="javascript">
+                        <div class="event-header">
+                            <div class="event-icon">⚡</div>
+                            <div class="event-actions">
+                                <span class="type-badge contest">Contest</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="event-body">
+                            <h3>Frontend Coding Contest</h3>
+                            <p>Showcase your frontend skills in this exciting coding contest.</p>
+                            <div class="event-meta">
+                                <span>📅 Mar 10, 2026</span>
+                                <span>⏱️ 2 hours</span>
+                                <span>⭐ 4.7</span>
+                            </div>
+                            <div class="event-tags">
+                                <span class="tag">Frontend</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <a href="event-details.html" class="btn-join">Join Event</a>
+                        </div>
+                    </div>
+
+                    <!-- Add more events as needed -->
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/events.js"></script>
+</body>
+</html>
+
+
+
+
+

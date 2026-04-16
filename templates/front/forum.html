@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forums - CodeQuest</title>
+    <link rel="stylesheet" href="../../assets/css/forum.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Code<span>Quest</span></div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="home.html">🏠 Home</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="problems.html">✏️ Quests</a></li>
+                <li><a href="projects.html">🎯 Missions</a></li>
+                <li><a href="events.html">🏆 Tournaments</a></li>
+                <li><a href="forum.html">🤝 Guild</a></li>
+                <li><a href="users.html">⚔️ Arena</a></li>
+            </ul>
+        </div>
+        <div class="nav-buttons">
+            <a href="sign-in.html" class="btn-login">Log In</a>
+            <button class="btn-play">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="level-badge">
+                ⚡ <span>Level 1 • 2,450 XP</span>
+            </div>
+            <h1>Join the Community</h1>
+            <p>Connect with fellow coders, ask questions, share knowledge, and grow together in our vibrant coding community!</p>
+            <div class="hero-buttons">
+                <button class="btn-browse">💬 Browse Forums</button>
+                <button class="btn-trailer">Watch Intro</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forums Section -->
+    <section class="forums-section">
+        <div class="forums-container">
+            <!-- Filter Sidebar -->
+            <aside class="filter-sidebar">
+                <div class="filter-header">
+                    <h3>🔍 Filter Forums</h3>
+                </div>
+
+                <div class="filter-group">
+                    <h4>🏷️ Category</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="category" value="general">
+                        <span class="checkmark"></span>
+                        General Discussion
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="category" value="help">
+                        <span class="checkmark"></span>
+                        Help & Support
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="category" value="projects">
+                        <span class="checkmark"></span>
+                        Project Showcase
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="category" value="careers">
+                        <span class="checkmark"></span>
+                        Career Advice
+                    </label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>💻 Language</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="javascript">
+                        <span class="checkmark"></span>
+                        JavaScript
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="python">
+                        <span class="checkmark"></span>
+                        Python
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="java">
+                        <span class="checkmark"></span>
+                        Java
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="html">
+                        <span class="checkmark"></span>
+                        HTML/CSS
+                    </label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>📊 Activity</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="activity" value="active">
+                        <span class="checkmark"></span>
+                        Most Active
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="activity" value="new">
+                        <span class="checkmark"></span>
+                        Recently Created
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="activity" value="popular">
+                        <span class="checkmark"></span>
+                        Most Popular
+                    </label>
+                </div>
+
+                <button class="btn-clear-filters">Clear All Filters</button>
+            </aside>
+
+            <!-- Forums Grid -->
+            <main class="forums-main">
+                <div class="forums-header">
+                    <h2>All <span>Forums</span></h2>
+                    <p>Join discussions, get help, and connect with the community</p>
+                    <div class="forums-stats">
+                        <span>💬 50+ Forums</span>
+                        <span>👥 25K+ Members</span>
+                        <span>📝 10K+ Posts</span>
+                    </div>
+                </div>
+
+                <div class="forums-grid">
+                    <!-- Forum 1 -->
+                    <div class="forum-card" data-category="general" data-language="javascript" data-activity="active">
+                        <div class="forum-header">
+                            <div class="forum-icon">⚔️</div>
+                            <div class="forum-actions">
+                                <span class="category-badge general">General</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="forum-body">
+                            <h3>Code Crusaders</h3>
+                            <p>Warriors of clean code and best practices. Share your coding victories and learn from fellow developers.</p>
+                            <div class="forum-meta">
+                                <span>👥 1,247 members</span>
+                                <span>💬 5.2K posts</span>
+                                <span>📅 Active today</span>
+                            </div>
+                            <div class="forum-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Best Practices</span>
+                            </div>
+                            <a href="forum-details.html" class="btn-join-forum">Join Discussion</a>
+                        </div>
+                    </div>
+
+                    <!-- Forum 2 -->
+                    <div class="forum-card" data-category="help" data-language="python" data-activity="active">
+                        <div class="forum-header">
+                            <div class="forum-icon">🧙</div>
+                            <div class="forum-actions">
+                                <span class="category-badge help">Help</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="forum-body">
+                            <h3>Magic Makers</h3>
+                            <p>Masters of algorithms and data structures. Get help with complex problems and share your solutions.</p>
+                            <div class="forum-meta">
+                                <span>👥 892 members</span>
+                                <span>💬 3.8K posts</span>
+                                <span>📅 Active today</span>
+                            </div>
+                            <div class="forum-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Algorithms</span>
+                            </div>
+                            <a href="forum-details.html" class="btn-join-forum">Join Discussion</a>
+                        </div>
+                    </div>
+
+                    <!-- Forum 3 -->
+                    <div class="forum-card" data-category="projects" data-language="html" data-activity="popular">
+                        <div class="forum-header">
+                            <div class="forum-icon">🎨</div>
+                            <div class="forum-actions">
+                                <span class="category-badge projects">Projects</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="forum-body">
+                            <h3>Pixel Pioneers</h3>
+                            <p>Creative frontend wizards and designers. Showcase your projects and get feedback from the community.</p>
+                            <div class="forum-meta">
+                                <span>👥 1,056 members</span>
+                                <span>💬 4.1K posts</span>
+                                <span>📅 Active yesterday</span>
+                            </div>
+                            <div class="forum-tags">
+                                <span class="tag">HTML/CSS</span>
+                                <span class="tag">Design</span>
+                            </div>
+                            <a href="forum-details.html" class="btn-join-forum">Join Discussion</a>
+                        </div>
+                    </div>
+
+                    <!-- Forum 4 -->
+                    <div class="forum-card" data-category="careers" data-language="java" data-activity="new">
+                        <div class="forum-header">
+                            <div class="forum-icon">🚀</div>
+                            <div class="forum-actions">
+                                <span class="category-badge careers">Careers</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="forum-body">
+                            <h3>Future Founders</h3>
+                            <p>Aspiring entrepreneurs and startup builders. Discuss career paths, job opportunities, and startup ideas.</p>
+                            <div class="forum-meta">
+                                <span>👥 734 members</span>
+                                <span>💬 2.3K posts</span>
+                                <span>📅 Active 2 days ago</span>
+                            </div>
+                            <div class="forum-tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">Entrepreneurship</span>
+                            </div>
+                            <a href="forum-details.html" class="btn-join-forum">Join Discussion</a>
+                        </div>
+                    </div>
+
+                    <!-- Forum 5 -->
+                    <div class="forum-card" data-category="general" data-language="javascript" data-activity="active">
+                        <div class="forum-header">
+                            <div class="forum-icon">🔬</div>
+                            <div class="forum-actions">
+                                <span class="category-badge general">General</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="forum-body">
+                            <h3>Data Scientists</h3>
+                            <p>Machine learning and AI enthusiasts. Discuss data science, ML algorithms, and AI applications.</p>
+                            <div class="forum-meta">
+                                <span>👥 623 members</span>
+                                <span>💬 1.9K posts</span>
+                                <span>📅 Active today</span>
+                            </div>
+                            <div class="forum-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Machine Learning</span>
+                            </div>
+                            <a href="forum-details.html" class="btn-join-forum">Join Discussion</a>
+                        </div>
+                    </div>
+
+                    <!-- Forum 6 -->
+                    <div class="forum-card" data-category="help" data-language="html" data-activity="popular">
+                        <div class="forum-header">
+                            <div class="forum-icon">🌟</div>
+                            <div class="forum-actions">
+                                <span class="category-badge help">Help</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="forum-body">
+                            <h3>Beginners Hub</h3>
+                            <p>Perfect place for newcomers to ask questions and get started with programming. No question is too basic!</p>
+                            <div class="forum-meta">
+                                <span>👥 2,134 members</span>
+                                <span>💬 7.8K posts</span>
+                                <span>📅 Active today</span>
+                            </div>
+                            <div class="forum-tags">
+                                <span class="tag">Beginners</span>
+                                <span class="tag">Help</span>
+                            </div>
+                            <a href="forum-details.html" class="btn-join-forum">Join Discussion</a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/forum.js"></script>
+
+</body>
+</html>
+
+
+
+
+

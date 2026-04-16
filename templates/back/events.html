@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Management - CodeQuest</title>
+    <link rel="stylesheet" href="../../assets/css/events-back.css">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo">Code<span>Quest</span></div>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">📊 Dashboard</a></li>
+                    <li><a href="users.html">👥 Users</a></li>
+                    <li><a href="courses.html">📚 Courses</a></li>
+                    <li><a href="#">🤝 Forum</a></li>
+                    <li><a href="problems.html">✏️ Problems</a></li>
+                    <li><a href="projects.html">🎯 Projects</a></li>
+                    <li><a href="events.html" class="active">🏆 Events</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="motivation-box">
+                    <p>Level up your skills! 🚀</p>
+                    <div class="rocket-emoji">👨‍🚀</div>
+                </div>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Events Management</h1>
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search events...">
+                        <button type="submit">🔍</button>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <div class="admin-profile">
+                        <span class="admin-avatar">👤</span>
+                        <span class="admin-name">Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Event Stats -->
+            <section class="user-stats">
+                <div class="stat-card">
+                    <h3>Total Events</h3>
+                    <p class="stat-number">1,234</p>
+                    <span class="stat-change positive">+12% this month</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Upcoming Events</h3>
+                    <p class="stat-number">89</p>
+                    <span class="stat-change positive">+8% this week</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Past Events</h3>
+                    <p class="stat-number">1,145</p>
+                    <span class="stat-change positive">+15% this month</span>
+                </div>
+                <div class="stat-card">
+                    <h3>New This Month</h3>
+                    <p class="stat-number">23</p>
+                    <span class="stat-change positive">+23% this week</span>
+                </div>
+            </section>
+
+            <!-- Filters and Actions -->
+            <section class="user-controls">
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All Events</button>
+                    <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                    <button class="filter-btn" data-filter="past">Past</button>
+                    <button class="filter-btn" data-filter="online">Online</button>
+                    <button class="filter-btn" data-filter="offline">Offline</button>
+                    <button class="filter-btn" data-filter="free">Free</button>
+                    <button class="filter-btn" data-filter="paid">Paid</button>
+                </div>
+                <div class="action-buttons">
+                    <button class="stats-btn">
+                        📊 View Stats
+                    </button>
+                    <button class="add-user-btn">
+                        <span>+</span> Add New Event
+                    </button>
+                </div>
+            </section>
+
+            <!-- Events Table -->
+            <section class="users-table-section">
+                <div class="table-container">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>Event ID</th>
+                                <th>Title</th>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Attendees</th>
+                                <th>Status</th>
+                                <th>Created Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Python Workshop</td>
+                                <td>Feb 15, 2026</td>
+                                <td><span class="type-badge online">Online</span></td>
+                                <td>156</td>
+                                <td><span class="status-badge upcoming">Upcoming</span></td>
+                                <td>Jan 15, 2024</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewEventDetails(1)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyEvent(1)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deleteEvent(1)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Hackathon 2026</td>
+                                <td>Mar 20, 2026</td>
+                                <td><span class="type-badge offline">Offline</span></td>
+                                <td>234</td>
+                                <td><span class="status-badge upcoming">Upcoming</span></td>
+                                <td>Feb 20, 2024</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewEventDetails(2)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyEvent(2)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deleteEvent(2)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>003</td>
+                                <td>Web Dev Conference</td>
+                                <td>Dec 10, 2025</td>
+                                <td><span class="type-badge offline">Offline</span></td>
+                                <td>567</td>
+                                <td><span class="status-badge past">Past</span></td>
+                                <td>Mar 10, 2024</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewEventDetails(3)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyEvent(3)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deleteEvent(3)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>004</td>
+                                <td>AI Seminar</td>
+                                <td>Apr 5, 2026</td>
+                                <td><span class="type-badge online">Online</span></td>
+                                <td>89</td>
+                                <td><span class="status-badge upcoming">Upcoming</span></td>
+                                <td>Apr 5, 2024</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewEventDetails(4)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyEvent(4)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deleteEvent(4)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>005</td>
+                                <td>Coding Bootcamp</td>
+                                <td>Nov 15, 2025</td>
+                                <td><span class="type-badge offline">Offline</span></td>
+                                <td>345</td>
+                                <td><span class="status-badge past">Past</span></td>
+                                <td>May 12, 2024</td>
+                                <td>
+                                    <div class="actions-dropdown">
+                                        <button class="actions-btn">⋮</button>
+                                        <div class="dropdown-menu">
+                                            <button class="dropdown-item" onclick="viewEventDetails(5)">👁️ View Details</button>
+                                            <button class="dropdown-item" onclick="modifyEvent(5)">✏️ Modify</button>
+                                            <button class="dropdown-item delete" onclick="deleteEvent(5)">🗑️ Delete</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="../../assets/js/events-back.js"></script>
+</body>
+</html></content>
+<parameter name="filePath">c:\Users\MSI-PC\Desktop\projet\templates\back\events.html

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - CodeQuest</title>
+    <link rel="stylesheet" href="../../assets/css/projects.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Code<span>Quest</span></div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="home.html">🏠 Home</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="problems.html">✏️ Quests</a></li>
+                <li><a href="projects.html">🎯 Missions</a></li>
+                <li><a href="events.html">🏆 Tournaments</a></li>
+                <li><a href="forum.html">🤝 Guild</a></li>
+                <li><a href="users.html">⚔️ Arena</a></li>
+            </ul>
+        </div>
+        <div class="nav-buttons">
+            <a href="sign-in.html" class="btn-login">Log In</a>
+            <button class="btn-play">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="level-badge">
+                ⚡ <span>Level 1 • 2,450 XP</span>
+            </div>
+            <h1>Master Programming Skills</h1>
+            <p>Choose from our comprehensive collection of projects. Learn at your own pace and unlock new programming abilities!</p>
+            <div class="hero-buttons">
+                <button class="btn-browse">🚀 Browse Projects</button>
+                <button class="btn-trailer">Watch Intro</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="projects-container">
+            <!-- Filter Sidebar -->
+            <aside class="filter-sidebar">
+                <div class="filter-header">
+                    <h3>🔍 Filter Projects</h3>
+                </div>
+
+                <div class="filter-group">
+                    <h4>📚 Project Type</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="type" value="web-development">
+                        <span class="checkmark"></span>
+                        Web Development
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="type" value="data-science">
+                        <span class="checkmark"></span>
+                        Data Science
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="type" value="mobile-dev">
+                        <span class="checkmark"></span>
+                        Mobile Development
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="type" value="game-dev">
+                        <span class="checkmark"></span>
+                        Game Development
+                    </label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>💻 Language</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="html">
+                        <span class="checkmark"></span>
+                        HTML
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="css">
+                        <span class="checkmark"></span>
+                        CSS
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="javascript">
+                        <span class="checkmark"></span>
+                        JavaScript
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="python">
+                        <span class="checkmark"></span>
+                        Python
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="java">
+                        <span class="checkmark"></span>
+                        Java
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="language" value="cpp">
+                        <span class="checkmark"></span>
+                        C++
+                    </label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>🎯 Difficulty</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="difficulty" value="beginner">
+                        <span class="checkmark"></span>
+                        Beginner
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="difficulty" value="intermediate">
+                        <span class="checkmark"></span>
+                        Intermediate
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="difficulty" value="advanced">
+                        <span class="checkmark"></span>
+                        Advanced
+                    </label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>⏱️ Duration</h4>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="duration" value="short">
+                        <span class="checkmark"></span>
+                        1-2 hours
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="duration" value="medium">
+                        <span class="checkmark"></span>
+                        3-5 hours
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" class="filter-checkbox" data-filter="duration" value="long">
+                        <span class="checkmark"></span>
+                        5+ hours
+                    </label>
+                </div>
+
+                <button class="btn-clear-filters">Clear All Filters</button>
+            </aside>
+
+            <!-- Projects Grid -->
+            <main class="projects-main">
+                <div class="projects-header">
+                    <h2>All <span>Projects</span></h2>
+                    <p>Build real-world applications and showcase your skills</p>
+                    <div class="projects-stats">
+                        <span>🚀 30+ Projects</span>
+                        <span>👥 75K+ Builders</span>
+                        <span>⭐ 4.7 Average Rating</span>
+                    </div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card" data-type="web-development" data-language="html" data-difficulty="beginner" data-duration="short">
+                        <div class="project-header">
+                            <div class="project-icon">🌐</div>
+                            <div class="project-actions">
+                                <span class="difficulty-badge beginner">Beginner</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h3>Personal Portfolio Website</h3>
+                            <p>Create a stunning personal portfolio to showcase your projects and skills</p>
+                            <div class="project-meta">
+                                <span>⏱️ 3 hours</span>
+                                <span>⭐ 4.8</span>
+                                <span>💻 HTML/CSS</span>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Portfolio</span>
+                                <span class="tag">Responsive</span>
+                            </div>
+                            <button class="btn-start">Start Project</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card" data-type="web-development" data-language="javascript" data-difficulty="intermediate" data-duration="medium">
+                        <div class="project-header">
+                            <div class="project-icon">🛒</div>
+                            <div class="project-actions">
+                                <span class="difficulty-badge intermediate">Intermediate</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h3>E-commerce Product Page</h3>
+                            <p>Build a dynamic product page with shopping cart functionality</p>
+                            <div class="project-meta">
+                                <span>⏱️ 5 hours</span>
+                                <span>⭐ 4.9</span>
+                                <span>💻 JavaScript</span>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">E-commerce</span>
+                                <span class="tag">DOM</span>
+                            </div>
+                            <button class="btn-start">Start Project</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card" data-type="data-science" data-language="python" data-difficulty="intermediate" data-duration="long">
+                        <div class="project-header">
+                            <div class="project-icon">📊</div>
+                            <div class="project-actions">
+                                <span class="difficulty-badge intermediate">Intermediate</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h3>Data Visualization Dashboard</h3>
+                            <p>Create interactive charts and graphs to visualize complex datasets</p>
+                            <div class="project-meta">
+                                <span>⏱️ 8 hours</span>
+                                <span>⭐ 4.7</span>
+                                <span>🐍 Python</span>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Data Viz</span>
+                                <span class="tag">Matplotlib</span>
+                            </div>
+                            <button class="btn-start">Start Project</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card" data-type="mobile-dev" data-language="javascript" data-difficulty="advanced" data-duration="long">
+                        <div class="project-header">
+                            <div class="project-icon">📱</div>
+                            <div class="project-actions">
+                                <span class="difficulty-badge advanced">Advanced</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h3>Weather App</h3>
+                            <p>Build a mobile weather application with location services and API integration</p>
+                            <div class="project-meta">
+                                <span>⏱️ 10 hours</span>
+                                <span>⭐ 4.8</span>
+                                <span>💻 React Native</span>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Mobile</span>
+                                <span class="tag">API</span>
+                            </div>
+                            <button class="btn-start">Start Project</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card" data-type="game-dev" data-language="javascript" data-difficulty="intermediate" data-duration="medium">
+                        <div class="project-header">
+                            <div class="project-icon">🎮</div>
+                            <div class="project-actions">
+                                <span class="difficulty-badge intermediate">Intermediate</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h3>Snake Game</h3>
+                            <p>Create a classic Snake game with smooth animations and score tracking</p>
+                            <div class="project-meta">
+                                <span>⏱️ 4 hours</span>
+                                <span>⭐ 4.6</span>
+                                <span>💻 JavaScript</span>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Games</span>
+                                <span class="tag">Canvas</span>
+                            </div>
+                            <button class="btn-start">Start Project</button>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card" data-type="web-development" data-language="python" data-difficulty="beginner" data-duration="short">
+                        <div class="project-header">
+                            <div class="project-icon">🤖</div>
+                            <div class="project-actions">
+                                <span class="difficulty-badge beginner">Beginner</span>
+                                <button class="save-icon"><img src="../../assets/icons/save-svgrepo-com.svg" alt="save" class="save-icon-img"></button>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h3>Simple Chatbot</h3>
+                            <p>Build a basic chatbot that responds to user inputs using Python</p>
+                            <div class="project-meta">
+                                <span>⏱️ 2 hours</span>
+                                <span>⭐ 4.5</span>
+                                <span>🐍 Python</span>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">AI</span>
+                                <span class="tag">Chatbot</span>
+                            </div>
+                            <button class="btn-start">Start Project</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/projects.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+

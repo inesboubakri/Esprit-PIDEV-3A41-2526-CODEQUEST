@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - CodeQuest</title>
+    <link rel="stylesheet" href="../../assets/css/sign-in.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Code<span>Quest</span></div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="home.html">🏠 Home</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="problems.html">✏️ Quests</a></li>
+                <li><a href="projects.html">🎯 Missions</a></li>
+                <li><a href="events.html">🏆 Tournaments</a></li>
+                <li><a href="forum.html">🤝 Guild</a></li>
+                <li><a href="users.html">⚔️ Arena</a></li>
+            </ul>
+        </div>
+        <div class="nav-buttons">
+            <a href="sign-up.html" class="btn-login">Sign Up</a>
+            <a href="sign-in.html" class="btn-play">Login In</a>
+        </div>
+    </nav>
+
+    <!-- Sign In Form Section -->
+    <section class="signin-section">
+        <div class="signin-container">
+            <div class="signin-form">
+                <div class="form-header">
+                    <h1>Welcome <span>Back</span></h1>
+                    <p>Continue your coding adventure!</p>
+                </div>
+
+                <form id="signinForm" class="form-content">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-container">
+                            <span class="input-icon">📧</span>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-container">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="password" name="password" required placeholder="Enter your password">
+                            <button type="button" class="password-toggle" id="passwordToggle">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="remember" name="remember">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-signin">
+                        <span class="btn-text">Sign In</span>
+                        <span class="btn-icon">⚔️</span>
+                    </button>
+
+                    <div class="form-footer">
+                        <p>Don't have an account? <a href="sign-up.html" class="link">Sign up here</a></p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+        </div>
+        <div class="hero-content">
+            <div class="level-badge">
+                ⚡ <span>Level 1 • 2,450 XP</span>
+            </div>
+            <h1>Your Coding Adventure Awaits</h1>
+            <p>Continue your epic journey to master programming. Complete quests, earn XP, and improve your coding skills!</p>
+            <div class="hero-buttons">
+                <button class="btn-start">▶ Continue Adventure</button>
+                <button class="btn-trailer">Watch Trailer</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/sign-in.js"></script>
+
+</body>
+</html>
+
+
+
+
+
