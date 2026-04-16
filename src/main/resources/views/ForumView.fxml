@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.ForumController" stylesheets="@../styles.css">
+    <top>
+        <VBox spacing="0">
+            <HBox fx:id="navbar" style="-fx-background-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent); -fx-padding: 0 40 0 40;" spacing="40" alignment="CENTER_LEFT" prefHeight="80">
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="Code" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="Quest" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                </HBox>
+                
+                <VBox style="-fx-background-color: rgba(255, 255, 255, 0.08); -fx-border-radius: 999; -fx-background-radius: 999; -fx-border-color: rgba(255, 255, 255, 0.1); -fx-border-width: 1;" prefHeight="40">
+                    <HBox spacing="8" alignment="CENTER" style="-fx-padding: 8 16 8 16;">
+                        <Hyperlink text="🏠 Home" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavHome"/>
+                        <Hyperlink text="📚 Courses" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavCourses"/>
+                        <Hyperlink text="✏️ Problems" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavProblems"/>
+                        <Hyperlink text="🎯 Projects" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavProjects"/>
+                        <Hyperlink text="🏆 Events" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavEvents"/>
+                        <Hyperlink text="🤝 Forum" style="-fx-text-fill: white;-fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavForum"/>
+                        <Hyperlink text="⚔️ Users" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavUsers"/>
+                    </HBox>
+                </VBox>
+                
+                <HBox spacing="28" alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                    <Hyperlink text="Profile" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500;" onAction="#handleNavProfile"/>
+                    <Button text="Log Out" styleClass="btn-primary" onAction="#handleLogOut"/>
+                </HBox>
+            </HBox>
+            
+            <VBox style="-fx-background-color: #1a1a1a; -fx-padding: 60 40 60 40;" alignment="CENTER" spacing="20">
+                <Label text="🤝 Community Guild - Forum" style="-fx-font-size: 40; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                <Label text="Ask questions, share knowledge, and help others" style="-fx-font-size: 16; -fx-text-fill: white;"/>
+            </VBox>
+        </VBox>
+    </top>
+    <center>
+        <HBox spacing="0">
+            <ScrollPane fitToHeight="true" style="-fx-border-color: transparent;">
+                <VBox styleClass="filter-sidebar" spacing="20" style="-fx-padding: 24; -fx-min-width: 280;">
+                    <Label text="📂 Categories" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                    <Hyperlink text="General Discussion" style="-fx-text-fill: #FF6B4A; -fx-font-weight: bold; -fx-font-size: 13;"/>
+                    <Hyperlink text="Web Development" style="-fx-text-fill: #666; -fx-font-size: 13;"/>
+                    <Hyperlink text="Mobile Development" style="-fx-text-fill: #666; -fx-font-size: 13;"/>
+                    <Hyperlink text="Data Science" style="-fx-text-fill: #666; -fx-font-size: 13;"/>
+                    <Hyperlink text="Job Opportunities" style="-fx-text-fill: #666; -fx-font-size: 13;"/>
+                </VBox>
+            </ScrollPane>
+            
+            <VBox HBox.hgrow="ALWAYS" spacing="24" style="-fx-padding: 40;">
+                <HBox spacing="12">
+                    <TextField promptText="Search discussions..." style="-fx-padding: 12 16 12 16; -fx-min-width: 300;" HBox.hgrow="ALWAYS"/>
+                    <Button text="New Topic" styleClass="btn-primary" style="-fx-padding: 12 28 12 28;" onAction="#handleNewTopic"/>
+                </HBox>
+                
+                <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+                    <VBox fx:id="forumList" spacing="16" style="-fx-padding: 0;">
+                        <!-- Topic 1 -->
+                        <VBox styleClass="card" spacing="12">
+                            <HBox spacing="12" alignment="TOP_LEFT">
+                                <Label text="👤" style="-fx-font-size: 20;"/>
+                                <VBox HBox.hgrow="ALWAYS" spacing="4">
+                                    <Label text="How do I learn React Hooks?" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                                    <Label text="Posted by John Doe in Web Development" style="-fx-font-size: 12; -fx-text-fill: #666;"/>
+                                    <Label text="I'm new to React and want to understand hooks better. Can someone explain useState and useEffect?" style="-fx-font-size: 13; -fx-text-fill: #333; -fx-wrap-text: true;"/>
+                                </VBox>
+                                <VBox alignment="CENTER" spacing="4">
+                                    <Label text="12" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                                    <Label text="replies" style="-fx-font-size: 11; -fx-text-fill: #999;"/>
+                                </VBox>
+                            </HBox>
+                            <Label text="Last reply 2 hours ago" style="-fx-font-size: 11; -fx-text-fill: #999;"/>
+                            <Button text="View Discussion" styleClass="btn-primary" style="-fx-padding: 8 16 8 16; -fx-font-size: 12;"/>
+                        </VBox>
+                    </VBox>
+                </ScrollPane>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

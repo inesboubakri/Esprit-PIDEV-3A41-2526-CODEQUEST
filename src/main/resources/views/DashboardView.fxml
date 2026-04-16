@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.DashboardController"
+            stylesheets="@../styles.css">
+    
+    <!-- Left Sidebar Navigation -->
+    <left>
+        <VBox styleClass="sidebar" spacing="0" style="-fx-min-width: 280; -fx-background-color: #FFFFFF; -fx-padding: 20; -fx-border-color: #E8E8E8; -fx-border-width: 0 1 0 0;">
+            <!-- Logo -->
+            <HBox spacing="4" alignment="CENTER_LEFT" style="-fx-padding: 0 0 20 0; -fx-border-color: #E8E8E8; -fx-border-width: 0 0 1 0;">
+                <Label text="Code" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                <Label text="Quest" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+            </HBox>
+            
+            <!-- Navigation Menu -->
+            <VBox fx:id="sidebarContent" spacing="8">
+                <Hyperlink text="📊 Dashboard" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-background-color: #FF6B4A; -fx-padding: 12 16 12 16; -fx-background-radius: 8; -fx-font-size: 14;" onAction="#handleNavDashboard"/>
+                <Hyperlink text="👥 Users" style="-fx-text-fill: #333; -fx-padding: 12 16 12 16; -fx-font-size: 14; -fx-cursor: hand;" onAction="#handleNavUsers"/>
+                <Hyperlink text="📚 Courses" style="-fx-text-fill: #333; -fx-padding: 12 16 12 16; -fx-font-size: 14; -fx-cursor: hand;" onAction="#handleNavCourses"/>
+                <Hyperlink text="🎪 Events" style="-fx-text-fill: #333; -fx-padding: 12 16 12 16; -fx-font-size: 14; -fx-cursor: hand;" onAction="#handleNavEvents"/>
+                <Hyperlink text="💬 Forum" style="-fx-text-fill: #333; -fx-padding: 12 16 12 16; -fx-font-size: 14; -fx-cursor: hand;" onAction="#handleNavForum"/>
+                <Hyperlink text="🧩 Problems" style="-fx-text-fill: #333; -fx-padding: 12 16 12 16; -fx-font-size: 14; -fx-cursor: hand;" onAction="#handleNavProblems"/>
+                <Hyperlink text="🚀 Projects" style="-fx-text-fill: #333; -fx-padding: 12 16 12 16; -fx-font-size: 14; -fx-cursor: hand;" onAction="#handleNavProjects"/>
+            </VBox>
+            
+            <!-- Sidebar Footer -->
+            <Region VBox.vgrow="ALWAYS"/>
+            <VBox style="-fx-background-color: #F5F5F5; -fx-padding: 16; -fx-background-radius: 8; -fx-border-radius: 8;" alignment="CENTER" spacing="12">
+                <Label text="Level up your skills! 🚀" style="-fx-font-size: 12; -fx-text-fill: #333; -fx-wrap-text: true; -fx-text-alignment: center;"/>
+                <Label text="👨‍🚀" style="-fx-font-size: 24;"/>
+            </VBox>
+        </VBox>
+    </left>
+    
+    <!-- Main Content Area -->
+    <center>
+        <VBox spacing="0">
+            <!-- Top Header Bar -->
+            <HBox style="-fx-background-color: white; -fx-padding: 20 40 20 40; -fx-border-color: #E0E0E0; -fx-border-width: 0 0 1 0;" spacing="20" alignment="CENTER_LEFT">
+                <Label text="Admin Dashboard" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                
+                <Region HBox.hgrow="ALWAYS"/>
+                
+                <!-- Search Bar -->
+                <HBox spacing="0" style="-fx-background-color: #F5F5F5; -fx-padding: 8 16 8 16; -fx-background-radius: 8; -fx-border-radius: 8;">
+                    <TextField promptText="Search..." style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-min-width: 250;" fx:id="searchField"/>
+                    <Button text="🔍" style="-fx-background-color: transparent; -fx-text-fill: #999; -fx-cursor: hand;"/>
+                </HBox>
+                
+                <!-- Theme Toggle -->
+                <Button text="🌙" style="-fx-background-color: transparent; -fx-font-size: 16; -fx-padding: 8; -fx-cursor: hand;" onAction="#handleThemeToggle"/>
+                
+                <!-- Admin Profile -->
+                <HBox spacing="12" alignment="CENTER">
+                    <Label text="👤" style="-fx-font-size: 24;"/>
+                    <Label text="Admin" style="-fx-font-size: 14; -fx-font-weight: 600; -fx-text-fill: #333;"/>
+                </HBox>
+            </HBox>
+            
+            <!-- Stats Grid -->
+            <ScrollPane fitToWidth="true" style="-fx-border-color: transparent;">
+                <VBox spacing="40" style="-fx-padding: 40;">
+                    <!-- Stats Cards Row 1 -->
+                    <GridPane fx:id="statsGrid" hgap="20" vgap="20" style="-fx-padding: 0;">
+                        <!-- Total Users Card -->
+                        <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="stat-card" spacing="12">
+                            <Label text="Total Users" style="-fx-font-size: 14; -fx-font-weight: 600; -fx-text-fill: #333;"/>
+                            <Label text="1,234" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                            <Label text="+12% from last month" style="-fx-font-size: 12; -fx-text-fill: #4CAF50;"/>
+                            <ProgressBar progress="0.75" style="-fx-padding: 4; -fx-background-color: #F0F0F0; -fx-background-radius: 8;"/>
+                        </VBox>
+                        
+                        <!-- Active Courses Card -->
+                        <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="stat-card" spacing="12">
+                            <Label text="Active Courses" style="-fx-font-size: 14; -fx-font-weight: 600; -fx-text-fill: #333;"/>
+                            <Label text="56" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                            <Label text="+5% this week" style="-fx-font-size: 12; -fx-text-fill: #4CAF50;"/>
+                            <ProgressBar progress="0.60" style="-fx-padding: 4; -fx-background-color: #F0F0F0; -fx-background-radius: 8;"/>
+                        </VBox>
+                        
+                        <!-- Forum Posts Card -->
+                        <VBox GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="stat-card" spacing="12">
+                            <Label text="Forum Posts" style="-fx-font-size: 14; -fx-font-weight: 600; -fx-text-fill: #333;"/>
+                            <Label text="789" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                            <Label text="-2% yesterday" style="-fx-font-size: 12; -fx-text-fill: #F44336;"/>
+                            <ProgressBar progress="0.85" style="-fx-padding: 4; -fx-background-color: #F0F0F0; -fx-background-radius: 8;"/>
+                        </VBox>
+                        
+                        <!-- Problems Solved Card -->
+                        <VBox GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="stat-card" spacing="12">
+                            <Label text="Problems Solved" style="-fx-font-size: 14; -fx-font-weight: 600; -fx-text-fill: #333;"/>
+                            <Label text="12,345" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                            <Label text="+18% this month" style="-fx-font-size: 12; -fx-text-fill: #4CAF50;"/>
+                            <ProgressBar progress="0.90" style="-fx-padding: 4; -fx-background-color: #F0F0F0; -fx-background-radius: 8;"/>
+                        </VBox>
+                        
+                        <!-- Projects Submitted Card -->
+                        <VBox GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="stat-card" spacing="12">
+                            <Label text="Projects Submitted" style="-fx-font-size: 14; -fx-font-weight: 600; -fx-text-fill: #333;"/>
+                            <Label text="234" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                            <Label text="+8% last week" style="-fx-font-size: 12; -fx-text-fill: #4CAF50;"/>
+                            <ProgressBar progress="0.70" style="-fx-padding: 4; -fx-background-color: #F0F0F0; -fx-background-radius: 8;"/>
+                        </VBox>
+                        
+                        <!-- Events Hosted Card -->
+                        <VBox GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="stat-card" spacing="12">
+                            <Label text="Events Hosted" style="-fx-font-size: 14; -fx-font-weight: 600; -fx-text-fill: #333;"/>
+                            <Label text="12" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                            <Label text="+25% this quarter" style="-fx-font-size: 12; -fx-text-fill: #4CAF50;"/>
+                            <ProgressBar progress="0.50" style="-fx-padding: 4; -fx-background-color: #F0F0F0; -fx-background-radius: 8;"/>
+                        </VBox>
+                    </GridPane>
+                    
+                    <!-- Dashboard Grid (Top Users + Recent Activity) -->
+                    <HBox spacing="20">
+                        <!-- Top Active Users -->
+                        <VBox styleClass="card" HBox.hgrow="ALWAYS" spacing="16">
+                            <Label text="Top Active Users" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <VBox spacing="12">
+                                <!-- User 1 -->
+                                <HBox style="-fx-padding: 12; -fx-background-color: #F8F9FA; -fx-background-radius: 8;" spacing="12" alignment="CENTER_LEFT">
+                                    <Label text="JD" style="-fx-background-color: #FF6B4A; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12; -fx-background-radius: 50%; -fx-min-width: 40; -fx-alignment: center;"/>
+                                    <VBox HBox.hgrow="ALWAYS" spacing="4">
+                                        <Label text="John Doe" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                                        <Label text="Level 15 • 2,450 XP" style="-fx-font-size: 12; -fx-text-fill: #666;"/>
+                                    </VBox>
+                                    <Label text="⭐ 4.8" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #FFB800;"/>
+                                </HBox>
+                                
+                                <!-- User 2 -->
+                                <HBox style="-fx-padding: 12; -fx-background-color: #F8F9FA; -fx-background-radius: 8;" spacing="12" alignment="CENTER_LEFT">
+                                    <Label text="SM" style="-fx-background-color: #FF6B4A; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12; -fx-background-radius: 50%; -fx-min-width: 40; -fx-alignment: center;"/>
+                                    <VBox HBox.hgrow="ALWAYS" spacing="4">
+                                        <Label text="Sarah Miller" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                                        <Label text="Level 12 • 1,890 XP" style="-fx-font-size: 12; -fx-text-fill: #666;"/>
+                                    </VBox>
+                                    <Label text="⭐ 4.7" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #FFB800;"/>
+                                </HBox>
+                                
+                                <!-- User 3 -->
+                                <HBox style="-fx-padding: 12; -fx-background-color: #F8F9FA; -fx-background-radius: 8;" spacing="12" alignment="CENTER_LEFT">
+                                    <Label text="AK" style="-fx-background-color: #FF6B4A; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12; -fx-background-radius: 50%; -fx-min-width: 40; -fx-alignment: center;"/>
+                                    <VBox HBox.hgrow="ALWAYS" spacing="4">
+                                        <Label text="Alex Kim" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                                        <Label text="Level 10 • 1,650 XP" style="-fx-font-size: 12; -fx-text-fill: #666;"/>
+                                    </VBox>
+                                    <Label text="⭐ 4.6" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #FFB800;"/>
+                                </HBox>
+                            </VBox>
+                        </VBox>
+                        
+                        <!-- Recent Activity -->
+                        <VBox styleClass="card" HBox.hgrow="ALWAYS" spacing="16">
+                            <Label text="Recent Activity" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <VBox spacing="12">
+                                <!-- Activity 1 -->
+                                <VBox style="-fx-padding: 12; -fx-background-color: #F8F9FA; -fx-background-radius: 8;" spacing="8">
+                                    <HBox spacing="12">
+                                        <Label text="👤" style="-fx-font-size: 16;"/>
+                                        <Label text="John Doe registered and completed &quot;Python Basics&quot;" style="-fx-font-size: 13; -fx-text-fill: #333; -fx-wrap-text: true;" HBox.hgrow="ALWAYS"/>
+                                    </HBox>
+                                    <Label text="2 minutes ago" style="-fx-font-size: 11; -fx-text-fill: #999;"/>
+                                </VBox>
+                                
+                                <!-- Activity 2 -->
+                                <VBox style="-fx-padding: 12; -fx-background-color: #F8F9FA; -fx-background-radius: 8;" spacing="8">
+                                    <HBox spacing="12">
+                                        <Label text="📚" style="-fx-font-size: 16;"/>
+                                        <Label text="Course &quot;JavaScript Advanced&quot; completed by 5 users" style="-fx-font-size: 13; -fx-text-fill: #333; -fx-wrap-text: true;" HBox.hgrow="ALWAYS"/>
+                                    </HBox>
+                                    <Label text="15 minutes ago" style="-fx-font-size: 11; -fx-text-fill: #999;"/>
+                                </VBox>
+                                
+                                <!-- Activity 3 -->
+                                <VBox style="-fx-padding: 12; -fx-background-color: #F8F9FA; -fx-background-radius: 8;" spacing="8">
+                                    <HBox spacing="12">
+                                        <Label text="💬" style="-fx-font-size: 16;"/>
+                                        <Label text="New forum post: &quot;Help with React hooks&quot; in General Discussion" style="-fx-font-size: 13; -fx-text-fill: #333; -fx-wrap-text: true;" HBox.hgrow="ALWAYS"/>
+                                    </HBox>
+                                    <Label text="1 hour ago" style="-fx-font-size: 11; -fx-text-fill: #999;"/>
+                                </VBox>
+                            </VBox>
+                        </VBox>
+                    </HBox>
+                </VBox>
+            </ScrollPane>
+        </VBox>
+    </center>
+</BorderPane>

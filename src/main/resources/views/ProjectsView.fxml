@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.ProjectsController"
+            stylesheets="@../styles.css">
+    
+    <top>
+        <VBox spacing="0">
+            <HBox fx:id="navbar" style="-fx-background-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent); -fx-padding: 0 40 0 40;" spacing="40" alignment="CENTER_LEFT" prefHeight="80">
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="Code" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="Quest" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                </HBox>
+                
+                <VBox style="-fx-background-color: rgba(255, 255, 255, 0.08); -fx-border-radius: 999; -fx-background-radius: 999; -fx-border-color: rgba(255, 255, 255, 0.1); -fx-border-width: 1;" prefHeight="40">
+                    <HBox spacing="8" alignment="CENTER" style="-fx-padding: 8 16 8 16;">
+                        <Hyperlink text="🏠 Home" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavHome"/>
+                        <Hyperlink text="📚 Courses" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavCourses"/>
+                        <Hyperlink text="✏️ Problems" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavProblems"/>
+                        <Hyperlink text="🎯 Projects" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavProjects"/>
+                        <Hyperlink text="🏆 Events" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavEvents"/>
+                        <Hyperlink text="🤝 Forum" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavForum"/>
+                        <Hyperlink text="⚔️ Users" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavUsers"/>
+                    </HBox>
+                </VBox>
+                
+                <HBox spacing="28" alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                    <Hyperlink text="Profile" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500;" onAction="#handleNavProfile"/>
+                    <Button text="Log Out" styleClass="btn-primary" onAction="#handleLogOut"/>
+                </HBox>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <center>
+        <VBox>
+            <VBox style="-fx-background-color: #1a1a1a; -fx-padding: 60 40 60 40;" alignment="CENTER" spacing="20">
+                <Label text="🎯 Missions - Build Real Projects" style="-fx-font-size: 40; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                <Label text="Complete projects to build your portfolio and learn by doing" style="-fx-font-size: 16; -fx-text-fill: white;" wrapText="true" maxWidth="800"/>
+            </VBox>
+            
+            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background-color: #F5F5F5;">
+                <FlowPane fx:id="projectsFlowPane" hgap="24" vgap="24" 
+                          style="-fx-padding: 40; -fx-background-color: #F5F5F5;" prefWrapLength="1200"/>
+            </ScrollPane>
+        </VBox>
+    </center>
+</BorderPane>

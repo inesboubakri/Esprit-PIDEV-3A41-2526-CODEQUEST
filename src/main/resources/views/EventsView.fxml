@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.EventsController" stylesheets="@../styles.css">
+    <top>
+        <VBox spacing="0">
+            <HBox fx:id="navbar" style="-fx-background-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent); -fx-padding: 0 40 0 40;" spacing="40" alignment="CENTER_LEFT" prefHeight="80">
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="Code" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="Quest" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                </HBox>
+                
+                <VBox style="-fx-background-color: rgba(255, 255, 255, 0.08); -fx-border-radius: 999; -fx-background-radius: 999; -fx-border-color: rgba(255, 255, 255, 0.1); -fx-border-width: 1;" prefHeight="40">
+                    <HBox spacing="8" alignment="CENTER" style="-fx-padding: 8 16 8 16;">
+                        <Hyperlink text="🏠 Home" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavHome"/>
+                        <Hyperlink text="📚 Courses" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavCourses"/>
+                        <Hyperlink text="✏️ Problems" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavProblems"/>
+                        <Hyperlink text="🎯 Projects" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavProjects"/>
+                        <Hyperlink text="🏆 Events" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavEvents"/>
+                        <Hyperlink text="🤝 Forum" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavForum"/>
+                        <Hyperlink text="⚔️ Users" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavUsers"/>
+                    </HBox>
+                </VBox>
+                
+                <HBox spacing="28" alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                    <Hyperlink text="Profile" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500;" onAction="#handleNavProfile"/>
+                    <Button text="Log Out" styleClass="btn-primary" onAction="#handleLogOut"/>
+                </HBox>
+            </HBox>
+            
+            <VBox style="-fx-background-color: #1a1a1a; -fx-padding: 60 40 60 40;" alignment="CENTER" spacing="20">
+                <Label text="🏆 Tournaments &amp; Events" style="-fx-font-size: 40; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                <Label text="Compete with others and showcase your skills" style="-fx-font-size: 16; -fx-text-fill: white;"/>
+            </VBox>
+        </VBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true">
+            <VBox spacing="20" style="-fx-padding: 40;">
+                <!-- Event 1 -->
+                <VBox styleClass="card" spacing="12">
+                    <HBox spacing="16" alignment="CENTER_LEFT">
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="Spring Coding Challenge 2024" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <Label text="March 15 - April 15, 2024" style="-fx-font-size: 13; -fx-text-fill: #FF6B4A; -fx-font-weight: bold;"/>
+                            <Label text="Compete with 5000+ programmers worldwide in this month-long competition" style="-fx-font-size: 13; -fx-text-fill: #666; -fx-wrap-text: true;"/>
+                        </VBox>
+                        <Label text="🏆" style="-fx-font-size: 32;"/>
+                    </HBox>
+                    <HBox spacing="12" style="-fx-padding: 12 0 0 0;">
+                        <Button text="Join Now" styleClass="btn-primary" style="-fx-padding: 10 20 10 20;"/>
+                        <Button text="View Rules" styleClass="btn-outline" style="-fx-padding: 10 20 10 20;"/>
+                    </HBox>
+                </VBox>
+                
+                <!-- Event 2 -->
+                <VBox styleClass="card" spacing="12">
+                    <HBox spacing="16" alignment="CENTER_LEFT">
+                        <VBox spacing="8" HBox.hgrow="ALWAYS">
+                            <Label text="Weekly Algorithm Battle" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <Label text="Every Saturday at 2:00 PM UTC" style="-fx-font-size: 13; -fx-text-fill: #FF6B4A; -fx-font-weight: bold;"/>
+                            <Label text="Solve 5 algorithmic problems in 3 hours to compete for fame and prizes" style="-fx-font-size: 13; -fx-text-fill: #666; -fx-wrap-text: true;"/>
+                        </VBox>
+                        <Label text="⚔️" style="-fx-font-size: 32;"/>
+                    </HBox>
+                    <HBox spacing="12" style="-fx-padding: 12 0 0 0;">
+                        <Button text="Register" styleClass="btn-primary" style="-fx-padding: 10 20 10 20;"/>
+                        <Button text="View Leaderboard" styleClass="btn-outline" style="-fx-padding: 10 20 10 20;"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.ProfileController" stylesheets="@../styles.css">
+    <top>
+        <VBox spacing="0">
+            <HBox fx:id="navbar" style="-fx-background-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent); -fx-padding: 0 40 0 40;" spacing="40" alignment="CENTER_LEFT" prefHeight="80">
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="Code" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="Quest" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                </HBox>
+                
+                <VBox style="-fx-background-color: rgba(255, 255, 255, 0.08); -fx-border-radius: 999; -fx-background-radius: 999; -fx-border-color: rgba(255, 255, 255, 0.1); -fx-border-width: 1;" prefHeight="40">
+                    <HBox spacing="8" alignment="CENTER" style="-fx-padding: 8 16 8 16;">
+                        <Hyperlink text="🏠 Home" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavHome"/>
+                        <Hyperlink text="📚 Courses" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavCourses"/>
+                        <Hyperlink text="✏️ Problems" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavProblems"/>
+                        <Hyperlink text="🎯 Projects" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavProjects"/>
+                        <Hyperlink text="🏆 Events" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavEvents"/>
+                        <Hyperlink text="🤝 Forum" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavForum"/>
+                        <Hyperlink text="⚔️ Users" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavUsers"/>
+                    </HBox>
+                </VBox>
+                
+                <HBox spacing="28" alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                    <Hyperlink text="Profile" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500;" onAction="#handleNavProfile"/>
+                    <Button text="Log Out" styleClass="btn-primary" onAction="#handleLogOut"/>
+                </HBox>
+            </HBox>
+            
+            <HBox style="-fx-background-color: white; -fx-padding: 20 40 20 40; -fx-border-color: #E0E0E0; -fx-border-width: 0 0 1 0;" spacing="20" alignment="CENTER_LEFT">
+                <Label text="Profile" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Edit Profile" styleClass="btn-primary" style="-fx-padding: 10 20 10 20;" onAction="#handleEditProfile"/>
+                <Button text="Settings" styleClass="btn-secondary" style="-fx-padding: 10 20 10 20;" onAction="#handleSettings"/>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true">
+            <VBox spacing="30" style="-fx-padding: 40;">
+                <!-- Profile Header -->
+                <VBox styleClass="card" spacing="20" alignment="CENTER">
+                    <Label text="👤" style="-fx-font-size: 64;"/>
+                    <Label text="John Doe" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                    <Label text="Level 15 Programmer" style="-fx-font-size: 16; -fx-text-fill: #FF6B4A; -fx-font-weight: bold;"/>
+                    <HBox spacing="40" alignment="CENTER">
+                        <VBox alignment="CENTER" spacing="4">
+                            <Label text="2,450" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <Label text="Total XP" style="-fx-font-size: 12; -fx-text-fill: #666;"/>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="4">
+                            <Label text="250" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <Label text="Courses" style="-fx-font-size: 12; -fx-text-fill: #666;"/>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="4">
+                            <Label text="156" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                            <Label text="Problems Solved" style="-fx-font-size: 12; -fx-text-fill: #666;"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+                
+                <!-- Skills Section -->
+                <VBox styleClass="card" spacing="12">
+                    <Label text="🎯 Skills" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                    <FlowPane hgap="12" vgap="12">
+                        <Label text="JavaScript" styleClass="badge" style="-fx-background-color: #FFE0B2; -fx-text-fill: #E65100;"/>
+                        <Label text="React" styleClass="badge" style="-fx-background-color: #FFE0B2; -fx-text-fill: #E65100;"/>
+                        <Label text="Node.js" styleClass="badge" style="-fx-background-color: #FFE0B2; -fx-text-fill: #E65100;"/>
+                        <Label text="Python" styleClass="badge" style="-fx-background-color: #FFE0B2; -fx-text-fill: #E65100;"/>
+                        <Label text="Java" styleClass="badge" style="-fx-background-color: #FFE0B2; -fx-text-fill: #E65100;"/>
+                    </FlowPane>
+                </VBox>
+                
+                <!-- Bio Section -->
+                <VBox styleClass="card" spacing="12">
+                    <Label text="📝 About Me" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                    <Label text="Passionate programmer with 5 years of experience in full-stack development. Love building scalable applications and mentoring junior developers." style="-fx-font-size: 14; -fx-text-fill: #666; -fx-wrap-text: true;"/>
+                </VBox>
+                
+                <!-- Recent Activity -->
+                <VBox styleClass="card" spacing="12">
+                    <Label text="📊 Recent Activity" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                    <VBox spacing="12">
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <Label text="✓" style="-fx-text-fill: #4CAF50; -fx-font-weight: bold; -fx-font-size: 16;"/>
+                            <Label text="Completed 'JavaScript Advanced' course" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                            <Label text="2 days ago" style="-fx-font-size: 11; -fx-text-fill: #999;"/>
+                        </HBox>
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <Label text="✓" style="-fx-text-fill: #4CAF50; -fx-font-weight: bold; -fx-font-size: 16;"/>
+                            <Label text="Solved 10 algorithmic problems" style="-fx-font-size: 13; -fx-text-fill: #666;"/>
+                            <Label text="5 days ago" style="-fx-font-size: 11; -fx-text-fill: #999;"/>
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
