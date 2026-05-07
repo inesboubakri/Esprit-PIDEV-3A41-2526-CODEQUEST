@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.ProblemsController"
+            stylesheets="@../styles.css">
+    
+    <top>
+        <VBox spacing="0">
+            <HBox fx:id="navbar" style="-fx-background-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent); -fx-padding: 0 40 0 40;" spacing="40" alignment="CENTER_LEFT" prefHeight="80">
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="Code" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="Quest" style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                </HBox>
+                
+                <VBox style="-fx-background-color: rgba(255, 255, 255, 0.08); -fx-border-radius: 999; -fx-background-radius: 999; -fx-border-color: rgba(255, 255, 255, 0.1); -fx-border-width: 1;" prefHeight="40">
+                    <HBox spacing="8" alignment="CENTER" style="-fx-padding: 8 16 8 16;">
+                        <Hyperlink text="🏠 Home" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavHome"/>
+                        <Hyperlink text="📚 Courses" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavCourses"/>
+                        <Hyperlink text="✏️ Problems" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavProblems"/>
+                        <Hyperlink text="🎯 Projects" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavProjects"/>
+                        <Hyperlink text="🏆 Events" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavEvents"/>
+                        <Hyperlink text="🤝 Forum" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavForum"/>
+                        <Hyperlink text="⚔️ Users" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500; -fx-padding: 8 16 8 16;" onAction="#handleNavUsers"/>
+                    </HBox>
+                </VBox>
+                
+                <HBox spacing="28" alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                    <Hyperlink text="Profile" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: 500;" onAction="#handleNavProfile"/>
+                    <Button text="Log Out" styleClass="btn-primary" onAction="#handleLogOut"/>
+                </HBox>
+            </HBox>
+            
+            <VBox style="-fx-background-color: #1a1a1a; -fx-padding: 60 40 60 40;" alignment="CENTER" spacing="20">
+                <Label text="✏️ Coding Quests" style="-fx-font-size: 40; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                <Label text="Solve practice problems to strengthen your programming skills" style="-fx-font-size: 16; -fx-text-fill: white;" wrapText="true" maxWidth="800"/>
+            </VBox>
+        </VBox>
+    </top>
+    
+    <center>
+        <HBox spacing="0">
+            <ScrollPane fitToHeight="true" style="-fx-border-color: transparent;">
+                <VBox styleClass="filter-sidebar" spacing="20" style="-fx-padding: 24; -fx-min-width: 280;">
+                    <Label text="🔍 Filter Problems" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                    
+                    <VBox spacing="12">
+                        <Label text="🎯 Difficulty" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                        <CheckBox text="Easy"/>
+                        <CheckBox text="Medium"/>
+                        <CheckBox text="Hard"/>
+                    </VBox>
+                    
+                    <VBox spacing="12">
+                        <Label text="💻 Category" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+                        <CheckBox text="Arrays"/>
+                        <CheckBox text="Strings"/>
+                        <CheckBox text="Trees"/>
+                        <CheckBox text="Graph"/>
+                        <CheckBox text="DP"/>
+                    </VBox>
+                    
+                    <Button text="Clear Filters" style="-fx-padding: 12 16 12 16;"/>
+                </VBox>
+            </ScrollPane>
+            
+            <VBox HBox.hgrow="ALWAYS" spacing="32" style="-fx-padding: 40;">
+                <HBox spacing="16" alignment="CENTER_RIGHT">
+                    <TextField promptText="Search problems..." style="-fx-padding: 12 16 12 16; -fx-min-width: 300;"/>
+                    <ComboBox promptText="Sort by: Newest" style="-fx-padding: 12 16 12 16;"/>
+                </HBox>
+                
+                <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+                    <VBox fx:id="problemsList" spacing="16" style="-fx-padding: 0;">
+                        <!-- Problem Card 1 -->
+                        <VBox styleClass="card" spacing="12">
+                            <HBox spacing="12" alignment="CENTER_LEFT">
+                                <Label text="1" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                                <Label text="Two Sum" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #333;" HBox.hgrow="ALWAYS"/>
+                                <Label text="Easy" style="-fx-background-color: #C8E6C9; -fx-text-fill: #2E7D32; -fx-padding: 4 12 4 12; -fx-background-radius: 15; -fx-font-size: 12; -fx-font-weight: bold;"/>
+                            </HBox>
+                            <Label text="Given an array of integers, return indices of the two numbers that add up to a specific target." style="-fx-text-fill: #666; -fx-wrap-text: true;"/>
+                            <HBox spacing="12" alignment="CENTER_LEFT">
+                                <Label text="Arrays" styleClass="badge" style="-fx-background-color: #E3F2FD; -fx-text-fill: #2196F3;"/>
+                                <Label text="Hash Map" styleClass="badge" style="-fx-background-color: #E3F2FD; -fx-text-fill: #2196F3;"/>
+                                <Label text="⭐ 4.5 (250 ratings)" style="-fx-font-size: 12; -fx-text-fill: #FFB800;"/>
+                            </HBox>
+                            <Button text="Solve" styleClass="btn-primary" style="-fx-padding: 10 20 10 20;"/>
+                        </VBox>
+                        
+                        <!-- Problem Card 2 -->
+                        <VBox styleClass="card" spacing="12">
+                            <HBox spacing="12" alignment="CENTER_LEFT">
+                                <Label text="2" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                                <Label text="Reverse String" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #333;" HBox.hgrow="ALWAYS"/>
+                                <Label text="Easy" style="-fx-background-color: #C8E6C9; -fx-text-fill: #2E7D32; -fx-padding: 4 12 4 12; -fx-background-radius: 15; -fx-font-size: 12; -fx-font-weight: bold;"/>
+                            </HBox>
+                            <Label text="Write a function that reverses a string. Input is given as an array of characters." style="-fx-text-fill: #666; -fx-wrap-text: true;"/>
+                            <HBox spacing="12" alignment="CENTER_LEFT">
+                                <Label text="Strings" styleClass="badge" style="-fx-background-color: #E3F2FD; -fx-text-fill: #2196F3;"/>
+                                <Label text="Two Pointers" styleClass="badge" style="-fx-background-color: #E3F2FD; -fx-text-fill: #2196F3;"/>
+                                <Label text="⭐ 4.7 (180 ratings)" style="-fx-font-size: 12; -fx-text-fill: #FFB800;"/>
+                            </HBox>
+                            <Button text="Solve" styleClass="btn-primary" style="-fx-padding: 10 20 10 20;"/>
+                        </VBox>
+                    </VBox>
+                </ScrollPane>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

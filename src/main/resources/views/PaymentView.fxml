@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.PaymentController"
+            stylesheets="@../styles.css"
+            style="-fx-background-color: #F5F5F5;">
+
+    <!-- HEADER BAR -->
+    <top>
+        <VBox style="-fx-background-color: #FFFFFF; -fx-effect: dropshadow(three-pass-box, #DDDDDD, 6, 0, 0, 2);">
+            <padding>
+                <Insets top="16" right="32" bottom="16" left="32"/>
+            </padding>
+            <HBox alignment="CENTER" spacing="12" maxWidth="1.7976931348623157E308">
+                <Label fx:id="backArrowLabel" text="←" onMouseClicked="#handleBack" pickOnBounds="true"
+                       style="-fx-font-size: 18; -fx-text-fill: #666666; -fx-cursor: hand;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="🔒 Secure Payment" wrapText="true" maxWidth="1.7976931348623157E308"
+                       style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="✓ 256-bit SSL encrypted" wrapText="true" maxWidth="1.7976931348623157E308"
+                       style="-fx-font-size: 12; -fx-text-fill: #4CAF50; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- MAIN CONTENT -->
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true" hbarPolicy="AS_NEEDED" vbarPolicy="AS_NEEDED"
+                    style="-fx-background-color: transparent; -fx-background: #F5F5F5;">
+            <VBox alignment="TOP_CENTER" fillWidth="true" spacing="0" prefWidth="580" minWidth="400"
+                  maxWidth="1.7976931348623157E308">
+                <padding>
+                    <Insets top="48" right="40" bottom="48" left="40"/>
+                </padding>
+
+                <!-- Center the card horizontally; HBox grows to ScrollPane content width -->
+                <HBox alignment="CENTER" fillHeight="false" maxWidth="1.7976931348623157E308">
+                    <!-- MAIN CARD -->
+                    <VBox maxWidth="560" minWidth="320" prefWidth="560" spacing="0"
+                          style="-fx-background-color: #FFFFFF; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-color: #E0E0E0; -fx-effect: dropshadow(three-pass-box, #DDDDDD, 10, 0, 0, 3);">
+                        <VBox spacing="24" fillWidth="true" maxWidth="1.7976931348623157E308">
+                            <padding>
+                                <Insets top="40" right="40" bottom="40" left="40"/>
+                            </padding>
+
+                            <!-- PLAN CHOICE (e.g. immediately after sign-up) -->
+                            <VBox fx:id="planChoiceBox" spacing="20" visible="false" managed="false" fillWidth="true">
+                                <Label fx:id="planChoiceTitleLabel" text="Choose your plan" wrapText="true"
+                                       maxWidth="1.7976931348623157E308"
+                                       style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
+                                <Label text="Pick Free to start at no cost, or Premium for full access." wrapText="true"
+                                       maxWidth="1.7976931348623157E308"
+                                       style="-fx-font-size: 13; -fx-text-fill: #666666;"/>
+                                <HBox spacing="16" alignment="CENTER" maxWidth="1.7976931348623157E308">
+                                    <Button fx:id="chooseFreePlanButton" text="Free — \$0/month" onAction="#handleChooseFreePlan"
+                                            wrapText="true" maxWidth="1.7976931348623157E308"
+                                            style="-fx-background-color: #FFFFFF; -fx-text-fill: #FF6B4A; -fx-border-color: #FF6B4A; -fx-border-radius: 6; -fx-background-radius: 6; -fx-font-size: 14; -fx-font-weight: bold; -fx-padding: 12 20 12 20; -fx-cursor: hand;"/>
+                                    <Button fx:id="choosePremiumPlanButton" text="Premium — \$9.99/month" onAction="#handleChoosePremiumPlan"
+                                            wrapText="true" maxWidth="1.7976931348623157E308"
+                                            style="-fx-background-color: #FF6B4A; -fx-text-fill: #FFFFFF; -fx-border-radius: 6; -fx-background-radius: 6; -fx-font-size: 14; -fx-font-weight: bold; -fx-padding: 12 20 12 20; -fx-cursor: hand;"/>
+                                </HBox>
+                            </VBox>
+
+                            <!-- STEP 1: CARD FORM -->
+                            <VBox fx:id="stepCardBox" spacing="24" fillWidth="true" maxWidth="1.7976931348623157E308">
+
+                                <!-- PACKAGE SUMMARY -->
+                                <Label fx:id="packageSummaryLabel" text="💳 Premium Plan — \$9.99/month" wrapText="true"
+                                       maxWidth="1.7976931348623157E308"
+                                       style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #FF6B4A; -fx-padding: 10 16 10 16; -fx-background-color: #FFF8E1; -fx-background-radius: 6;"/>
+
+                                <!-- CARD INFORMATION HEADER -->
+                                <VBox spacing="4" fillWidth="true" maxWidth="1.7976931348623157E308">
+                                    <Label text="Card Information" wrapText="true" maxWidth="1.7976931348623157E308"
+                                           style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
+                                    <Region prefHeight="1" maxWidth="1.7976931348623157E308" style="-fx-background-color: #EEEEEE;"/>
+                                </VBox>
+
+                                <!-- FORM FIELDS -->
+                                <VBox spacing="16" fillWidth="true" maxWidth="1.7976931348623157E308">
+
+                                    <!-- FULL NAME -->
+                                    <VBox spacing="6" fillWidth="true" maxWidth="1.7976931348623157E308">
+                                        <Label text="Full Name" wrapText="true" maxWidth="1.7976931348623157E308"
+                                               style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #666666;"/>
+                                        <TextField fx:id="cardNameField" promptText="Name as it appears on card"
+                                                   maxWidth="1.7976931348623157E308"
+                                                   style="-fx-background-color: #FFFFFF; -fx-border-color: #E0E0E0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 10 14 10 14; -fx-font-size: 13;"/>
+                                    </VBox>
+
+                                    <!-- CARD NUMBER -->
+                                    <VBox spacing="6" fillWidth="true" maxWidth="1.7976931348623157E308">
+                                        <Label text="Card Number" wrapText="true" maxWidth="1.7976931348623157E308"
+                                               style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #666666;"/>
+                                        <TextField fx:id="cardNumberField" promptText="1234 5678 9012 3456"
+                                                   maxWidth="1.7976931348623157E308"
+                                                   style="-fx-background-color: #FFFFFF; -fx-border-color: #E0E0E0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 10 14 10 14; -fx-font-size: 13;"/>
+                                    </VBox>
+
+                                    <!-- EXPIRY AND CVV -->
+                                    <HBox spacing="16" maxWidth="1.7976931348623157E308">
+                                        <VBox spacing="6" HBox.hgrow="ALWAYS" fillWidth="true" maxWidth="1.7976931348623157E308">
+                                            <Label text="Expiry Date" wrapText="true" maxWidth="1.7976931348623157E308"
+                                                   style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #666666;"/>
+                                            <TextField fx:id="expiryField" promptText="MM/YY"
+                                                       maxWidth="1.7976931348623157E308"
+                                                       style="-fx-background-color: #FFFFFF; -fx-border-color: #E0E0E0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 10 14 10 14; -fx-font-size: 13;"/>
+                                        </VBox>
+                                        <VBox spacing="6" HBox.hgrow="ALWAYS" fillWidth="true" maxWidth="1.7976931348623157E308">
+                                            <Label text="CVV" wrapText="true" maxWidth="1.7976931348623157E308"
+                                                   style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #666666;"/>
+                                            <TextField fx:id="cvvField" promptText="3 digits"
+                                                       maxWidth="1.7976931348623157E308"
+                                                       style="-fx-background-color: #FFFFFF; -fx-border-color: #E0E0E0; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 10 14 10 14; -fx-font-size: 13;"/>
+                                        </VBox>
+                                    </HBox>
+
+                                </VBox>
+
+                                <!-- ERROR MESSAGE -->
+                                <Label fx:id="cardStepError" text="" visible="false" managed="false" wrapText="true"
+                                       maxWidth="1.7976931348623157E308"
+                                       style="-fx-font-size: 12; -fx-text-fill: #D32F2F;"/>
+
+                                <!-- DIVIDER -->
+                                <Region prefHeight="1" maxWidth="1.7976931348623157E308" style="-fx-background-color: #EEEEEE;"/>
+
+                                <!-- PAY BUTTON -->
+                                <Button fx:id="payButton" text="💳 Pay and Verify" onAction="#handlePay"
+                                        maxWidth="1.7976931348623157E308"
+                                        style="-fx-background-color: #FF6B4A; -fx-text-fill: #FFFFFF; -fx-font-size: 15; -fx-font-weight: bold; -fx-padding: 14; -fx-background-radius: 6; -fx-cursor: hand;"/>
+
+                                <!-- SECURITY NOTE -->
+                                <Label text="🔒 Your payment information is never stored on our servers" wrapText="true"
+                                       alignment="CENTER" maxWidth="1.7976931348623157E308"
+                                       style="-fx-font-size: 11; -fx-text-fill: #999999;"/>
+
+                            </VBox>
+
+                            <!-- STEP 2: VERIFICATION (managed toggled in code when step is shown) -->
+                            <VBox fx:id="stepVerifyBox" spacing="0" visible="false" managed="false"
+                                  fillWidth="true" maxWidth="1.7976931348623157E308"
+                                  style="-fx-background-color: #FFFBF7; -fx-background-radius: 10; -fx-border-color: #FFE0D6; -fx-border-radius: 10; -fx-border-width: 1;">
+
+                                <VBox spacing="24" fillWidth="true" maxWidth="1.7976931348623157E308">
+                                    <padding>
+                                        <Insets top="28" right="24" bottom="28" left="24"/>
+                                    </padding>
+
+                                    <!-- HEAD -->
+                                    <VBox alignment="CENTER" spacing="12" fillWidth="true" maxWidth="1.7976931348623157E308">
+                                        <Label text="Step 2 · Verify email" wrapText="true" alignment="CENTER"
+                                               maxWidth="1.7976931348623157E308"
+                                               style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #FF6B4A; -fx-letter-spacing: 0.5;"/>
+                                        <Label text="✉️" style="-fx-font-size: 44;"/>
+                                        <Label text="Almost there" wrapText="true" alignment="CENTER"
+                                               maxWidth="1.7976931348623157E308"
+                                               style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
+                                        <Label fx:id="verifyStepInfo" text="We sent a 6-digit code to your email."
+                                               wrapText="true" alignment="CENTER" maxWidth="1.7976931348623157E308"
+                                               style="-fx-font-size: 13; -fx-text-fill: #555555;"/>
+                                    </VBox>
+
+                                    <!-- CODE INPUT: wide field, left-aligned text (no CENTER on TextField — JavaFX 21) -->
+                                    <VBox spacing="8" fillWidth="true" maxWidth="1.7976931348623157E308">
+                                        <Label text="6-digit code" wrapText="true" maxWidth="1.7976931348623157E308"
+                                               style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #666666;"/>
+                                        <TextField fx:id="verifyCodeField" promptText="e.g. 123456" editable="true"
+                                                   prefWidth="400" minWidth="200" maxWidth="1.7976931348623157E308"
+                                                   style="-fx-background-color: #FFFFFF; -fx-border-color: #FF6B4A; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8; -fx-padding: 12 16 12 16; -fx-font-size: 20; -fx-font-family: 'Consolas', 'Courier New', monospace;"/>
+                                        <Label text="Digits only. Use Backspace to correct." wrapText="true"
+                                               maxWidth="1.7976931348623157E308"
+                                               style="-fx-font-size: 11; -fx-text-fill: #888888;"/>
+                                    </VBox>
+
+                                    <!-- ERROR -->
+                                    <Label fx:id="verifyStepError" text="" visible="false" managed="false" wrapText="true"
+                                           maxWidth="1.7976931348623157E308"
+                                           style="-fx-font-size: 13; -fx-text-fill: #D32F2F;"/>
+
+                                    <Region prefHeight="1" maxWidth="1.7976931348623157E308" style="-fx-background-color: #F0D0C4;"/>
+
+                                    <Button fx:id="verifyButton" text="✅ Confirm payment" onAction="#handleVerifyPayment"
+                                            maxWidth="1.7976931348623157E308"
+                                            style="-fx-background-color: #FF6B4A; -fx-text-fill: #FFFFFF; -fx-font-size: 15; -fx-font-weight: bold; -fx-padding: 14; -fx-background-radius: 6; -fx-cursor: hand;"/>
+
+                                    <HBox alignment="CENTER" maxWidth="1.7976931348623157E308">
+                                        <Hyperlink fx:id="resendLink" text="Didn't get the email? Resend code" onAction="#handleResendCode" wrapText="true"
+                                                   style="-fx-text-fill: #FF6B4A; -fx-font-size: 12; -fx-border-color: transparent;"/>
+                                    </HBox>
+                                </VBox>
+                            </VBox>
+
+                        </VBox>
+                    </VBox>
+                </HBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>
