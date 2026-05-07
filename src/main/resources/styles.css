@@ -765,25 +765,3 @@
 .bg-white {
     -fx-background-color: -bg-white;
 }
-
-/* ============================================================
-   AI COACH PANEL — TextArea readable text on white background
-   ============================================================ */
-
-/* Override the dark panel background for the coach output area */
-#aiCoachOutput {
-    -fx-text-fill: #1a1a1a;
-    -fx-background-color: #FFFFFF;
-    -fx-control-inner-background: #FFFFFF;
-    -fx-background-insets: 0;
-    -fx-background-radius: 10;
-    -fx-border-color: #E0E0E0;
-    -fx-border-radius: 10;
-}
-
-/* JavaFX TextArea text colour is applied via the .content child node */
-#aiCoachOutput .content {
-    -fx-text-fill: #1a1a1a;
-    -fx-background-color: #FFFFFF;
-}
-

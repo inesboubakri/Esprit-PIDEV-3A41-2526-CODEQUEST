@@ -10,10 +10,9 @@
             stylesheets="@../styles.css">
     
     <center>
-        <ScrollPane fitToWidth="true" style="-fx-padding: 0; -fx-border-color: transparent;">
-            <VBox alignment="TOP_CENTER" spacing="40" style="-fx-padding: 60;">
-                <!-- Brand Section -->
-                <VBox alignment="CENTER" spacing="16">
+        <VBox alignment="CENTER" spacing="40" style="-fx-padding: 60;">
+            <!-- Brand Section -->
+            <VBox alignment="CENTER" spacing="16">
                 <Label text="Code" style="-fx-font-size: 36; -fx-font-weight: bold; -fx-text-fill: #333;"/>
                 <Label text="Quest" style="-fx-font-size: 36; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
                 <Label text="Welcome Back, Adventurer!" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #333;"/>
@@ -34,23 +33,15 @@
                     <PasswordField promptText="Enter your password" styleClass="text-input" fx:id="passwordField"/>
                 </VBox>
                 
-                <!-- Error Message -->
-                <Label fx:id="errorLabel" text="Wrong email or password" style="-fx-text-fill: #d32f2f; -fx-font-size: 12; -fx-font-weight: bold;" visible="false" managed="false"/>
-                
                 <!-- Remember Me & Forgot Password -->
                 <HBox spacing="16" alignment="CENTER_LEFT">
                     <CheckBox text="Remember me" style="-fx-font-size: 12; -fx-text-fill: #666;"/>
                     <Region HBox.hgrow="ALWAYS"/>
-                    <Hyperlink text="Forgot Password?" style="-fx-font-size: 12; -fx-text-fill: #FF6B4A;" onAction="#handleForgotPassword"/>
+                    <Hyperlink text="Forgot Password?" style="-fx-font-size: 12; -fx-text-fill: #FF6B4A;"/>
                 </HBox>
                 
                 <!-- Sign In Button -->
                 <Button text="Sign In" styleClass="btn-primary" style="-fx-padding: 14 20 14 20;" minWidth="300" onAction="#handleSignIn"/>
-
-                <!-- Face ID Login Button -->
-                <Button fx:id="faceIdLoginButton" text="🔍 Sign In with Face ID"
-                    style="-fx-padding: 12 20 12 20; -fx-background-color: #111827; -fx-text-fill: #FFFFFF; -fx-font-size: 14; -fx-border-color: #111827; -fx-border-width: 1; -fx-border-radius: 8; -fx-background-radius: 8;"
-                    minWidth="300" onAction="#handleFaceIdLogin"/>
                 
                 <!-- Divider -->
                 <HBox spacing="12" alignment="CENTER">
@@ -59,33 +50,9 @@
                     <Separator HBox.hgrow="ALWAYS"/>
                 </HBox>
                 
-                <!-- Social Login Buttons -->
-                <Button fx:id="googleSignInButton" text="🔵 Sign in with Google" 
-                        style="-fx-padding: 12 20 12 20; -fx-background-color: #FFFFFF; -fx-text-fill: #333; -fx-font-size: 14; -fx-border-color: #DADCE0; -fx-border-width: 1; -fx-border-radius: 8; -fx-background-radius: 8;" 
-                        minWidth="300" onAction="#handleGoogleSignIn">
-                    <tooltip>
-                        <Tooltip text="Sign in with your Google account"/>
-                    </tooltip>
-                </Button>
-                
-                <Button fx:id="githubSignInButton" text="🐙 Sign in with GitHub" 
-                        style="-fx-padding: 12 20 12 20; -fx-background-color: #24292e; -fx-text-fill: #FFFFFF; -fx-font-size: 14; -fx-border-color: #1b1f23; -fx-border-width: 1; -fx-border-radius: 8; -fx-background-radius: 8;" 
-                        minWidth="300" onAction="#handleGithubSignIn">
-                    <tooltip>
-                        <Tooltip text="Sign in with your GitHub account"/>
-                    </tooltip>
-                </Button>
-                
-                <Button fx:id="discordSignInButton" text="🎮 Sign in with Discord" 
-                        style="-fx-padding: 12 20 12 20; -fx-background-color: #5865F2; -fx-text-fill: #FFFFFF; -fx-font-size: 14; -fx-border-color: #4752C4; -fx-border-width: 1; -fx-border-radius: 8; -fx-background-radius: 8;" 
-                        minWidth="300" onAction="#handleDiscordSignIn">
-                    <tooltip>
-                        <Tooltip text="Sign in with your Discord account"/>
-                    </tooltip>
-                </Button>
-                
-                <!-- Social Login Status -->
-                <Label fx:id="socialLoginStatus" style="-fx-text-fill: #4CAF50; -fx-font-size: 12; -fx-font-weight: bold;" visible="false" managed="false" wrapText="true"/>
+                <!-- Social Login -->
+                <Button text="🔵 Sign in with Google" style="-fx-padding: 12 20 12 20; -fx-background-color: #F5F5F5; -fx-text-fill: #333; -fx-font-size: 14; -fx-border-color: #E0E0E0; -fx-border-width: 1; -fx-border-radius: 8; -fx-background-radius: 8;" minWidth="300"/>
+                <Button text="🐙 Sign in with GitHub" style="-fx-padding: 12 20 12 20; -fx-background-color: #F5F5F5; -fx-text-fill: #333; -fx-font-size: 14; -fx-border-color: #E0E0E0; -fx-border-width: 1; -fx-border-radius: 8; -fx-background-radius: 8;" minWidth="300"/>
                 
                 <!-- Sign Up Link -->
                 <HBox alignment="CENTER" spacing="8">
@@ -93,7 +60,6 @@
                     <Hyperlink text="Sign Up Here" style="-fx-font-size: 12; -fx-text-fill: #FF6B4A; -fx-font-weight: bold;" onAction="#handleSignUpRedirect"/>
                 </HBox>
             </VBox>
-            </VBox>
-        </ScrollPane>
+        </VBox>
     </center>
 </BorderPane>

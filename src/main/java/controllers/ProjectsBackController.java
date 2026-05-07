@@ -1,103 +1,147 @@
 package controllers;
 
+import dao.ProjetDAO;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.layout.VBox;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import models.Projet;
 import utils.NavigationManager;
-import utils.AppConfig;
+
+import java.net.URL;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.ResourceBundle;
 
 /**
  * Controller for the Projects Management view (admin).
  */
-public class ProjectsBackController {
+public class ProjectsBackController implements Initializable {
 
     @FXML
     private VBox sidebarContent;
 
     @FXML
-    private TableView projectsTable;
+    private TableView<Projet> projectsTable;
 
-    @FXML
-    public void initialize() {
-        // Initialize projects table and data
-        setupProjectsTable();
+    private ProjetDAO projetDAO;
+    private ObservableList<Projet> projectsList;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        projetDAO = new ProjetDAO();
+        projectsList = FXCollections.observableArrayList();
+
+        // Setup table columns
+        setupTableColumns();
+
+        // Load projects from database
+        loadProjects();
     }
 
     /**
-     * Setup the projects table structure with sample data.
+     * Setup TableView columns with property bindings
      */
-    private void setupProjectsTable() {
-        // Sample projects data
-        ObservableList<Object[]> projectsList = FXCollections.observableArrayList(
-            new Object[]{"PROJ-001", "E-Commerce Platform", "Completed", 5, "2024-05-01", "2024-04-15"},
-            new Object[]{"PROJ-002", "Social Media App", "Active", 8, "2024-06-15", "2024-04-20"},
-            new Object[]{"PROJ-003", "AI Chatbot", "In Progress", 3, "2024-06-01", "2024-05-01"},
-            new Object[]{"PROJ-004", "Blog CMS", "Completed", 4, "2024-04-30", "2024-04-01"},
-            new Object[]{"PROJ-005", "Mobile Game", "On Hold", 6, "2024-07-01", "2024-05-15"},
-            new Object[]{"PROJ-006", "Analytics Dashboard", "Active", 5, "2024-06-20", "2024-05-05"}
-        );
-        projectsTable.setItems(projectsList);
+    private void setupTableColumns() {
+        TableColumn<Projet, Integer> idCol = new TableColumn<>("Project ID");
+        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        idCol.setPrefWidth(110);
+
+        TableColumn<Projet, String> titleCol = new TableColumn<>("Title");
+        titleCol.setCellValueFactory(new PropertyValueFactory<>("titre"));
+        titleCol.setPrefWidth(200);
+
+        TableColumn<Projet, String> niveauCol = new TableColumn<>("Level");
+        niveauCol.setCellValueFactory(new PropertyValueFactory<>("niveau"));
+        niveauCol.setPrefWidth(120);
+
+        TableColumn<Projet, String> taskCol = new TableColumn<>("Tasks");
+        taskCol.setCellValueFactory(new PropertyValueFactory<>("taches"));
+        taskCol.setPrefWidth(110);
+
+        TableColumn<Projet, LocalDate> deadlineCol = new TableColumn<>("Deadline");
+        deadlineCol.setCellValueFactory(new PropertyValueFactory<>("date_limite"));
+        deadlineCol.setPrefWidth(140);
+
+        TableColumn<Projet, LocalDate> createdCol = new TableColumn<>("Created Date");
+        createdCol.setCellValueFactory(new PropertyValueFactory<>("date_debut"));
+        createdCol.setPrefWidth(130);
+
+        projectsTable.getColumns().clear();
+        projectsTable.getColumns().addAll(idCol, titleCol, niveauCol, taskCol, deadlineCol, createdCol);
+    }
+
+    /**
+     * Load all projects from database and populate TableView
+     */
+    private void loadProjects() {
+        try {
+            System.out.println("[ProjectsBackController] Starting loadProjects()...");
+            List<Projet> projets = projetDAO.getAll();
+            System.out.println("[ProjectsBackController] Retrieved " + projets.size() + " projects from DAO");
+            
+            projectsList.clear();
+            projectsList.addAll(projets);
+            projectsTable.setItems(projectsList);
+            
+            System.out.println("[ProjectsBackController] ✓ Loaded " + projectsList.size() + " projects into TableView");
+        } catch (Exception e) {
+            System.err.println("[ProjectsBackController] ✗ Error loading projects: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Helper method to get Stage from any FXML node
+     */
+    private Stage getStage() {
+        return (Stage) sidebarContent.getScene().getWindow();
     }
 
     // Sidebar navigation handlers
     @FXML
     private void handleNavDashboard() {
-        navigateToView(AppConfig.VIEW_DASHBOARD, "Dashboard");
+        NavigationManager.navigateTo(getStage(), "views/DashboardView.fxml", "Dashboard");
     }
 
     @FXML
     private void handleNavUsers() {
-        navigateToView(AppConfig.VIEW_USERS_BACK, "Users Management");
+        NavigationManager.navigateTo(getStage(), "views/UsersBackView.fxml", "Users - Admin");
     }
 
     @FXML
     private void handleNavCourses() {
-        navigateToView(AppConfig.VIEW_COURSES_BACK, "Courses Management");
+        NavigationManager.navigateTo(getStage(), "views/CoursesBackView.fxml", "Courses - Admin");
     }
 
     @FXML
     private void handleNavForum() {
-        navigateToView(AppConfig.VIEW_FORUM_BACK, "Forum Management");
+        NavigationManager.navigateTo(getStage(), "views/ForumBackView.fxml", "Forum - Admin");
     }
 
     @FXML
     private void handleNavProblems() {
-        navigateToView(AppConfig.VIEW_PROBLEMS_BACK, "Problems Management");
+        NavigationManager.navigateTo(getStage(), "views/ProblemsBackView.fxml", "Problems - Admin");
     }
 
     @FXML
     private void handleNavProjects() {
-        navigateToView(AppConfig.VIEW_PROJECTS_BACK, "Projects Management");
+        // Already on projects view, no action needed
     }
 
     @FXML
     private void handleNavEvents() {
-        navigateToView(AppConfig.VIEW_EVENTS_BACK, "Events Management");
-    }
-
-    @FXML
-    private void handleNavHome() {
-        navigateToView(AppConfig.VIEW_HOME, "Home");
+        NavigationManager.navigateTo(getStage(), "views/EventsBackView.fxml", "Events - Admin");
     }
 
     @FXML
     private void handleThemeToggle() {
         // TODO: Implement theme toggle functionality
-    }
-
-    /**
-     * Helper method to navigate to a view.
-     */
-    private void navigateToView(String viewPath, String title) {
-        try {
-            Stage stage = (Stage) sidebarContent.getScene().getWindow();
-            NavigationManager.navigateTo(stage, viewPath, title);
-        } catch (Exception e) {
-            System.err.println("Error navigating to: " + viewPath);
-            e.printStackTrace();
-        }
+        System.out.println("Theme toggle clicked");
     }
 }

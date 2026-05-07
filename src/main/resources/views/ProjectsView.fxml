@@ -43,47 +43,9 @@
                 <Label text="Complete projects to build your portfolio and learn by doing" style="-fx-font-size: 16; -fx-text-fill: white;" wrapText="true" maxWidth="800"/>
             </VBox>
             
-            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
-                <FlowPane hgap="24" vgap="24" style="-fx-padding: 40;" prefWrapLength="1200">
-                    <!-- Project Card 1 -->
-                    <VBox styleClass="card" style="-fx-min-width: 300; -fx-max-width: 300;" spacing="12">
-                        <Label text="Weather App" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #333;"/>
-                        <Label text="Build a real-time weather application using APIs" style="-fx-font-size: 12; -fx-text-fill: #666; -fx-wrap-text: true;"/>
-                        <HBox spacing="8">
-                            <Label text="Intermediate" style="-fx-background-color: #FFE0B2; -fx-text-fill: #E65100; -fx-padding: 4 12 4 12; -fx-background-radius: 15; -fx-font-size: 11; -fx-font-weight: bold;"/>
-                            <Label text="HTML, CSS, JS" style="-fx-text-fill: #666; -fx-font-size: 11;"/>
-                        </HBox>
-                        <ProgressBar progress="0.30"/>
-                        <Label text="⭐ 4.6 (120 submissions)" style="-fx-font-size: 11; -fx-text-fill: #FFB800;"/>
-                        <Button text="Start Project" styleClass="btn-primary" style="-fx-padding: 10 20 10 20;" onAction="#handleStartProject1"/>
-                    </VBox>
-                    
-                    <!-- Project Card 2 -->
-                    <VBox styleClass="card" style="-fx-min-width: 300; -fx-max-width: 300;" spacing="12">
-                        <Label text="E-Commerce Platform" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #333;"/>
-                        <Label text="Create a complete online shopping system" style="-fx-font-size: 12; -fx-text-fill: #666; -fx-wrap-text: true;"/>
-                        <HBox spacing="8">
-                            <Label text="Advanced" style="-fx-background-color: #FFCCCC; -fx-text-fill: #C62828; -fx-padding: 4 12 4 12; -fx-background-radius: 15; -fx-font-size: 11; -fx-font-weight: bold;"/>
-                            <Label text="React, Node.js" style="-fx-text-fill: #666; -fx-font-size: 11;"/>
-                        </HBox>
-                        <ProgressBar progress="0.15"/>
-                        <Label text="⭐ 4.9 (89 submissions)" style="-fx-font-size: 11; -fx-text-fill: #FFB800;"/>
-                        <Button text="Start Project" styleClass="btn-primary" style="-fx-padding: 10 20 10 20;" onAction="#handleStartProject2"/>
-                    </VBox>
-                    
-                    <!-- Project Card 3 -->
-                    <VBox styleClass="card" style="-fx-min-width: 300; -fx-max-width: 300;" spacing="12">
-                        <Label text="Chat Application" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #333;"/>
-                        <Label text="Build a real-time messaging application" style="-fx-font-size: 12; -fx-text-fill: #666; -fx-wrap-text: true;"/>
-                        <HBox spacing="8">
-                            <Label text="Intermediate" style="-fx-background-color: #FFE0B2; -fx-text-fill: #E65100; -fx-padding: 4 12 4 12; -fx-background-radius: 15; -fx-font-size: 11; -fx-font-weight: bold;"/>
-                            <Label text="Socket.io, React" style="-fx-text-fill: #666; -fx-font-size: 11;"/>
-                        </HBox>
-                        <ProgressBar progress="0.60"/>
-                        <Label text="⭐ 4.7 (150 submissions)" style="-fx-font-size: 11; -fx-text-fill: #FFB800;"/>
-                        <Button text="Continue" styleClass="btn-primary" style="-fx-padding: 10 20 10 20;" onAction="#handleContinueProject"/>
-                    </VBox>
-                </FlowPane>
+            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background-color: #F5F5F5;">
+                <FlowPane fx:id="projectsFlowPane" hgap="24" vgap="24" 
+                          style="-fx-padding: 40; -fx-background-color: #F5F5F5;" prefWrapLength="1200"/>
             </ScrollPane>
         </VBox>
     </center>

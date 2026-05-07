@@ -55,14 +55,9 @@ public class AppConfig {
     public static final String VIEW_FORUM = "views/ForumView.fxml";
     public static final String VIEW_USERS = "views/UsersView.fxml";
     public static final String VIEW_PROFILE = "views/ProfileView.fxml";
-    public static final String VIEW_EDIT_PROFILE = "views/EditProfileView.fxml";
     public static final String VIEW_SIGNIN = "views/SignInView.fxml";
     public static final String VIEW_SIGNUP = "views/SignUpView.fxml";
-    public static final String VIEW_FORGOT_PASSWORD = "views/ForgotPasswordView.fxml";
-    public static final String VIEW_PACKAGE_SELECTION = "views/PackageSelectionView.fxml";
-    public static final String VIEW_PAYMENT = "views/PaymentView.fxml";
     public static final String VIEW_DASHBOARD = "views/DashboardView.fxml";
-    public static final String VIEW_DASHBOARD_BACK = "views/DashboardBackView.fxml";
     public static final String VIEW_USERS_BACK = "views/UsersBackView.fxml";
     public static final String VIEW_COURSES_BACK = "views/CoursesBackView.fxml";
     public static final String VIEW_FORUM_BACK = "views/ForumBackView.fxml";

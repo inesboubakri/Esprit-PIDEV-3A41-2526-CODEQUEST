@@ -14,15 +14,15 @@ import java.io.IOException;
 public class CodeQuestApp extends Application {
 
     private static final String APP_TITLE = "CodeQuest - Learn Programming Through Gaming";
-    private static final int WINDOW_WIDTH = 1200;
-    private static final int WINDOW_HEIGHT = 750;
+    private static final int WINDOW_WIDTH = 1400;
+    private static final int WINDOW_HEIGHT = 900;
 
     @Override
     public void start(Stage primaryStage) {
         try {
             
             // Change in CodeQuestApp.java (line 26)
-Parent root = FXMLLoader.load(getClass().getResource("views/HomeView.fxml"));
+Parent root = FXMLLoader.load(getClass().getResource("views/homeView.fxml"));
             Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
             
             primaryStage.setTitle(APP_TITLE);

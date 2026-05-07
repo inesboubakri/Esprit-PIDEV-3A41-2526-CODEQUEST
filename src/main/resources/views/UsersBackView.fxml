@@ -41,7 +41,7 @@
                 <Label text="Users Management" style="-fx-font-size: 32; -fx-font-weight: bold; -fx-text-fill: #333;"/>
                 <Region HBox.hgrow="ALWAYS"/>
                 <HBox spacing="0" style="-fx-background-color: #F5F5F5; -fx-padding: 10 16 10 16; -fx-background-radius: 8;">
-                    <TextField fx:id="searchField" promptText="Search users..." style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-min-width: 250; -fx-font-size: 14;"/>
+                    <TextField promptText="Search users..." style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-min-width: 250; -fx-font-size: 14;"/>
                     <Button text="🔍" style="-fx-background-color: transparent; -fx-text-fill: #999; -fx-cursor: hand; -fx-font-size: 14;"/>
                 </HBox>
                 <Button text="🌙" style="-fx-background-color: transparent; -fx-font-size: 18; -fx-padding: 8; -fx-cursor: hand;" onAction="#handleThemeToggle"/>
@@ -65,13 +65,13 @@
                         
                         <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 2);" spacing="10">
                             <Label text="Total Users" style="-fx-font-size: 12; -fx-font-weight: 600; -fx-text-fill: #666; -fx-text-transform: uppercase;"/>
-                            <Label fx:id="totalUsersLabel" text="0" style="-fx-font-size: 36; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                            <Label text="1,234" style="-fx-font-size: 36; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
                             <Label text="+12% this month" style="-fx-font-size: 11; -fx-text-fill: #4CAF50; -fx-background-color: #d4edda; -fx-padding: 4 8; -fx-background-radius: 4; -fx-text-alignment: center;"/>
                         </VBox>
                         
                         <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 2);" spacing="10">
                             <Label text="Active Users" style="-fx-font-size: 12; -fx-font-weight: 600; -fx-text-fill: #666; -fx-text-transform: uppercase;"/>
-                            <Label fx:id="activeUsersLabel" text="0" style="-fx-font-size: 36; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
+                            <Label text="987" style="-fx-font-size: 36; -fx-font-weight: bold; -fx-text-fill: #FF6B4A;"/>
                             <Label text="+8% this week" style="-fx-font-size: 11; -fx-text-fill: #4CAF50; -fx-background-color: #d4edda; -fx-padding: 4 8; -fx-background-radius: 4; -fx-text-alignment: center;"/>
                         </VBox>
                         
@@ -89,35 +89,29 @@
                     </GridPane>
                     
                     <!-- Filters and Actions Section -->
-                    <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 2);">
-                        <!-- Filter Row -->
-                        <HBox spacing="15" alignment="CENTER_LEFT">
-                            <Label text="Filters:" style="-fx-font-weight: 600; -fx-font-size: 13; -fx-text-fill: #333;"/>
-                            
-                            <ComboBox fx:id="levelFilterCombo" style="-fx-font-size: 13; -fx-pref-width: 140;"/>
-                            <ComboBox fx:id="roleFilterCombo" style="-fx-font-size: 13; -fx-pref-width: 140;"/>
-                            
-                            <Region HBox.hgrow="ALWAYS"/>
-                            <Button text="📊 View Stats" style="-fx-padding: 10 20; -fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: 500;"/>
-                            <Button fx:id="addNewUserBtn" text="+ Add New User" style="-fx-padding: 10 20; -fx-background-color: #FF6B4A; -fx-text-fill: white; -fx-font-weight: 500;" onAction="#handleAddUser"/>
+                    <HBox spacing="20" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 2);" alignment="CENTER_LEFT">
+                        <HBox spacing="10">
+                            <Button text="All Users" style="-fx-padding: 8 16; -fx-text-fill: white; -fx-background-color: #FF6B4A; -fx-font-weight: 500;"/>
+                            <Button text="Active" style="-fx-padding: 8 16; -fx-background-color: #f0f0f0; -fx-font-weight: 500;"/>
+                            <Button text="Inactive" style="-fx-padding: 8 16; -fx-background-color: #f0f0f0; -fx-font-weight: 500;"/>
+                            <Button text="Premium" style="-fx-padding: 8 16; -fx-background-color: #f0f0f0; -fx-font-weight: 500;"/>
+                            <Button text="Suspended" style="-fx-padding: 8 16; -fx-background-color: #f0f0f0; -fx-font-weight: 500;"/>
                         </HBox>
-                        
-                        <!-- Info Row -->
-                        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10 0 0 0; -fx-border-color: #E0E0E0; -fx-border-width: 1 0 0 0;">
-                            <Label text="💡 Tip: Click column headers to sort. Filters work together." style="-fx-font-size: 12; -fx-text-fill: #666; -fx-font-style: italic;"/>
-                        </HBox>
-                    </VBox>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="📊 View Stats" style="-fx-padding: 10 20; -fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: 500;"/>
+                        <Button text="+ Add New User" style="-fx-padding: 10 20; -fx-background-color: #FF6B4A; -fx-text-fill: white; -fx-font-weight: 500;"/>
+                    </HBox>
                     
-                    <!-- Users Table with Sorting Enabled -->
-                    <TableView fx:id="usersTable" style="-fx-font-size: 13; -fx-background-color: white;" pickOnBounds="false" VBox.vgrow="ALWAYS">
+                    <!-- Users Table -->
+                    <TableView fx:id="usersTable" style="-fx-font-size: 13; -fx-background-color: white;" pickOnBounds="false">
                         <columns>
-                            <TableColumn text="User ID" prefWidth="110" sortable="true"/>
-                            <TableColumn text="Name" prefWidth="180" sortable="true"/>
-                            <TableColumn text="Email" prefWidth="220" sortable="true"/>
-                            <TableColumn text="Level" prefWidth="100" sortable="true"/>
-                            <TableColumn text="Status" prefWidth="110" sortable="true"/>
-                            <TableColumn text="Joined Date" prefWidth="130" sortable="true"/>
-                            <TableColumn text="Actions" prefWidth="150" sortable="false"/>
+                            <TableColumn text="User ID" prefWidth="110"/>
+                            <TableColumn text="Name" prefWidth="180"/>
+                            <TableColumn text="Email" prefWidth="220"/>
+                            <TableColumn text="Level" prefWidth="100"/>
+                            <TableColumn text="Status" prefWidth="110"/>
+                            <TableColumn text="Joined Date" prefWidth="130"/>
+                            <TableColumn text="Actions" prefWidth="150"/>
                         </columns>
                     </TableView>
                 </VBox>
