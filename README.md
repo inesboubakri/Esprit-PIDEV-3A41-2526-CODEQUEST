@@ -1,212 +1,784 @@
-# CodeQuest JavaFX Application
+# CodeQuest Desktop - Application de Bureau pour l'Apprentissage de la Programmation
 
-Complete JavaFX conversion of the CodeQuest web template into a desktop application using Scene Builder-compatible FXML files.
+## Table des Matières
 
-## Project Structure
-
-```
-javafx_project/
-├── src/
-│   ├── CodeQuestApp.java                    # Main application entry point
-│   ├── views/                               # All FXML layout files
-│   │   ├── HomeView.fxml                    # Home/Landing page
-│   │   ├── CoursesView.fxml                 # Courses listing (front-end)
-│   │   ├── ProblemsView.fxml                # Practice problems
-│   │   ├── ProjectsView.fxml                # Portfolio projects
-│   │   ├── EventsView.fxml                  # Tournaments and events
-│   │   ├── ForumView.fxml                   # Community forum
-│   │   ├── UsersView.fxml                   # User profiles (Arena)
-│   │   ├── SignInView.fxml                  # Sign-in page
-│   │   ├── SignUpView.fxml                  # Registration page
-│   │   ├── ProfileView.fxml                 # User profile page
-│   │   ├── DashboardView.fxml               # Admin dashboard (back-end)
-│   │   └── [Additional detail pages]        # Course/Problem/Project details
-│   ├── controllers/                         # All JavaFX Controller classes
-│   │   ├── HomeController.java
-│   │   ├── CoursesController.java
-│   │   ├── ProblemsController.java
-│   │   ├── ProjectsController.java
-│   │   ├── EventsController.java
-│   │   ├── ForumController.java
-│   │   ├── UsersController.java
-│   │   ├── SignInController.java
-│   │   ├── SignUpController.java
-│   │   ├── ProfileController.java
-│   │   ├── DashboardController.java
-│   │   └── [Additional controllers]
-│   └── resources/
-│       └── styles.css                       # Comprehensive JavaFX CSS stylesheet
-```
-
-## Features
-
-### ✨ Design Fidelity
-- **Exact Color Matching**: All colors extracted from the original web template
-  - Primary: #FF6B4A (Vibrant Orange)
-  - Secondary: #FFB800 (Golden Yellow)
-  - Accent: #2196F3 (Deep Blue)
-  - Neutrals: #333 (Dark), #666 (Gray), #FFF (White)
-
-- **Typography & Spacing**: Precise recreation of font sizes, weights, and spacing
-- **UI Components**: All buttons, cards, badges, and navigation elements faithfully replicated
-- **Layout Compatibility**: Every FXML file is Scene Builder-compatible for visual editing
-
-### 📱 Pages Included (Front-End)
-- **Home**: Hero section with stats and mentor cards
-- **Courses**: Course listing with advanced filtering
-- **Problems**: Practice problem sets with difficulty levels
-- **Projects**: Portfolio building projects
-- **Events**: Upcoming tournaments and competitions
-- **Forum**: Community discussion board
-- **Users**: Arena to view and connect with other developers
-- **Profile**: User profile with stats and activity
-- **Sign In/Sign Up**: Authentication pages
-
-### ⚙️ Pages Included (Back-End)
-- **Dashboard**: Admin dashboard with stats cards and activity feed
-- **Users Management**: Admin view for managing users
-- **Courses Management**: Admin view for courses
-- **Problems Management**: Admin view for problems
-- **Projects Management**: Admin view for projects
-- **Events Management**: Admin view for events
-- **Forum Management**: Admin view for forum moderation
-
-## Color Scheme
-
-All colors are defined as CSS variables and can be easily customized:
-
-```css
--primary-color: #FF6B4A;        /* Main brand orange */
--primary-hover: #ff7a1f;        /* Hover state */
--secondary-color: #FFB800;      /* Accent yellow */
--accent-color: #2196F3;         /* Light blue */
--success-color: #4CAF50;        /* Green for success */
--warning-color: #FFC107;        /* Amber for warnings */
--danger-color: #F44336;         /* Red for errors */
-```
-
-## Getting Started
-
-### Prerequisites
-- JDK 17 or higher
-- JavaFX SDK (version 20+)
-- Scene Builder (optional, for visual FXML editing)
-
-### Running the Application
-
-1. **Compile the project:**
-   ```bash
-   javac -cp javafx-sdk/lib/* --module-path javafx-sdk/lib --add-modules javafx.controls,javafx.fxml src/*.java src/controllers/*.java
-   ```
-
-2. **Run the application:**
-   ```bash
-   java -cp javafx-sdk/lib/* --module-path javafx-sdk/lib --add-modules javafx.controls,javafx.fxml src.CodeQuestApp
-   ```
-
-### Using Scene Builder
-1. Open any `.fxml` file with Scene Builder
-2. Edit visually while respecting the existing layout structure
-3. All CSS classes are applied and can be modified in the assigned stylesheets
-
-## Controller Implementation
-
-All controllers are structured with:
-- `@FXML` annotations for UI element binding
-- `initialize()` method for setup
-- Empty event handler methods for business logic implementation
-
-### Example:
-```java
-public class HomeController {
-    @FXML
-    private Button startAdventureButton;
-    
-    @FXML
-    public void initialize() {
-        // Setup UI bindings here
-    }
-    
-    @FXML
-    private void handleStartAdventure() {
-        // TODO: Implement business logic
-    }
-}
-```
-
-## Styling Guide
-
-The `styles.css` file contains:
-- **Root variables**: Color definitions, font sizes, spacing
-- **Component styles**: Pre-built CSS classes for common UI patterns
-  - `.btn-primary` / `.btn-secondary` - Buttons
-  - `.card` - Card containers
-  - `.stat-card` - Statistics cards
-  - `.sidebar` - Sidebar navigation
-  - `.text-input` - Form inputs
-  - `.badge` - Badge elements
-
-### Adding Custom Styles
-Add CSS to individual FXML elements or create new CSS classes:
-
-```xml
-<Button styleClass="btn-primary" text="Click Me"/>
-<Label style="-fx-text-fill: #FF6B4A; -fx-font-size: 16;"/>
-```
-
-## File Organization & Naming Conventions
-
-- **FXML Files**: `[FeatureName]View.fxml`
-- **Controller Files**: `[FeatureName]Controller.java`
-- **CSS Classes**: Kebab-case (`.btn-primary`, `.card-header`)
-- **Java Classes**: PascalCase (`HomeController`, `CoursesController`)
-
-## Language
-
-All UI text is in **English** and can be easily adapted for internationalization using resource bundles.
-
-## Next Steps for Development
-
-1. **Implement Navigation**:
-   - Create a `NavigationManager` to switch between scenes
-   - Handle window resizing and responsive layouts
-
-2. **Add Backend Integration**:
-   - Connect controllers to REST APIs
-   - Implement data binding with JavaFX properties
-
-3. **Add Animations**:
-   - Implement scene transitions
-   - Add button hover animations
-
-4. **Database Connection**:
-   - Integrate JDBC or ORM framework
-   - Implement data persistence
-
-5. **User Authentication**:
-   - Implement JWT or OAuth integration
-   - Add session management
-
-## Troubleshooting
-
-### Issue: Cannot find FXML file
-- Ensure the FXML file path is correct relative to the class files
-- Verify the file is in the `src/views/` directory
-
-### Issue: CSS not applying
-- Check that `stylesheets="@../resources/styles.css"` is correct in FXML root element
-- Verify CSS class names match exactly
-
-### Issue: Scene Builder cannot open FXML
-- Ensure JavaFX SDK is properly configured in Scene Builder preferences
-- Check that FXML uses standard JavaFX controls only
-
-## Credits
-
-Design inspiration: CodeQuest - Learn Programming Through Gaming
-
-JavaFX Conversion: Complete adaptation maintaining 100% design fidelity with Scene Builder compatibility.
+- [Description du Projet](#description-du-projet)
+- [Fonctionnalités Principales](#fonctionnalités-principales)
+- [Architecture](#architecture)
+- [Installation](#installation)
+- [Utilisation](#utilisation)
+- [Contribution](#contribution)
+- [Licence](#licence)
 
 ---
 
-**Ready to extend**: All FXML and Controller files are structured for easy business logic implementation. Add your own methods to the controllers and wire them to UI events!
+## Description du Projet
+
+**CodeQuest Desktop** est une application de bureau complète d'apprentissage et de gestion pédagogique en programmation. Elle permet aux formateurs de créer et gérer des **cours**, des **projets** et des **problèmes de code**, tandis que les étudiants peuvent suivre des cours, soumettre des solutions de code qui sont **automatiquement validées**, accumuler des points et consulter leur progression.
+
+### Objectif
+
+Offrir une solution complète et autonome pour l'**enseignement de la programmation** avec :
+- Validation automatique des solutions de code
+- Gestion centralisée des ressources pédagogiques
+- Gamification pour motiver les apprenants
+- Suivi complet de la progression
+- Interface graphique intuitive et responsive
+
+### Problème résolu
+
+- ❌ **Avant** : Validation manuelle laborieuse, ressources dispersées, dépendance internet
+- ✅ **Après** : Validation instantanée, plateforme centralisée, application autonome sans dépendance web
+
+### Technologies utilisées
+
+- **Frontend** : JavaFX (Java UI Framework)
+- **Backend** : Java 17+ avec architecture MVC
+- **Base de données** : SQLite / MySQL (configurable)
+- **Build Tool** : Maven
+- **Validation de code** : Compilateurs locaux (Java, Python, etc.)
+- **Gestion de dépendances** : Maven Central Repository
+- **Interfaces** : FXML (XML-based UI markup)
+
+---
+
+## Architecture
+
+### Structure du projet
+
+```
+CodeQuest-Java/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/codequest/
+│   │   │       ├── controller/          # Contrôleurs JavaFX
+│   │   │       ├── model/               # Modèles de données (User, Course, Problem, etc.)
+│   │   │       ├── service/             # Logique métier
+│   │   │       ├── repository/          # Accès aux données
+│   │   │       ├── validator/           # Validation de code
+│   │   │       ├── util/                # Utilitaires
+│   │   │       └── Main.java            # Point d'entrée
+│   │   ├── resources/
+│   │   │   ├── fxml/                    # Interfaces FXML
+│   │   │   │   ├── main-window.fxml
+│   │   │   │   ├── problem-list.fxml
+│   │   │   │   ├── course-view.fxml
+│   │   │   │   ├── admin-panel.fxml
+│   │   │   │   └── ...
+│   │   │   ├── css/                     # Feuilles de style
+│   │   │   │   └── application.css
+│   │   │   ├── images/                  # Ressources graphiques
+│   │   │   └── config.properties        # Configuration
+│   │   └── sql/
+│   │       ├── schema.sql               # Schéma de base de données
+│   │       └── initial-data.sql         # Données initiales
+│   └── test/
+│       ├── java/                        # Tests unitaires
+│       └── resources/                   # Ressources de test
+├── pom.xml                              # Configuration Maven
+├── README.md                            # Ce fichier
+└── .gitignore
+```
+
+### Dépendances principales (pom.xml)
+
+```xml
+<!-- JavaFX - Interface graphique -->
+<dependency>
+    <groupId>org.openjfx</groupId>
+    <artifactId>javafx-controls</artifactId>
+</dependency>
+
+<!-- JDBC - Accès aux données -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+</dependency>
+
+<!-- Logging -->
+<dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+</dependency>
+
+<!-- Testing -->
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+</dependency>
+```
+
+---
+
+## Fonctionnalités Principales
+
+### 1. Gestion des Utilisateurs et Authentification
+
+- **Inscription et connexion** avec email/mot de passe
+- **Profils utilisateur** : Photo, bio, statistiques personnelles
+- **Rôles et permissions** : Admin, Formateur, Étudiant
+- **Session persistante** : Mémorisation de la dernière session
+
+### 2. Gestion des Cours
+
+Les formateurs peuvent créer des cours structurés :
+
+- **Structure de cours** : Titre, description, objectifs d'apprentissage
+- **Chapitres** : Division du contenu en sections logiques
+- **Gestion d'accès** : Publics ou réservés aux inscrits
+- **Suivi de progression** : Voir le % de complétion par étudiant
+- **Ressources associées** : Associer des problèmes, projets
+- **Certificats** : Générer des certificats PDF à la fin du cours
+- **Points de compétence** : Attribuer des points par chapitre complété
+
+### 3. Gestion des Projets
+
+Créer des projets pratiques complexes :
+
+- **Énoncés détaillés** : Description, objectifs, contraintes
+- **Listes de tâches** : Checklist des étapes à accomplir
+- **Gestion des délais** : Dates limites de soumission
+- **Documentation** : Fichiers, ressources
+- **Soumissions** : Les étudiants soumettent leur code
+- **Évaluation** : Feedback détaillé des formateurs
+- **Critères d'évaluation** : Rubriques de notation personnalisées
+
+### 4. Gestion des Problèmes (Défis de Code)
+
+Créer et gérer des défis de programmation :
+
+- **Énoncés clairs** : Description, entrée, sortie attendue
+- **Niveaux de difficulté** : Facile, moyen, difficile
+- **Système de points** : Points configurables par problème
+- **Solution de référence** : Fournir une solution pour validation
+- **Validation automatique locale** : Compilation et test instantanés
+- **Support multi-langage** : Python, Java, C++, JavaScript, etc.
+- **Historique** : Tracer toutes les tentatives des étudiants
+- **Statuts** : ACCEPTED (accepté), REJECTED (rejeté)
+- **Compétences associées** : Lier à des compétences (Python, Java, SQL, etc.)
+
+### 5. Système de Points et Gamification
+
+- **Points globaux** : Accumulation par soumissions
+- **Classements** : Leaderboard global et par compétence
+- **Badges** : Récompenses visuelles pour jalons atteints
+- **Compétences** : Niveaux de maîtrise par domaine
+- **Historique** : Tracer l'évolution des points
+- **Analytics** : Statistiques détaillées de progression
+
+### 6. Tableau de Bord et Statistiques
+
+- **Vue d'ensemble** : Résumé personnel de la progression
+- **Statistiques** : Problèmes résolus, taux de réussite, points gagnés
+- **Cours actifs** : Liste des cours en cours de suivi
+- **Projets** : État des projets en cours
+- **Classement** : Position parmi les autres utilisateurs
+- **Graphiques** : Visualisation de la progression
+
+### 7. Gestion Administrateur
+
+Interface d'administration complète :
+
+- **Gestion des utilisateurs** : Créer, modifier, supprimer, bannir
+- **Gestion des cours** : CRUD complet
+- **Gestion des problèmes** : Création, édition, validation des solutions
+- **Gestion des projets** : Configuration, suivi des soumissions
+- **Rapports** : Statistiques globales, activité des utilisateurs
+- **Permissions** : Attribution des rôles (Admin, Formateur, Étudiant)
+
+---
+
+## Installation
+
+### Prérequis
+
+- **Java** >= 17 (JDK)
+- **Maven** >= 3.6
+- **MySQL** >= 5.7 (ou SQLite pour version légère)
+- **Git** : Système de contrôle de version
+
+### Étapes d'installation
+
+#### 1. Cloner le repository
+
+```bash
+git clone https://github.com/inesboubakri/Esprit-PIDEV-3A41-2526-CODEQUEST.git
+cd CodeQuest-Java
+```
+
+#### 2. Configurer la base de données
+
+Créer un fichier `config.properties` dans `src/main/resources/` :
+
+```properties
+# ===== BASE DE DONNÉES =====
+# Pour MySQL
+db.driver=com.mysql.cj.jdbc.Driver
+db.url=jdbc:mysql://localhost:3306/codequest_java
+db.user=root
+db.password=votre_mot_de_passe
+
+# OU pour SQLite (fichier local)
+# db.driver=org.sqlite.JDBC
+# db.url=jdbc:sqlite:codequest.db
+
+# ===== APPLICATION =====
+app.name=CodeQuest Desktop
+app.version=1.0.0
+
+# ===== VALIDATION DE CODE =====
+java.compiler.path=javac
+python.interpreter.path=python3
+cpp.compiler.path=g++
+```
+
+#### 3. Créer la base de données
+
+```bash
+# Pour MySQL, créer la base de données
+mysql -u root -p -e "CREATE DATABASE codequest_java;"
+
+# Importer le schéma
+mysql -u root -p codequest_java < src/main/sql/schema.sql
+
+# (Optionnel) Importer les données initiales
+mysql -u root -p codequest_java < src/main/sql/initial-data.sql
+```
+
+#### 4. Installer les dépendances Maven
+
+```bash
+mvn clean install
+```
+
+Cette commande télécharge toutes les dépendances listées dans `pom.xml`.
+
+#### 5. Compiler le projet
+
+```bash
+mvn compile
+```
+
+#### 6. Lancer l'application
+
+**Option 1 : Avec Maven**
+```bash
+mvn javafx:run
+```
+
+**Option 2 : Créer un JAR exécutable**
+```bash
+mvn package -DskipTests
+java -jar target/codequest-desktop-1.0.0.jar
+```
+
+**Option 3 : Depuis l'IDE (IntelliJ, Eclipse, NetBeans)**
+- Ouvrir le projet
+- Cliquer sur `Main.java`
+- Exécuter avec Shift+F10 (IntelliJ) ou Ctrl+F11 (Eclipse)
+
+---
+
+## Utilisation
+
+### Pour les Étudiants
+
+#### Créer un compte et se connecter
+
+1. Lancer l'application
+2. Cliquer sur **"S'inscrire"** depuis l'écran de connexion
+3. Remplir vos informations (email, nom, prénom, mot de passe)
+4. Cliquer sur **"Créer un compte"**
+5. Se connecter avec vos identifiants
+
+#### Consulter les problèmes et résoudre un défi
+
+1. Depuis le menu, aller à **"Problèmes"**
+2. Filtrer par difficulté, compétence ou langage
+3. Sélectionner un problème
+4. Lire attentivement l'énoncé et les exemples
+5. Écrire votre solution dans l'éditeur de code
+6. Cliquer sur **"Soumettre et Valider"**
+7. Voir instantanément le résultat :
+   - ✅ **Accepté** : Recevoir les points
+   - ❌ **Rejeté** : Voir les erreurs de compilation/test
+8. Réessayer autant de fois que nécessaire
+
+**Exemple d'interface** :
+```
+┌─────────────────────────────────────────────┐
+│ Énoncé: Calculer le Nième nombre Fibonacci │
+│                                             │
+│ Difficulté: ⭐⭐ (Moyen)                    │
+│ Points: 50                                  │
+│ Langage: Python                             │
+│                                             │
+│ ┌─────────────────────────────────────────┐ │
+│ │ def fibonacci(n):                       │ │
+│ │     if n <= 1:                          │ │
+│ │         return n                        │ │
+│ │     return fibonacci(n-1) + ..          │ │
+│ │                                         │ │
+│ └─────────────────────────────────────────┘ │
+│                                             │
+│         [Valider] [Aide] [Historique]      │
+└─────────────────────────────────────────────┘
+```
+
+#### Suivre un cours
+
+1. Aller à **"Mes Cours"**
+2. Chercher et s'inscrire à un cours
+3. Lire les chapitres dans l'ordre
+4. Compléter les problèmes associés
+5. Voir votre progression (0-100%)
+6. À 100% : Télécharger votre certificat
+
+#### Participer à un projet
+
+1. Aller à **"Projets"**
+2. Sélectionner un projet
+3. Lire l'énoncé et les critères d'évaluation
+4. Voir la checklist des tâches à accomplir
+5. Développer votre solution dans l'éditeur intégré
+6. Soumettre votre code
+7. Attendre l'évaluation du formateur
+8. Recevoir le feedback et les points
+
+#### Consulter vos statistiques
+
+1. Cliquer sur votre profil (coin haut droit)
+2. Voir :
+   - Points totaux et par compétence
+   - Problèmes résolus
+   - Classement global
+   - Badges débloqués
+   - Progression dans les cours
+   - Graphiques de progression dans le temps
+
+### Pour les Formateurs
+
+#### Créer un cours
+
+1. Aller à **"Administration"** → **"Mes Cours"** → **"Nouveau Cours"**
+2. Remplir le formulaire :
+   - Titre du cours
+   - Description détaillée
+   - Niveau (Débutant, Intermédiaire, Avancé)
+   - Objectifs d'apprentissage
+3. Cliquer **"Créer le cours"**
+4. Le cours est créé et vous pouvez ajouter du contenu
+
+#### Ajouter des chapitres et du contenu
+
+1. Dans votre cours → **"Ajouter un chapitre"**
+2. Remplir :
+   - Titre du chapitre
+   - Description et contenu
+   - Ressources (fichiers, documentations)
+3. Ajouter des problèmes au chapitre
+4. Configurer l'ordre d'apparition
+5. Sauvegarder
+
+#### Créer des problèmes de code
+
+1. Aller à **"Administration"** → **"Problèmes"** → **"Nouveau Problème"**
+2. Remplir l'énoncé :
+   - Titre du problème
+   - Description claire
+   - Exemples d'entrée/sortie (tester manuellement)
+3. Écrire la solution de référence :
+
+**Exemple** :
+```
+Titre : Vérifier si un nombre est premier
+Énoncé : Écrire une fonction qui vérifie si un nombre donné est premier.
+         Retourner True si premier, False sinon.
+
+Langage : Python
+Solution :
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+Test 1 :
+Entrée : 7
+Sortie attendue : True
+
+Test 2 :
+Entrée : 10
+Sortie attendue : False
+
+Difficulté : Moyen (3/5)
+Points : 40
+Compétence : Python
+```
+
+4. Configurer :
+   - Langage(s) supporté(s)
+   - Difficulté (1-5)
+   - Points à attribuer
+   - Compétence associée
+   - Temps limite (optionnel)
+5. Sauvegarder
+
+#### Créer un projet
+
+1. Aller à **"Administration"** → **"Projets"** → **"Nouveau Projet"**
+2. Remplir :
+   - Titre du projet
+   - Description détaillée
+   - Niveau de difficulté
+   - Date limite de soumission
+   - Fichiers de ressources
+3. Ajouter les critères d'évaluation :
+   - Critère 1 : Fonctionnalité (0-30 points)
+   - Critère 2 : Code Quality (0-20 points)
+   - Critère 3 : Documentation (0-20 points)
+4. Créer une checklist des tâches
+5. Sauvegarder
+
+#### Évaluer les soumissions
+
+1. Aller à **"Évaluations"** ou **"Mes Projets"**
+2. Voir les soumissions en attente
+3. Ouvrir une soumission d'étudiant
+4. Voir le code soumis dans l'éditeur
+5. Ajouter des commentaires ligne par ligne
+6. Attribuer une note pour chaque critère
+7. Valider l'évaluation
+8. L'étudiant reçoit automatiquement les points et le feedback
+
+### Pour les Administrateurs
+
+#### Gérer les utilisateurs
+
+1. Aller à **"Administration"** → **"Utilisateurs"**
+2. Voir la liste de tous les utilisateurs
+3. Pour chaque utilisateur :
+   - Modifier les informations
+   - Changer le rôle (Admin, Formateur, Étudiant)
+   - Bannir si nécessaire
+   - Consulter les statistiques d'activité
+
+#### Gérer les ressources
+
+1. **Cours** : `Administration → Cours`
+   - Voir tous les cours
+   - Modifier, dupliquer, archiver
+   - Voir les inscriptions
+
+2. **Problèmes** : `Administration → Problèmes`
+   - CRUD complet
+   - Importer/Exporter des problèmes
+   - Gérer les langages supportés
+
+3. **Projets** : `Administration → Projets`
+   - CRUD complet
+   - Configurer les critères d'évaluation
+
+#### Consulter les rapports et statistiques
+
+1. Aller à **"Administration"** → **"Rapports"**
+2. Voir :
+   - Nombre d'utilisateurs actifs
+   - Taux de complétion des cours
+   - Problèmes les plus résolus
+   - Utilisateurs les plus actifs
+   - Performances globales
+   - Exportation des données (CSV, PDF)
+
+#### Configurer l'application
+
+1. Aller à **"Administration"** → **"Paramètres"**
+2. Configurer :
+   - Langages de programmation supportés
+   - Compilateurs/Interpréteurs disponibles
+   - Limites de ressources (mémoire, timeout)
+   - Thème de l'application
+
+---
+
+## Structure de la Base de Données
+
+### Principales tables
+
+```sql
+-- Utilisateurs
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    first_name VARCHAR(100),
+    last_name VARCHAR(100),
+    avatar_path VARCHAR(255),
+    role ENUM('ADMIN', 'TEACHER', 'STUDENT'),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Cours
+CREATE TABLE courses (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    teacher_id INT,
+    difficulty VARCHAR(50),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (teacher_id) REFERENCES users(id)
+);
+
+-- Problèmes
+CREATE TABLE problems (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    difficulty INT,
+    points INT,
+    reference_solution LONGTEXT,
+    language VARCHAR(50),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Soumissions
+CREATE TABLE submissions (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    student_id INT,
+    problem_id INT,
+    code LONGTEXT,
+    status ENUM('ACCEPTED', 'REJECTED', 'PENDING'),
+    feedback TEXT,
+    submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (student_id) REFERENCES users(id),
+    FOREIGN KEY (problem_id) REFERENCES problems(id)
+);
+
+-- Points
+CREATE TABLE points (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    student_id INT,
+    problem_id INT,
+    points_earned INT,
+    earned_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (student_id) REFERENCES users(id),
+    FOREIGN KEY (problem_id) REFERENCES problems(id)
+);
+```
+
+---
+
+## Compilation et Distribution
+
+### Créer une distribution exécutable
+
+```bash
+# Créer un JAR exécutable avec dépendances
+mvn clean package -DskipTests
+
+# Le JAR sera disponible dans target/codequest-desktop-1.0.0-jar-with-dependencies.jar
+```
+
+### Créer un installateur (Windows)
+
+```bash
+mvn clean package
+# Utiliser des outils comme NSIS ou jpackage (JDK 16+)
+jpackage --input target \
+         --name CodeQuest \
+         --main-jar codequest-desktop-1.0.0.jar \
+         --main-class com.codequest.Main \
+         --type exe
+```
+
+### Empaqueter pour macOS
+
+```bash
+jpackage --input target \
+         --name CodeQuest \
+         --main-jar codequest-desktop-1.0.0.jar \
+         --main-class com.codequest.Main \
+         --type dmg
+```
+
+---
+
+## Tests
+
+### Lancer les tests unitaires
+
+```bash
+mvn test
+```
+
+### Lancer les tests d'intégration
+
+```bash
+mvn verify
+```
+
+### Tests avec couverture de code
+
+```bash
+mvn clean test jacoco:report
+# Rapport dans : target/site/jacoco/index.html
+```
+
+---
+
+## Dépannage
+
+### Problème : "Erreur de connexion à la base de données"
+
+**Solution** :
+1. Vérifier que MySQL est en cours d'exécution
+2. Vérifier les paramètres dans `config.properties`
+3. Vérifier que la base de données `codequest_java` existe
+4. Vérifier les permissions de l'utilisateur MySQL
+
+### Problème : "JavaFX non trouvé"
+
+**Solution** :
+```bash
+# Mettre à jour les dépendances
+mvn clean install
+
+# Ou spécifier le chemin du SDK JavaFX dans pom.xml
+<properties>
+    <javafx.version>21.0.1</javafx.version>
+    <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
+</properties>
+```
+
+### Problème : "Le compilateur Python/Java n'est pas trouvé"
+
+**Solution** :
+1. Vérifier que Python/Java est installé
+2. Vérifier que les chemins dans `config.properties` sont corrects
+3. Ajouter les répertoires au PATH de l'OS
+
+```bash
+# Windows
+set PATH=%PATH%;C:\Python39;C:\Program Files\Java\jdk17\bin
+
+# Linux/macOS
+export PATH=$PATH:/usr/bin/python3:/usr/local/java/bin
+```
+
+---
+
+## Contribution
+
+Nous accueillons les contributions ! Voici comment contribuer au projet :
+
+### Avant de commencer
+
+1. **Forker le repository** sur GitHub
+2. **Cloner votre fork**
+   ```bash
+   git clone https://github.com/votre-username/CodeQuest-Java.git
+   ```
+3. **Créer une branche** pour votre feature
+   ```bash
+   git checkout -b feature/ma-nouvelle-fonctionnalite
+   ```
+
+### Pendant le développement
+
+1. Effectuer vos modifications
+2. Ajouter des tests pour les nouvelles fonctionnalités
+3. Tester localement
+   ```bash
+   mvn clean test
+   mvn javafx:run
+   ```
+4. Commit avec un message clair
+   ```bash
+   git add .
+   git commit -m "Ajouter nouvelle fonctionnalité X"
+   ```
+
+### Après le développement
+
+1. Push votre branche
+   ```bash
+   git push origin feature/ma-nouvelle-fonctionnalite
+   ```
+2. Créer une Pull Request sur GitHub
+3. Attendre la review et répondre aux commentaires
+
+### Bonnes pratiques
+
+- Suivre la convention de nommage : `feature/`, `bugfix/`, `hotfix/`
+- Rédiger des messages de commit descriptifs
+- Ajouter des tests pour les nouvelles fonctionnalités
+- Documenter les changements majeurs
+- Respecter la structure du code (architecture MVC)
+- Utiliser des noms significatifs pour les variables et méthodes
+- Commenter le code complexe
+
+### Types de contributions bienvenues
+
+- **Corrections de bugs** : Signaler les problèmes dans les Issues
+- **Nouvelles fonctionnalités** : Proposer des améliorations
+- **Documentation** : Améliorer le README, les commentaires
+- **Design/UX** : Améliorations de l'interface FXML
+- **Performance** : Optimisations de code
+- **Support de langages** : Ajouter des compilateurs supplémentaires
+
+---
+
+## Licence
+
+Ce projet est sous **licence propriétaire**.
+
+### Conditions d'utilisation
+
+Tous les droits sont réservés. L'utilisation, la modification ou la distribution de ce code source est strictement interdite sans permission écrite préalable.
+
+Pour toute question concernant la licence, veuillez contacter les mainteneurs du projet.
+
+---
+
+## Crédits
+
+- **Développement** : Équipe de programmation
+- **Architecture** : Design MVC avec JavaFX
+- **Tester** : Communauté des contributeurs
+
+---
+
+## Ressources Utiles
+
+### Documentation
+
+- [JavaFX Documentation](https://gluonhq.com/products/javafx/)
+- [Maven Guide](https://maven.apache.org/)
+- [JDBC Tutorial](https://docs.oracle.com/javase/tutorial/jdbc/)
+
+### Outils
+
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/) - IDE recommandé
+- [Scene Builder](https://gluonhq.com/products/scene-builder/) - Éditeur FXML
+- [MySQL Workbench](https://www.mysql.com/products/workbench/) - Gestion BD
+
+### Communautés
+
+- GitHub Issues pour signaler les bugs
+- Discussions GitHub pour les questions
+
+---
+
+## Contact
+
+Pour toute question ou suggestion :
+- 📧 Email : support@codequest.local
+- 💬 Issues GitHub : [CodeQuest-Java/issues](https://github.com/inesboubakri/Esprit-PIDEV-3A41-2526-CODEQUEST.git/issues)
+
+---
+
+**Dernier mise à jour** : Mai 2026
+**Version** : 1.0.0
